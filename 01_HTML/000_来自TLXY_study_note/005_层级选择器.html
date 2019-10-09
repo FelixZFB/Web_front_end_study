@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <style>
+        /*层级选择器，通过父元素来设置子元素的样式*/
+        .wrap{
+            width:500px;
+            height:500px;
+            border:5px solid blue;
+        }
+        /*子元素*/
+        .wrap div{
+            width:200px;
+            height:200px;
+            background-color:yellow;
+        }
+        .wrap .in{
+            width:100px;
+            height:100px;
+            background-color:red;
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div></div>
+        <br>
+        <div>
+            <div class="in"></div>
+        </div>
+    </div>
+</body>
+</html>

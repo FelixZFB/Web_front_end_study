@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签使用演示</title>
+</head>
+<body>
+    <!--
+    form标签来划定一个表单区域，就是网页中最常用的输入用户名密码的地方
+    action 数据提交的地址
+    method 提交的方式 post get
+        get: 表单提交默认是以get方式，
+        特点是以URL传输数据，数据会显示在URL地址栏当中，传输数据有大小限制
+        相对来说不安全
+        post: 数据不通过URL地址传参，相对来说较安全，数据传输没有具体大小的限制
+        一般表单指定以post传输数据
+
+
+    -->
+    <form action="" method="post">
+        <!--表单控件 type指定表单的类型：普通文本，密码框，单选框，多选框-->
+        <!--必须填写name属性-->
+        用户名: <input type="text" name="username" value="" placeholder="请输入用户名"> <br>
+        密码: <input type="password" name="password" value=""> <br>
+
+        <!--单选框，必须有name和value属性，并且一组name的属性值必须相同，一般1代表男，0代表女-->
+        <!--name的值如果不相同，则变成了多选框了-->
+        性别: <input type="radio" name="sex" value="1"> 男
+              <input type="radio" name="sex" value="0"> 女 <br>
+
+        <!--多选框，必须有name和value属性，并且一组name的属性值必须相同，一般1代表男，0代表女-->
+        <!--name的值最好加一个中括号-->
+        <!--value值的123分别代表篮球，足球，排球，也可以自己指定,但是前端后端要一致，才能正确识别-->
+        爱好：<br>
+            <input type="checkbox" name="love[]" value="1"> 篮球 <br>
+            <input type="checkbox" name="love[]" value="2"> 足球 <br>
+            <input type="checkbox" name="love[]" value="3"> 排球 <br>
+
+        <!--下拉框 必须配合option使用-->
+        学历：<br>
+            <select name="xl">
+                <option value="0">小学</option>
+                <option value="1">初中</option>
+                <option value="2">高中</option>
+                <option value="3">大学</option>
+            </select> <br>
+
+        <!--文件上传 file-->
+        请选择上传的文件：<br>
+        <input type="file" name="file"> <br>
+
+        请输入个人说明：<br>
+        <textarea name="text" id="">请输入个人信息</textarea> <br>
+
+        <!--按钮-->
+        <input type="submit" value="确定">
+        <button>提交</button>
+        <input type="reset" value="重置">
+
+
+        <!--隐藏域 不需要用户查看和填写的信息-->
+        <input type="hidden" name="id" value="0">
+
+
+
+
+
+
+
+
+
+    </form>
+
+</body>
+</html>

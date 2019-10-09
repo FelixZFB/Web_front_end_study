@@ -1,0 +1,66 @@
+<!--
+1. 标签选择器，影响范围最大
+2. . 类选择器，通过class类名来设置元素的样式,可以设置多个类
+影响范围可以控制，相对较小
+可以重名
+3. # id选择器，通过id属性的值来设置元素的样式
+id在html中是唯一的，不能重名，只能引用一次
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css三种基本选择器</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+        .item1{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .item2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        #box1{
+            width:200px;
+            height:200px;
+            background-color: blue;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            /*设置一个边框,三个参数都不能少*/
+            border: 5px solid blue;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <br>
+    <div class="item1" id="box3"></div>
+    <br>
+    <div class="item2"></div>
+    <br>
+    <div class="item1"></div>
+    <br>
+    <div id="box1"></div>
+    <br>
+    <div id="box2"></div>
+</body>
+</html>
+<!--
+上面一共设置了6个div标签，最后一个标签，由于没有设置背景色，直接套用的了div的黑色背景色
+同时设置多个，id>类>div
+推荐使用类选择器，一个类中可以使用多个类名
+-->
