@@ -9,16 +9,16 @@
     form标签来划定一个表单区域，就是网页中最常用的输入用户名密码的地方
     action 数据提交的地址
     method 提交的方式 post get
-        get: 表单提交默认是以get方式，
+        get: 表单提交默认是以get方式，提交的数据会在网址中显示
         特点是以URL传输数据，数据会显示在URL地址栏当中，传输数据有大小限制
         相对来说不安全
         post: 数据不通过URL地址传参，相对来说较安全，数据传输没有具体大小的限制
-        一般表单指定以post传输数据
+        一般表单指定以post传输数据,数据放在headers中的FromData中
     -->
 
         <form action="" method="post">
             <!--表单控件type指定表单的类型：普通文本，密码框，单选框，多选框-->
-            <!--必须填写name属性-->
+            <!--必须填写name属性，提交到数据库中，name和value的值就是一个键值对,数据库中都是以键值对存储数据-->
             <!--每一部分都放在div标签中，可以自动分块换行，便于管理-->
             <div>
                 <label>用户名: </label>
@@ -97,3 +97,7 @@
 
     </body>
 </html>
+
+<!--get提交，所有信息都会显示在网址中，密码都可以看见，因此有敏感信息使用post提交-->
+<!--http://localhost:63342/Web_front_end_study/01_HTML/010_html%E8%A1%A8%E5%8D%95.html?
+username=Felix&password=123456&sex=1&love%5B%5D=1&xl=0&file=&text=Mynameisfelix&id=0-->
