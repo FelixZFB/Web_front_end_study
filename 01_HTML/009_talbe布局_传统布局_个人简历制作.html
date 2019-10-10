@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table布局</title>
+</head>
+    <body>
+        <!--border全部设置完成后设置为0，就不显示边框了-->
+        <!--cellpadding="0" cellspacing="0"即不占用任何空间-->
+        <table width="800" height="1000" border="0" cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <!--设置第一列的布局内容-->
+                <td width="260" valign="top" bgcolor="#fafad2">
+                    <!--第一列中嵌套一个表格-->
+                    <table width="220" border="0" align="center">
+                        <!--设置一个空白行，用于和顶端保持100的距离-->
+                        <tr height="100">
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><img src="images/person.png"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Felix Zhang</td>
+                        </tr>
+                        <tr>
+                            <td align="right">18200001111</td>
+                        </tr>
+                        <tr>
+                            <td align="right">Felix@gmail.com</td>
+                        </tr>
+                    </table>
+
+                </td>
+                <!--第二列用于分割，没有内容-->
+                <td width="30"></td>
+                <!--第三列用于填写详细的个人信息-->
+                <td width="480" valign="top">
+
+                    <!--标题部分-->
+                    <table width="480" border="0" cellpadding="0" cellspacing="0">
+                        <tr height="80">
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/resume.png" align="right"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <!--hr标签就是画一条线，现在被淘汰了-->
+                    <hr />
+                    <br>
+
+                    <!--详细内容部分-->
+                    <!--table>(tr>td*2)*6-->
+                    <table width="480" height="200" border="0" cellpadding="0" cellspacing="0">
+                        <tr align="left">
+                            <td colspan="2"><b>个人基本情况</b></td>
+                        </tr>
+                        <tr>
+                            <td>姓名：张天爱</td>
+                            <td>籍贯：北京天山</td>
+                        </tr>
+                        <tr>
+                            <td>性别：男</td>
+                            <td>身高：189cm</td>
+                        </tr>
+                        <tr>
+                            <td>名族：汉</td>
+                            <td>体重：80KG</td>
+                        </tr>
+                        <tr>
+                            <td>出生日期：1990-09-09</td>
+                            <td>电话：18200001111</td>
+                        </tr>
+                        <tr>
+                            <td>现居住地：北京天山</td>
+                            <td>专业：表演艺术</td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <br>
+                    <!--详细内容部分-->
+                    <table width="480" height="80" border="0" cellpadding="0" cellspacing="0">
+                        <tr align="left">
+                            <td colspan="2"><b>教育背景</b></td>
+                        </tr>
+                        <tr>
+                            <td>2009-2019 北京表演学院</td>
+                        </tr>
+                        <tr>
+                            <td>2009-2019 北京表演学院</td>
+                        </tr>
+                    </table>
+
+                </td>
+                
+                <!--第四列用于分割，没有内容-->
+                <td width="30"></td>
+            </tr>
+        </table>
+    </body>
+</html>
