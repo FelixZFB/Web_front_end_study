@@ -18,11 +18,12 @@
 
         <form action="" method="post">
             <!--表单控件type指定表单的类型：普通文本，密码框，单选框，多选框-->
-            <!--必须填写name属性，提交到数据库中，name和value的值就是一个键值对,数据库中都是以键值对存储数据-->
+            <!--记住，必须填写name属性，提交到数据库中，name和value的值就是一个键值对,数据库中都是以键值对存储数据-->
             <!--每一部分都放在div标签中，可以自动分块换行，便于管理-->
             <div>
-                <label>用户名: </label>
-                <input type="text" name="username" value="" placeholder="请输入用户名">
+                <!--label的for属性和下面input的id属性结合使用，点击用户名就可以激活输入窗口-->
+                <label for="username">用户名: </label>
+                <input type="text" name="username" value="" id="username" placeholder="请输入用户名">
             </div>
             <br>
 

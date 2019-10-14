@@ -281,3 +281,9 @@ HTML快速创建，配合tab键使用
 - 4、<textarea>标签 定义多行文本输入框
 - 5、<select>标签 定义下拉表单元素
 - 6、<option>标签与<select>标签配合，定义下拉表单元素中的选项 
+
+# 5. 其它常用标签
+- link
+    引入外部文件,比如引用css文件
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
