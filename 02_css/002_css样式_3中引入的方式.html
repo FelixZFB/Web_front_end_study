@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css的使用</title>
+
+    <!--方式1(推荐). 外链式 通过link标签引入css文件，要在head标签中引入-->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--方式2(一般用于网站首页). 嵌入式 是通过style标签来写css,也要写在head标签之中-->
+    <!--页面的h1标签都会使用下面的h1样式-->
+    <style type="text/css">
+        h1{
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+    <h1>页面标题，使用的嵌入式css样式表</h1>
+    <body>
+        <!--方式3(不推荐). 内联式 同style属性设置css样式-->
+        <div>我是div标签，使用的外链式css样式</div>
+        <br>
+        <a href="https://www.hao123.com/" style="font-size:20px;color:yellow;background-color:green;">我是一个内联式样式表，hao123首页</a>
+    </body>
+</html>
+
+<!--样式优先级：内联式>嵌入式>外链式，如果有一个标签定义的三种样式，会使用最高的级别的样式-->

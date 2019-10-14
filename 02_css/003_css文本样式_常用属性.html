@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css文本样式</title>
+    <style type="text/css">
+        div{
+             font-size: 30px;
+             color: blue;
+             font-style: normal;
+             font-family: "Arial";
+             line-height: 60px;
+        }
+
+        em{
+            font-size: 30px;
+            color: red;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        a{
+            font-size: 50px;
+            color: deepskyblue;
+            text-decoration: none;
+        }
+        
+        p{
+            font-size: 50px;
+            color: deepskyblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>我是<em>em标签重点标记em</em>文本样式Times。为了让网页元素的样式更加丰富，
+        也为了让网页的内容和样式能拆分开，CSS由此思想而诞生，CSS是 Cascading Style Sheets
+        的首字母缩写，意思是层叠样式表。有了CSS，html中大部分表现样式的标签就废弃不用了，
+        html只负责文档的结构和内容，表现形式完全交给CSS，html文档变得更加简洁。
+    </div>
+    <br>
+    <!--上面的text-decoration: none;去掉a标签自带的下划线样式-->
+    <a href="https://www.baidu.com/">百度首页</a>
+    <!--p标签默认是整个网页的宽度，可以居中-->
+    <!--a标签默认宽度就是文字的宽度，因此居中没有效果，a标签居中要先转换类型-->
+    <p>段落居中对齐</p>
+</body>
+</html>
