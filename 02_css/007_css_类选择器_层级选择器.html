@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    主要应用在选择父元素下的子元素，或者子元素下面的子元素，
+    可与标签元素结合使用，减少命名，同时也可以通过层级，防止命名冲突。
+    -->
+    <style type="text/css">
+        /*类标签*/
+        div{font-size: 100px}
+        /*类 子标签*/
+        .box span{color:red}
+        /*类 子类*/
+        .box .pink{
+            color:pink;
+            text-decoration:none;
+        }
+        /*类标签*/
+        .yellow{color:yellow}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>....</span> <br>
+        <a href="#" class="pink">....</a>
+        <a href="#" class="yellow">....</a>
+    </div>
+
+    <div class="yellow">....</div>
+</body>
+</html>
