@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .news_title1{
+            /*1. 设置盒子样式*/
+            width: 780px;
+            height: 20px;
+            border-top: 1px solid black; /*顶部边框样式*/
+            border-bottom: 3px solid black; /*底部边框样式*/
+            /*2. 设置内容样式*/
+            font-size: 20px;
+            color: black;
+            font-weight: normal; /*字体不加粗*/
+            font-family: "Microsoft YaHei"; /*设置字体为微软雅黑*/
+            padding-top: 15px; /*设置文字与上边框距离15*/
+            padding-bottom: 15px; /*设置文字与底边框距离15*/
+            padding-left: 20px; /*设置文字与左边框距离15*/
+            line-height: 20px; /*设置文字的行高，h3标签默认有自己的行高样式*/
+        }
+
+        /*<!--*/
+        /*注意：整个盒子整体尺寸是800*54*/
+        /*为了是文字居中，我们使用的行高加上边距进行设置,padding边距变了，整体盒子尺寸会发生改变*/
+        /*内容上下左都有边距padding，文字内容需要减掉边距，*/
+        /*宽度上面就是800-20，高度就是50-15-15*/
+        /*-->*/
+
+        /*上面news_title1需要计算之后减去边距，才能保持盒子的尺寸为800*54 4px是边框的宽度*/
+        /*上面使用行高和边距设置，比较麻烦，实际简化：文字首行缩进，直接设置文字行高就是盒子的宽度即可避免使用边距padding*/
+        .news_title2{
+            /*1. 设置盒子样式*/
+            width: 800px;
+            height: 50px;
+            border-top: 1px solid black; /*顶部边框样式*/
+            border-bottom: 3px solid black; /*底部边框样式*/
+            /*2. 设置内容样式*/
+            font-size: 20px;
+            color: black;
+            font-weight: normal; /*字体不加粗*/
+            font-family: "Microsoft YaHei"; /*设置字体为微软雅黑*/
+            line-height: 50px; /*直接设置文字行高为盒子内容的高度*/
+            text-indent: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="news_title1">新闻标题,设置方式1，使用行高和边距padding</h3>
+    <h3 class="news_title2">新闻标题,实际开发技巧，使用行高为盒子内容的高度和首行缩进</h3>
+</body>
+</html>
+

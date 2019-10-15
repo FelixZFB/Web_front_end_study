@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css盒子模型</title>
+    <style type="text/css">
+
+        .box{
+            /*1. 设置盒子的大小和背景色*/
+            width: 200px; /* 设置盒子的宽度，此宽度是指盒子内容的宽度，不是盒子整体宽度(难点) */
+            height: 200px; /* 设置盒子的高度，此高度是指盒子内容的高度，不是盒子整体高度(难点) */
+            background-color: yellow; /*设置盒子背景色*/
+            /* 015_css_盒子模型_浏览器元素实际图.png结果可以发现，实际盒子内部元素是200*200 */
+            /* 整个盒子还要加上内容和边框间距，边框的宽度，盒子实际是320*320 */
+
+            /*2. 设置盒子的边框*/
+            /*border-top-color:red;    !* 设置顶部边框颜色为红色 *!*/
+            /*border-top-width:10px;   !* 设置顶部边框粗细为10px *!*/
+            /*border-top-style:solid;  !* 设置顶部边框的线性为实线，常用的有：solid(实线)*/
+                                        /*dashed(虚线)  dotted(点线); *!*/
+            /*上面内容可以简写，宽度，线性，颜色顺序不能错*/
+            border-top:10px solid red;
+            border-left:10px dashed blue;
+            border-right:10px dashed blue;
+            border-bottom:10px dotted red;
+
+            /*一般四周边框都是相同的，直接使用border设置*/
+            /*border: 10px solid red;*/
+
+            /*3. 设置盒子内容和边框的间距, 可以单独设置4个边，单实际都是整体设置*/
+            /*padding-top: 20px;*/
+            /* 四个值按照顺时针方向，分别设置的是 上 右 下 左 四个方向的内边距值。 */
+            padding: 20px;
+
+            /*padding后面还可以跟3个值，2个值和1个值，它们分别设置的项目如下：*/
+            /*padding：20px 40px 50px; !* 设置顶部内边距为20px，左右内边距为40px，底部内边距为50px *! */
+            /*padding：20px 40px; !* 设置上下内边距为20px，左右内边距为40px*! */
+            /*padding：20px; !* 设置四边内边距为20px *!*/
+
+            /*4. 设置盒子与盒子间距,即设置盒子四周的间距*/
+            margin: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        我是一个盒子模型我是一个盒子模型我是一个盒子模型我是一个盒子模型
+        我是一个盒子模型我是一个盒子模型我是一个盒子模型我是一个盒子模型
+        我是一个盒子模型我是一个盒子模型我是一个盒子模型我是一个盒子模型
+    </div>
+    <div class="box">
+        我是一个盒子模型我是一个盒子模型我是一个盒子模型我是一个盒子模型
+        我是一个盒子模型我是一个盒子模型我是一个盒子模型我是一个盒子模型
+        我是一个盒子模型我是一个盒子模型我是一个盒子模型我是一个盒子模型
+    </div>
+</body>
+</html>
