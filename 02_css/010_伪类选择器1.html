@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+        伪类选择器有hover，表示鼠标悬浮在元素上时的状态
+        鼠标放在元素上后，元素才会变成红色
+        */
+        .box1:hover{font-size:100px;color:red}
+        .box2:before{font-size:100px;content:'行首文字';}
+        .box3:after{font-size:100px;content:'行尾文字';}
+    </style>
+</head>
+    <body>
+        <!--伪类选择器，鼠标放上后元素状态改变-->
+        <div class="box1">....鼠标放上颜色变红</div>
+        <!--伪元素选择器有before和after,它们可以通过样式在元素中插入内容-->
+        <div class="box2">....</div>
+        <div class="box3">....</div>
+    </body>
+</html>
