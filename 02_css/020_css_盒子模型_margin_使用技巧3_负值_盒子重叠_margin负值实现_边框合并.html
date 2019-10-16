@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*body标签自带有8个像素的margin值，因此默认盒子是不能贴边浏览器*/
+        /*此处将body的margin赋值为0*/
+        body{
+            margin: 0;
+        }
+
+        .box{
+            width: 202px; /* 设置盒子的宽度，此宽度是指盒子内容的宽度，不是盒子整体宽度(难点) */
+            height: 156px; /* 设置盒子的高度，此高度是指盒子内容的高度，不是盒子整体高度(难点) */
+            background-color: green; /*设置盒子背景色*/
+            margin: 50px auto 0; /*上下间距设置数值,右左间距自动*/
+        }
+        /*margin可以给负值，盒子会跑出浏览器，盒子也可以相互重叠*/
+
+        .box div {
+            width: 200px;
+            height: 30px;
+            border: 1px dotted blue;
+            background-color: pink;
+            margin-top: -1px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

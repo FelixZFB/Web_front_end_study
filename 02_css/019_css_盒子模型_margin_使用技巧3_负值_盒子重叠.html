@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*body标签自带有8个像素的margin值，因此默认盒子是不能贴边浏览器*/
+        /*此处将body的margin赋值为0*/
+        body{
+            margin: 0;
+        }
+
+        .box{
+            width: 202px; /* 设置盒子的宽度，此宽度是指盒子内容的宽度，不是盒子整体宽度(难点) */
+            height: 156px; /* 设置盒子的高度，此高度是指盒子内容的高度，不是盒子整体高度(难点) */
+            background-color: green; /*设置盒子背景色*/
+            margin: 50px auto 0; /*上下间距设置数值,右左间距自动*/
+        }
+        /*margin可以给负值，盒子会跑出浏览器，盒子也可以相互重叠*/
+        /*参考使用技巧3*/
+
+        /*大盒子总高度为大盒子无边框，156，第一个盒子32，上边框1px，下边框1px,第二个盒子也是32,*/
+        /*盒子间距为0，第一个盒子的下边框和第二个盒子上边框挨着在，看起来线条会很粗，设置底边框为0*/
+        /*4条线，重叠，盒子间距默认为0,4条重叠线宽度为4*/
+        .box div{
+            width: 200px;
+            height: 30px;
+            border: 1px dotted blue;
+            background-color: pink;
+            border-bottom: 0; /*小盒子底边设置为0，这样就不会出现中间线条看似很粗的现象了*/
+        }
+
+        .box .last{
+            border-bottom: 1px dotted blue; /*上面底边全部设置为0，最后一个没有了，单独设置边框*/
+        }
+        /*上面设置很复杂，直接看020，将margin-top设置为-1，下面的一个就会自动覆盖上面的*/
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="last"></div>
+    </div>
+</body>
+</html>

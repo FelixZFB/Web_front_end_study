@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .con{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+        }
+
+        /*
+        margin-top塌陷bug: 左右没有塌陷问题
+        本来内部盒子设置的边距是100px，是想内部盒子和外部盒子上面间隔100px
+        但是实际情况是，内部盒子和外部盒子间距没变
+        反而，外部盒子和外面的间距增加了100
+        */
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

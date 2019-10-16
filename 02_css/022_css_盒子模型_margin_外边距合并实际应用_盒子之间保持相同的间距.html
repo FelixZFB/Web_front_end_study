@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .box{
+            width: 500px; /*高度不设置，文字内容自动撑开*/
+            border: 1px solid black;
+            margin: 50px auto 0;
+        }
+
+        /*.box div{*/
+            /*margin-left: 20px;*/
+            /*margin-right: 20px;*/
+            /*margin-top: 20px;*/
+            /*margin-bottom: 20px;*/
+        /*}*/
+        /*中间的margin会自动合并为20px*/
+
+        /*上面直接简写*/
+        .box div{
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</div>
+        <div>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</div>
+        <div>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</div>
+        <div>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</div>
+    </div>
+</body>
+</html>
