@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 500px;
+            height: 200px;
+            border: 1px dotted black;
+            margin: 50px auto 0;
+            font-size: 0; /*文字设置为0，即盒子内的内容都是0，内部元素直接就没了*/
+        }
+
+        .box2{
+            width: 500px;
+            height: 200px;
+            border: 1px dotted black;
+            margin: 50px auto 0;
+            text-align: center;
+            font-size: 0; /*文字设置为0，即盒子内的内容都是0，内部元素直接就没了*/
+        }
+
+        .box a{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            font-size: 16px; /*设置内部元素字体大小，此时内联元素盒子之间的间距就没有了*/
+        }
+    </style>
+</head>
+<body>
+    <!--a标签就是内联元素，盒子并在一行，宽高由内容决定，自己设置无效-->
+    <!--代码换行，盒子之间会产生间距，不换行不会有间距-->
+    <!--支持左右的margin和padding(上下padding有bug)-->
+    <!--左右设置，盒子之间间距会变宽-->
+    <div class="box">
+        <a href="#">链接文字1</a>
+        <a href="#">链接文字2</a>
+        <a href="#">链接文字3</a>
+    </div>
+
+    <!--div父元素box2设置了元素居中，子元素可以继承水平对齐方式-->
+    <div class="box2">
+        <a href="#">链接文字1</a>
+    </div>
+</body>
+</html>
