@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .con{
+            width: 400px;
+            height: 80px;
+            border: 1px solid gold;
+            margin: 50px auto 0;
+        }
+
+        .con div{
+            width: 60px;
+            height: 60px;
+            /*float: left; !*盒子里面的子元素左浮动*!*/
+            margin: 10px; /*子元素四周间隔10px*/
+        }
+
+        /*单独设置盒子浮动方向，实现左右对称布局*/
+        .box1{
+            background-color: green;
+            float: left;
+        }
+
+        .box2{
+            background-color: pink;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
