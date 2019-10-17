@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .list{
+            width: 210px;
+            /*将高度不设置，子元素li不会将父元素ul撑开*/
+            /*运行结果，只有顶部一条边框，其它边框并没有，并没有将盒子变大*/
+            /*height: 400px;*/
+            border: 1px solid black;
+            margin: 50px auto 0;
+            list-style: none; /*去掉小圆点*/
+            padding: 0; /*去掉边框与内容间距*/
+        }
+
+        .list li{
+            width: 50px;
+            height: 50px;
+            background-color: gold;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!--ul.list>li{$}*8-->
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

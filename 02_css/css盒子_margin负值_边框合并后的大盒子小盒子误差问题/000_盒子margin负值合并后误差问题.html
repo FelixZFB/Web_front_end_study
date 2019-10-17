@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .menu{
+            /*由于内容是从盒子最左边开始，第一个li左移实际上是相当于没有移动，后面的每个盒子都左移了1px*/
+            /*误差在3px以内是合理的，详细解释参考css盒子_margin负值_边框合并后的大盒子小盒子误差问题*/
+            width: 296px; /*宽度整体制作完成后再微调，或者直接取掉menu的背景色*/
+            height: 50px;
+            background-color: cyan; /*可以注释掉背景色，最右边背景色就看不见了*/
+            /*经过以下三步设置，ul就变成了一个div一样的块元素了*/
+            list-style: none; /*去掉li默认的小圆点*/
+            margin: 50px auto 0; /*取掉ul自带的margin,改成自己设置值*/
+            padding: 0; /*去掉ul自带的padding*/
+        }
+
+        .menu li{
+            width: 98px;
+            height: 48px;
+            background-color: white; /*背景色*/
+            border: 1px solid gold; /*边框*/
+            float: left; /*所有块元素向左浮动，浮动的块元素可以并在一行，超出父级宽度就换行*/
+            margin-left: -1px; /*所有li块元素的左边框左移一个像素，右边盒子的左边框就盖住了左边盒子的右边框，实现边框合并*/
+        }
+
+        /*a标签下的文字，只能才a下设置，li中设置不会生效*/
+        .menu li a{
+            color: red; /*文字颜色*/
+            text-decoration: none; /*去掉链接默认的下划线*/
+            display: block; /*先转换为块元素，才可以设置水平居中生效*/
+            text-align: center; /*文字水平居中*/
+            line-height: 48px; /*文字垂直居中，即内容的高度*/
+        }
+
+        /*伪类标签，鼠标放上去后改变状态*/
+        /*鼠标放上去后背景色和文字都变色*/
+        /*a标签已经覆盖了li标签上面，hover要设置a标签*/
+        .menu a:hover{
+            background-color: gold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!--快速编写：ul.menu>(li>a{公司简介})*7-->
+    <ul class="menu">
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+    </ul>
+</body>
+</html>

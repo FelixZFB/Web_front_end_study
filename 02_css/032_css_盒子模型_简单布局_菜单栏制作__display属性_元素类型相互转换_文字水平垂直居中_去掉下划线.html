@@ -23,8 +23,15 @@
             text-decoration: none; /*去掉链接默认的下划线*/
             text-align: center; /*文字水平居中*/
             line-height: 48px; /*文字垂直居中，即内容的高度*/
-            display: inline-block; /*转换a标签为内联块元素*/
+            display: inline-block; /*转换a标签为内联块元素,如果要做成垂直列表，就用转换为块元素*/
             margin-left: -1px; /*边框整体向左移动，边框合并*/
+        }
+
+        /*伪类标签，鼠标放上去后改变状态*/
+        /*鼠标放上去后背景色和文字都变色*/
+        .menu a:hover{
+            background-color: gold;
+            color: white;
         }
     </style>
 </head>
