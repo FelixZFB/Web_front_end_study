@@ -24,12 +24,14 @@
         本来内部盒子设置的边距是100px，是想内部盒子和外部盒子上面间隔100px
         但是实际情况是，内部盒子和外部盒子间距没变
         反而，外部盒子和外面的间距增加了100
+        内部的两个盒子自动使用垂直方向较大值100px
         */
 
     </style>
 </head>
 <body>
     <div class="con">
+        <div class="box"></div>
         <div class="box"></div>
     </div>
 </body>
