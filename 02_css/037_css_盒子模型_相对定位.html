@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .con{
+            width: 400px;
+            height: 400px;
+            border: solid 1px black;
+            margin: 50px auto 0;
+        }
+
+        /*公共样式*/
+        .box1, .box2{
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        /*relative 生成相对定位元素，
+        元素所占据的文档流的位置保留，
+        元素本身相对自身原位置进行偏移*/
+        /*相对偏移，相对自己原来的位置进行偏移*/
+        .box1{
+            background-color: green;
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+
+        .box2{
+            background-color: yellowgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
