@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .con1{
+            width: 400px;
+            height: 400px;
+            border: solid 1px black;
+            margin: 50px auto 0;
+        }
+
+        .con2{
+            width: 400px;
+            height: 400px;
+            border: solid 1px black;
+            margin: 50px auto 0;
+            position: relative; /*给一个相对定位参数，作为子级的参考物*/
+        }
+
+        /*公共样式*/
+        .box1, .box2{
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        /*
+        元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，
+            相对于上一个设置了定位的父级元素来进行定位，如果找不到，则相对于body元素进行定位。
+        */
+        .box1{
+            background-color: green;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        .box2{
+            background-color: yellowgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <!--父级div没有给定位参数，box1定位参照物就是body-->
+    <div class="con1">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <!--父级div给了定位参数，box1定位参照物就是父级div的位置-->
+    <div class="con2">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

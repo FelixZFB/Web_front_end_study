@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style type="text/css">
+        .con{
+            width: 100px;
+            height: 100px;
+            margin: 50px auto 0;
+            position: relative;
+            background-color: gold;
+            border-radius: 10px; /*边框倒圆角，指定圆角的半径*/
+        }
+
+        /*父级给定定位参数，子级相对于父级进行移动*/
+        .box{
+            width: 28px;
+            height: 28px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 28px;
+            position: absolute; /*相对于父级进行移动*/
+            left: 86px;
+            top: -14px;
+            border-radius: 14px; /*边框倒圆角，指定圆角的半径，边框的一半就变成一个圆了*/
+        }
+     </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box">5</div>
+    </div>
+</body>
+</html>
