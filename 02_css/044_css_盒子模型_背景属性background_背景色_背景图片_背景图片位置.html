@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="">
+
+        .box{
+            width: 400px;
+            height: 200px;
+            border: 5px solid black;
+            margin: 50px auto 0;
+            /*设置盒子背景图，图片会从盒子的左上角开始将盒子铺满*/
+            background-image: url(images/bg.jpg);
+        }
+
+        .backshow{
+            width:400px;
+            height:160px;
+            border:3px solid #333;
+            float:left;
+            margin:10px;
+        }
+
+        /*默认设置一个图片地址，图片会从盒子的左上角开始将盒子铺满*/
+        .bg1{background:cyan url(images/bg.jpg);}
+        /*横向平铺盒子，盒子其他部分显示背景颜色“cyan”*/
+        .bg2{background:cyan url(images/bg.jpg) repeat-x;}
+        /*纵向平铺盒子，盒子其他部分显示背景颜色“cyan”*/
+        .bg3{background:cyan url(images/bg.jpg) repeat-y;}
+        /*背景不重复，背景和盒子左上角对齐，盒子其他部分显示背景颜色“cyan”*/
+        .bg4{background:cyan url(images/bg.jpg) no-repeat;}
+        /*背景不重复，背景和盒子左中对齐，盒子其他部分显示背景颜色“cyan”*/
+        /*background-position每次设置两个值，先水平位置，再垂直位置*/
+        /*一共有9个位置*/
+        .bg5{background:cyan url(images/bg.jpg) no-repeat left center;}
+        /*背景不重复，背景和盒子右中对齐，也就是背景图片的右边对齐盒子的右边，盒子其他部分显示背景颜色“cyan”*/
+        .bg6{background:cyan url(images/bg.jpg) no-repeat right center;}
+        /*背景不重复，背景和盒子居中对齐，也就是背景图片在盒子正中间，盒子其他部分显示背景颜色“cyan”*/
+        .bg7{background:cyan url(images/bg.jpg) no-repeat center center;}
+        /*背景图片位置可以给定具体数值，图片水平向右偏移20px,垂直向下偏移20px*/
+        /*背景图片左上角会和盒子默认对齐，图片左上角为基准偏移*/
+        .bg8{background:cyan url(images/bg.jpg) no-repeat 20px 20px;}
+        /*也可以给定负值，即图片左上角为基准，图片向左和向上偏移*/
+        /*负值偏移时候，超出盒子的部分会自动隐藏了*/
+        .bg9{background:cyan url(images/bg.jpg) no-repeat -20px -20px;}
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="backshow bg1"></div>
+    <div class="backshow bg2"></div>
+    <div class="backshow bg3"></div>
+    <div class="backshow bg4"></div>
+    <div class="backshow bg5"></div>
+    <div class="backshow bg6"></div>
+    <div class="backshow bg7"></div>
+    <div class="backshow bg8"></div>
+    <div class="backshow bg9"></div>
+</body>
+</html>

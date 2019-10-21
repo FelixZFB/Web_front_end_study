@@ -25,3 +25,12 @@ HTML快速创建，配合tab键使用
         <li>7</li>
         <li>8</li>
     </ul>
+    
+- ul.list>(li{美人鱼})*5 (li外面的圆括号可以省略)
+    <ul class="list">
+        <li>美人鱼</li>
+        <li>美人鱼</li>
+        <li>美人鱼</li>
+        <li>美人鱼</li>
+        <li>美人鱼</li>
+    </ul>
