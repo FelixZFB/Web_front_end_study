@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .pagenation{
+            list-style: none; /*去掉ul自带样式的小圆点*/
+            margin: 50px auto 0;
+            padding: 0; /*去掉自带的边距样式，变成div块一样*/
+            width: 600px;
+            height: 40px;
+            border: 1px solid cyan;
+            font-size: 0; /*用于去掉子元素的间隙*/
+            text-align: center; /*所有的子元素水平居中*/
+        }
+
+        .pagenation li{
+            display: inline-block; /*将所有的li转换为行内块元素*/
+            height: 26px;
+            margin: 7px 5px 0 5px; /*设置盒子之间的间距，盒子上下与边框保持距离，盒子之间保持距离*/
+            line-height: 26px;
+        }
+
+        .pagenation li a{
+            display: block;
+            height: 26px; /*设置高度，宽度不设置，文字字数不一样，自动用文字撑开*/
+            line-height: 26px; /*行高块高度一致，文字垂直居中*/
+            background: gold; /*设置背景色*/
+            padding: 0 10px; /*只给左右内容间距，上下不给，行高自动撑开*/
+            font-size: 12px; /*设置文字大小*/
+            color: black; /*文字设置为黑色*/
+            text-decoration: none; /*去掉a标签文字自带的下划线*/
+        }
+
+        /*使用伪类，鼠标放在a盒子上，页码显示发生变化*/
+        .pagenation li a:hover{
+            background: darkcyan;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!--ul.pagenation>(li>a{$})*11-->
+    <ul class="pagenation">
+        <li><a href="#">上一页</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><span>...</span></li>
+        <li><a href="#">17</a></li>
+        <li><a href="#">18</a></li>
+        <li><a href="#">19</a></li>
+        <li><a href="#">20</a></li>
+        <li><a href="#">下一页</a></li>
+    </ul>
+</body>
+</html>
