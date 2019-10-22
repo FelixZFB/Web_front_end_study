@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .menu{
+            list-style: none; /*去掉ul自带样式的小圆点*/
+            margin: 50px auto 0;
+            padding: 0; /*去掉自带的边距样式，变成div块一样*/
+            width: 958px;
+            height: 40px;
+            border: 1px solid cyan;
+            font-size: 0; /*用于去掉子元素的间隙*/
+            text-align: center; /*所有的子元素水平居中*/
+            position: relative;
+        }
+
+        .menu li{
+            display: inline-block; /*将所有的li转换为行内块元素*/
+            height: 40px;
+            font-size: 14px; /*该字体用于设置li标签下其它字体，此案例没有作用，a和span单独设置了字体*/
+        }
+
+        .menu li a{
+            display: block;
+            height: 35px; /*设置高度，宽度不设置，文字字数不一样，自动用文字撑开*/
+            line-height: 35px; /*行高块高度一致，文字内容垂直居中*/
+            padding: 0 5px; /*只给左右内容间距，可以给定a也可以给定竖线，上下不给，行高自动撑开*/
+            font-size: 12px; /*设置文字大小，a标签字体会覆盖li标签字体大小*/
+            color: black; /*文字设置为黑色*/
+            text-decoration: none; /*去掉a标签文字自带的下划线*/
+        }
+
+        .menu li span{
+            display: block;
+            height: 35px;
+            padding: 0 5px;
+            font: normal 15px/35px 'Microsoft YaHei'; /*设置字体不倾斜，字体/行高，雅黑*/
+        }
+
+        /*使用伪类，鼠标放在a盒子上，页码显示发生变化*/
+        .menu li a:hover{
+            background: red;
+            color: white;
+        }
+
+        .menu .new{
+            width: 33px; /*块大小和图片大小一致，图片就刚好和盒子吻合*/
+            height: 20px;
+            background: url("images/new.png") no-repeat;
+            position: absolute; /*找定位的父级元素来进行定位，如果找不到，则相对于body元素进行定位*/
+            left: 480px;
+            top: -10px;
+
+        }
+    </style>
+</head>
+<body>
+    <!--ul.menu>(li>a{网站建设})*7-->
+    <ul class="menu">
+        <li><a href="#">网站建设</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">网站建设</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">网站建设</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">网站建设</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">网站建设</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">网站建设</a></li>
+        <li><span>|</span></li>
+        <li><a href="#">网站建设</a></li>
+        <!--使用图片作为背景，然后相对于ul进行定位-->
+        <li class="new"></li>
+    </ul>
+</body>
+</html>
