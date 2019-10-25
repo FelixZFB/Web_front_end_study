@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*设置最外层div样式*/
+        .pic_list_con{
+            width: 958px;
+            border: 1px solid cyan;
+            margin: 50px auto 0; /*con的div标签相对于浏览器左右居中*/
+        }
+
+        /*设置标签外面的div样式*/
+        .pic_list_title{
+            width: 918px;
+            height: 50px;
+            border-bottom: 1px solid gold;
+            background-color: green;
+            margin: 0 auto 0; /*title的div标签相对于上面的con的div标签居中*/
+        }
+
+        /*设置标题文字样式，设置为浮动，自动变为行内块元素，只占标题div左边一小块*/
+        .pic_list_title h3{
+            float: left;
+            font: normal 18px/50px "Microsoft YaHei";    /*字体无倾斜，大小18px，行高50px文字垂直居中了*/
+            margin: 0; /*去掉h3自带的边距*/
+            padding: 0 10px 0;
+            border-bottom: 2px solid red;
+            background-color: lightgreen;
+        }
+
+        /*实用技巧：最右边元素的右边距隐藏*/
+        /*用于包裹下面的ul盒子，盒子大小和ul一样，用来解决最右边一个li标签的右边距问题*/
+        /*解决原理：ul外面的包裹了一个div，ul本来和div宽度大小一样都是918px，ul里面的最右边一个有边距放不下，自动换到下一行*/
+        /*我们保持div大小不变，ul宽度变大，此时就可以放下了，918+29=947px，然后隐藏div溢出的部分，溢出的其实是背景色*/
+        /*最右边的一张图片就可以摆下了*/
+        .pic_list_wrap{
+            width: 918px;
+            margin: 20px auto 13px;
+            overflow: hidden; /*元素溢出部分不显示*/
+            background-color: yellow;
+        }
+
+        /*设置ul列表整体的样式*/
+        .pic_list{
+            width: 947px; /*918+29=947px*/
+            list-style: none; /*去掉列表前面的小圆点样式*/
+            padding: 0; /*去掉默认的内容和边框的间距*/
+            margin: 0 auto 0; /*ul盒子整体相对于它父元素div左右居中*/
+            background-color: lightblue;
+            overflow: hidden; /*父元素未设置高度，子元素浮动无法撑开父元素行高，清楚浮动方法1:元素溢出部分不显示*/
+        }
+
+        /*设置每个li的样式*/
+        .pic_list li{
+            float: left; /*左浮动，行内块元素，依次排列*/
+            width: 160px;
+            height: 68px;
+            margin: 0 29px 25px 0; /*给定右边为29px，下面为25px*/
+            /*整体设置后，最右边一个右边间距不够，自动撑开到下一行*/
+            /*最后一个应该右边距为0px，我们可以ul外面在包一层div*/
+        }
+
+        /*由于像素不可能刚刚好，背景浅蓝色右边会有一点误差*/
+        /*全部样式设置完成后，可以将图片的背景色注释掉*/
+
+
+    </style>
+</head>
+<body>
+    <div class="pic_list_con">
+        <div class="pic_list_title">
+             <h3>图片展示</h3>
+        </div>
+        <div class="pic_list_wrap">
+            <!--ul.pic_list>(li>a>img)*10-->
+            <ul class="pic_list">
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+                <li><a href="#"><img src="images/goods1.jpg" alt="商品图片"></a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
