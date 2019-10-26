@@ -2,12 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>天天生鲜首页</title>
+    <title>天天生鲜-首页</title>
+    <!--使用外联CSS样式-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css"> <!--包括一些通用样式和清除自带的样式-->
+    <link rel="stylesheet" type="text/css" href="css/main.css"> <!--自定义样式，要写在reset后面，不然main样式也会被清除哦-->
 </head>
 <body>
-<!--页面顶部-->
-<div class="header_con">
 
-</div>
+    <!--顶部栏目：欢迎信息、用户模块：登陆模块和信息模块-->
+    <div class="header_con">
+        <div class="header">
+            <div class="welcome fl">欢迎来到天天生鲜!</div> <!--fl flow:left;-->
+
+            <div class="user_con fr">
+
+                <!--登录前的显示-->
+                <!--ul.login_btns>(li>a)*2-->
+                <ul class="login_btns fl">
+                    <li><a href="">登录</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="">注册</a></li>
+                </ul>
+
+                <!--登录后的显示,默认是隐藏起来的-->
+                <div class="user_info fl">
+                    欢迎您：<em>张山</em>
+                </div>
+
+                <!--公共显示信息模块-->
+                <!--ul.user_icons>(li>a)*2-->
+                <ul class="user_btns fl">
+                    <li><span>|</span></li>
+                    <li><a href="">我的购物车</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="">我的订单</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>

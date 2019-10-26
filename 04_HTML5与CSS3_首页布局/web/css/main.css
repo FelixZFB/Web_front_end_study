@@ -1,137 +1,73 @@
-/*  页面顶部的样式    */
-
+/*网页中文字都是微软雅黑，直接body设置，后面的标签都可以直接继承*/
 body{
-	font-family:'Microsoft Yahei';
-	font-size:14px;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
 }
 
 
+/*页面顶部栏的样式*/
+/*整个顶部栏盒子*/
 .header_con{
-	height:29px;
-	background-color:#f7f7f7;
-	border-bottom:1px solid #ddd;
+    height: 29px; /*不设置宽度，宽度为浏览器宽度*/
+    background-color: #f7f7f7; /*颜色直接在PS中用吸管工具吸取，然后复制颜色值过来即可*/
+    border-bottom: 1px solid #dddddd;
 }
 
+/*顶部栏内容盒子*/
 .header{
-	width:1200px;
-	height:29px;
-	margin:0 auto;
+    width: 1200px;
+    height: 29px;
+    background-color: gold;
+    margin: 0 auto; /*上下0，左右水平居中*/
+    line-height: 29px;
 }
 
-
+/*欢迎文字样式*/
 .welcome{
-	font-size:12px;
-	color:#666;
-	line-height:29px;
+    font-size: 12px;
+    color: #666666;
+    line-height: 29px;
 }
 
+/*用户栏样式*/
 .user_con{
-	/* background-color:gold; */
+    background-color: cyan;
 }
 
-
+/*登陆后的用户信息*/
 .user_info{
-	display:none;
-	font-size:12px;
-	line-height:29px;
-	color:#666;
+    display: none; /*隐藏模块*/
+    font-size: 12px;
+    line-height: 29px;
+    color: #666666;
 }
 
+/*用户名特殊颜色*/
 .user_info em{
-	color: #f80
+    color: #f80;
 }
 
 
-.login_btns li,.user_btns li{
-	float:left;
-	height:29px;
+/*登陆模块和用户模块样式设置*/
+.login_btns li, .user_btns li{
+    float: left;
+    line-height: 29px;
 }
 
-.login_btns a,.login_btns span,.user_btns a,.user_btns span{
-	display:block;
-	line-height:29px;
-	font-size:12px;
-	color:#666;
+.login_btns a, .login_btns span, .user_btns a, .user_btns span{
+    display: block;
+    line-height: 29px;
+    font-size: 14px;
+    color: #666666;
 }
 
-.login_btns span,.user_btns span{
-	color:#cecece;
-	margin:0 10px;
+.login_btns span, .user_btns span{
+    color: #cecece;
+    margin: 0 10px;
+    font-size: 16px;
 }
 
-.login_btns a:hover,.user_btns a:hover{
-	color:#f80;
+/*鼠标放上去后，字体变色*/
+.login_btns a:hover, .user_btns a:hover{
+    color: blue;
 }
-
-
-/*  logo、搜索框、购物车的样式    */
-.center_con{
-	width:1200px;
-	height:115px;
-	margin:0 auto;
-}
-
-.logo{
-	margin:29px 0 0 17px;
-}
-
-.search_con{
-	width:616px;
-	height:38px;
-	margin:34px 0 0 124px;
-	border:1px solid #37ab40;
-	background:url(../images/icons.png) 10px 10px no-repeat;
-}
-
-.search_con .input_txt{
-	margin-left:36px;
-	width:480px;
-	height:38px;
-	border:0px;
-
-    /* 去掉获得焦点时显示的蓝色的框   */
-	outline:none;
-
-}
-
-
-.search_con .input_sub{
-	width:100px;
-	height:38px;
-	background-color:#37ab40;
-	border:0px;
-	font-size:14px;
-	color:#fff;
-
-    /* 将鼠标的形状设置为手型   */
-	cursor:pointer;
-}
-
-.chart_con{
-	width:200px;
-	height:40px;
-	margin-top:34px;
-}
-
-.chart_link{
-	width:158px;
-	height:38px;
-	border:1px solid #ddd;
-	background:url(../images/icons.png) 12px -42px  no-repeat #f7f7f7;
-	text-indent:56px;
-	line-height:38px;
-	font-size:14px;
-	color:#37ab40
-}
-
-.chart_num{
-	width:40px;
-	height:40px;
-	background-color:#f80;
-	text-align:center;
-	font:bold 18px/40px 'Microsft Yahei';
-	color:#fff;
-}
-
-
-
