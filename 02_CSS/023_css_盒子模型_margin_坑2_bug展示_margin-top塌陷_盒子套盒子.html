@@ -11,11 +11,20 @@
             background-color: blue;
         }
 
-        .box{
+        .box1{
             width: 200px;
             height: 100px;
             background-color: red;
             margin-top: 100px;
+            margin-left: 50px;
+            margin-bottom: 100px;
+        }
+
+        .box2{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 50px;
             margin-left: 50px;
         }
 
@@ -23,16 +32,16 @@
         margin-top塌陷bug: 左右没有塌陷问题
         本来内部盒子设置的边距是100px，是想内部盒子和外部盒子上面间隔100px
         但是实际情况是，内部盒子和外部盒子间距没变
-        反而，外部盒子和外面的间距增加了100
-        内部的两个盒子自动使用垂直方向较大值100px
+        反而，外部盒子和外面的间距增加了100px
+        内部的两个盒子，上面盒子设置100下面设置50，自动使用垂直方向较大值100px
         */
 
     </style>
 </head>
 <body>
     <div class="con">
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
     </div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!--顶部栏目：欢迎信息、用户模块：登陆模块和信息模块-->
+    <!--页面顶部：欢迎信息、用户模块：登陆模块和信息模块-->
     <div class="header_con">
         <div class="header">
             <div class="welcome fl">欢迎来到天天生鲜!</div> <!--fl flow:left;-->
@@ -41,5 +41,32 @@
             </div>
         </div>
     </div>
+
+    <!--logo、搜索框、购物车-->
+    <div class="center_con">
+
+        <!--三个盒子分别使用左浮动，左浮动，右浮动布置，如果不给浮动，会自动从大盒子的左上角开始排列-->
+        <!--浮动的盒子会在未浮动的盒子上层-->
+        <!--图片放在a标签里面，点击图片就可以跳转到主页-->
+        <!--a标签设置为左浮动，由于a并不占用空间，图片空间就是a标签占用的空间-->
+        <a href="index.html" class="logo fl"><img src="images/logo.png" alt="天天生鲜Logo"></a>
+        <div class="search_con fl">
+            <form>
+                <input type="text" name="" class="input_txt fl" value="请输入搜索的内容">
+                <input type="submit" name="" class="input_sub fl" value="搜索">
+            </form>
+        </div>
+
+        <div class="chart_con fr">
+            <!--浮动为行内块元素，显示在一行-->
+            <a href="#" class="chart_link fl">我的购物车</a>
+            <a href="#" class="chart_num fl">5</a>
+        </div>
+
+    </div>
+
+
+
+
 </body>
 </html>

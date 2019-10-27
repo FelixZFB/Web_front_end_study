@@ -5,6 +5,7 @@ body{
 }
 
 
+/*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 111111111111*/
 /*页面顶部栏的样式*/
 /*整个顶部栏盒子*/
 .header_con{
@@ -17,7 +18,7 @@ body{
 .header{
     width: 1200px;
     height: 29px;
-    background-color: gold;
+    /*background-color: gold;*/ /*背景色开始留着便于调整观察，盒子制作完成后就注释掉*/
     margin: 0 auto; /*上下0，左右水平居中*/
     line-height: 29px;
 }
@@ -31,7 +32,7 @@ body{
 
 /*用户栏样式*/
 .user_con{
-    background-color: cyan;
+    /*background-color: cyan;*/
 }
 
 /*登陆后的用户信息*/
@@ -46,7 +47,6 @@ body{
 .user_info em{
     color: #f80;
 }
-
 
 /*登陆模块和用户模块样式设置*/
 .login_btns li, .user_btns li{
@@ -71,3 +71,84 @@ body{
 .login_btns a:hover, .user_btns a:hover{
     color: blue;
 }
+
+
+/*22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*/
+/*logo、搜索框、购物车*/
+/*整体盒子*/
+.center_con{
+    width: 1200px;
+    height: 115px;
+    margin: 0 auto;
+    /*background-color: gold;*/
+}
+
+/*logo样式*/
+.logo{
+    margin: 29px 0 0 17px;
+    /*background-color: blue;*/
+}
+
+/*搜索框样式*/
+.search_con{
+    width: 616px;
+    height: 38px;
+    /*background-color: blanchedalmond;*/
+    margin: 34px 0 0 124px;
+    border: 1px solid #37ab40;
+    background: url("../images/icons.png") 10px 10px no-repeat ; /*使用搜索图标作为背景填充*/
+}
+
+.search_con .input_txt{
+    margin-left: 36px;
+    width: 480px;
+    height: 38px;
+    border: 0;
+    outline: none; /*去掉获得焦点时候显示的突出边框*/
+}
+
+.search_con .input_sub{
+    width: 100px;
+    height: 38px;
+    background-color: #37ab40;
+    border: 0; /*默认input会带一个边框，去掉外边框*/
+    font-size: 14px;
+    color: white;
+
+    cursor: pointer; /*将图标的形状由默认箭头设置为手型*/
+}
+
+/*购物车样式*/
+.chart_con{
+    width: 200px;
+    height: 40px;
+    /*background-color: red;*/
+    margin-top: 34px;
+}
+
+/*我的购物车样式*/
+.chart_link{
+    width: 158px;
+    height: 38px;
+    border: 1px solid #dddddd;
+    background: url("../images/icons.png") 12px -42px no-repeat #f7f7f7;
+    text-indent: 56px; /*我的购物车文字首行缩进56px*/
+    line-height: 38px; /*文字垂直居中*/
+    font-size: 14px;
+    color: #37ab40;
+}
+
+/*购物车后面数字样式*/
+.chart_num{
+    width: 40px;
+    height: 40px;
+    background-color: #ff8800;
+    text-align: center; /*文字水平居中*/
+    color: white;
+    font: bold 18px/40px "Microsoft YaHei"; /*文字加粗，垂直居中*/
+}
+
+
+
+/*33333333333*/
+/*主菜单栏：全部商品、首页、手机端*/
