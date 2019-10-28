@@ -265,20 +265,58 @@ body{
     height: 270px;
     background-color: pink;
     position: relative; /*父级相对定位，作为子级绝对定位的参考物*/
+    overflow: hidden; /*下面的ul标签太宽，溢出设置隐藏*/
 }
 
 .slide_con .slide{
     width: 4560px;
     height: 270px;
-
     position: absolute; /*ul相对于父级div定位，相对于父级左边和顶边移动都是0*/
+    /*图片水平滚动的效果，实际就是改变left值，让图片向左移动，可以进入火狐，手动不断改变left，可以查看到滚动效果*/
+    /*后期实际就是通过程序控制left值的变化*/
+    /*所有图片都是浮动放在ul标签里面，改变left所有图片就会水平移动*/
     left: 0;
     top: 0;
 }
 
 .slide li{
-    float: left;
+    float: left; /*浮动不能继承父级的浮动，li是一个块元素，需要自己设置自己，ul下面的所有li标签元素都左浮动,所有图片宽度正好是4560px，此时多余的元素会溢出，父级溢出隐藏*/
 }
+
+/*幻灯片左右的箭头*/
+.slide_con .prev{
+    width: 15px; /*宽高是要设置的箭头大小*/
+    height: 24px;
+    position: absolute; /*使用绝对定位，参考元素是父级div,即幻灯片图片左上角，绝对定位不占据文档流的位置，可以漂浮在幻灯片上层*/
+    background: url("../images/icons.png") left -450px no-repeat; /*先左边对齐，然后向上移动，将箭头先对齐幻灯片的左上角*/
+    left: 0;
+    top: 0;
+    cursor: pointer; /*箭头本来没给连接，放在上面原始是显示箭头，设置鼠标放在箭头上，鼠标变成手形状*/
+}
+
+/*然后单独设置图片相对于父级移动的位置,下面设置的left和top就会覆盖掉上面的0,0*/
+.slide_con .prev{
+    left: 11px;
+    top: 122px;
+}
+
+.slide_con .next{
+    width: 15px; /*宽高是要设置的箭头大小*/
+    height: 24px;
+    position: absolute; /*使用绝对定位，参考元素是父级div,即幻灯片图片左上角，绝对定位不占据文档流的位置，可以漂浮在幻灯片上层*/
+    background: url("../images/icons.png") left -500px no-repeat; /*先左边对齐，然后向上移动，将箭头先对齐幻灯片的左上角*/
+    left: 0;
+    top: 0;
+    cursor: pointer; /*箭头本来没给连接，放在上面原始是显示箭头，设置鼠标放在箭头上，鼠标变成手形状*/
+}
+
+/*然后单独设置图片相对于父级移动的位置,下面设置的left和top就会覆盖掉上面的0,0*/
+/*注意，此处不能使用right移动，right不能覆盖上面的left值*/
+.slide_con .next{
+    left: 732px;
+    top: 122px;
+}
+
 
 
 /*右侧广告栏*/
