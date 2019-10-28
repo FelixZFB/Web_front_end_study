@@ -207,6 +207,8 @@ body{
     margin: 0 auto; /*盒子水平居中*/
 }
 
+
+/*二级菜单*/
 .sub_menu_con{
     width: 200px;
     height: 270px;
@@ -257,15 +259,29 @@ body{
 }
 
 
-
-.slide{
+/*幻灯片展示*/
+.slide_con{
     width: 760px;
     height: 270px;
     background-color: pink;
+    position: relative; /*父级相对定位，作为子级绝对定位的参考物*/
+}
+
+.slide_con .slide{
+    width: 4560px;
+    height: 270px;
+
+    position: absolute; /*ul相对于父级div定位，相对于父级左边和顶边移动都是0*/
+    left: 0;
+    top: 0;
+}
+
+.slide li{
+    float: left;
 }
 
 
-
+/*右侧广告栏*/
 .advs{
     width: 240px;
     height: 270px;
