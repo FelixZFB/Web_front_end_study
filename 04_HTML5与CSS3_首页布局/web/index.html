@@ -9,6 +9,14 @@
 </head>
 <body>
 
+    <!--
+    1. 从顶部向底部，进行分块
+    2. 每一块，先做整体大的布局，然后再做里面每一块的布局
+    3. 大块里面每一块，先都使用背景色整体做出来，确保不出错
+    4. 然后再一块一块最终完成整个页面
+    -->
+
+
     <!--页面顶部：欢迎信息、用户模块：登陆模块和信息模块-->
     <div class="header_con">
         <div class="header">
@@ -42,6 +50,7 @@
         </div>
     </div>
 
+
     <!--logo、搜索框、购物车-->
     <div class="center_con">
 
@@ -66,6 +75,48 @@
     </div>
 
 
+    <!--主菜单栏：全部商品、首页、手机端-->
+    <div class="main_menu_con">
+        <div class="center_con02">
+            <h2>全部商品分类</h2>
+            <!--ul>(li>a{首页})*3-->
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">手机生鲜</a></li>
+                <li><a href="">抽奖</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!--二级菜单、幻灯片、广告-->
+    <!--.center_con03-->
+    <div class="center_con03">
+        <!--二级菜单栏-->
+        <div class="sub_menu_con fl">
+            <!--ul.sub_menu_con>(li>a{新鲜水果})*6-->
+            <ul class="sub_menu_con">
+                <li><a href="#">新鲜水果</a></li>
+                <li><a class="icon02" href="#">新鲜水果</a></li>
+                <li><a class="icon03" href="#">新鲜水果</a></li>
+                <li><a class="icon04" href="#">新鲜水果</a></li>
+                <li><a class="icon05" href="#">新鲜水果</a></li>
+                <li><a class="icon06" href="#">新鲜水果</a></li>
+            </ul>
+        </div>
+
+        <!--幻灯片产品展示-->
+        <div class="slide fl"></div>
+        <!--ul>(li>a>img)*3-->
+        <ul>
+            <li><a href=""><img src="images/slide.jpg" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+        </ul>
+
+        <!--右侧广告栏-->
+        <div class="advs fl"></div>
+    </div>
 
 
 </body>

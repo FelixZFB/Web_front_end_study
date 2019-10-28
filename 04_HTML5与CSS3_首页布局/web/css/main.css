@@ -1,4 +1,4 @@
-/*网页中文字都是微软雅黑，直接body设置，后面的标签都可以直接继承*/
+/*网页中文字都是微软雅黑，直接body设置，后面的标签都可以直接继承字体和大小*/
 body{
     font-family: "Microsoft YaHei";
     font-size: 14px;
@@ -150,5 +150,124 @@ body{
 
 
 
-/*3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
+/*33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 /*主菜单栏：全部商品、首页、手机端*/
+.main_menu_con{
+    height: 40px;
+    border-bottom: 2px solid #39a93e;
+}
+
+.center_con02{
+    width: 1200px;
+    height: 40px;
+    /*background-color: gold; !*全部菜单样式设置好后，注释掉背景色*!*/
+    margin: 0 auto; /*水平居中*/
+}
+
+.center_con02 h2{
+    float: left;
+    width: 200px;
+    height: 40px;
+    background-color: #39a93e;
+    text-align: center; /*水平居中*/
+    font: normal 14px/40px "Microsoft YaHei";
+    color: white;
+}
+
+.center_con02 ul{
+    float: left;
+    overflow: hidden; /*用于隐藏第一个a标签的做边框，如果给在下面的li标签，则所有的做边框都被隐藏了*/
+}
+
+.center_con02 li{
+    float: left;
+    height: 40px;
+    /*overflow: hidden;*/
+}
+
+.center_con02 li a{
+    display: block; /*内联元素转换为块元素后支持所有样式*/
+    height: 14px;
+    line-height: 14px; /*垂直居中*/
+    padding: 0 20px;
+    margin: 13px 0; /*盒子之间保持间距*/
+    margin-left: -1px; /*实用技巧：第一个a标签左边有一个边框，移动1像素，溢出盒子，然后再最外层盒子ul给一个overflow: hidden;*/
+    border-left: 1px solid #666666;
+    color: #666666;
+}
+
+
+
+/*44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444*/
+/*二级菜单、幻灯片、广告*/
+.center_con03{
+    width: 1200px;
+    height: 270px;
+    /*background-color: gold;*/
+    margin: 0 auto; /*盒子水平居中*/
+}
+
+.sub_menu_con{
+    width: 200px;
+    height: 270px;
+    /*background-color: green;*/
+}
+
+.sub_menu_con li{
+    width: 198px;
+    height: 44px;
+    border: 1px solid #eee;
+    border-top: 0; /*去掉顶边框消除边框有2条线*/
+    background: url("../images/icons.png") 178px -382px no-repeat; /*我们把背景图片给在li标签，连接a标签给的大小和li盒子大小一样，点击整个li都会相应连接*/
+}
+
+.sub_menu_con li a{
+    display: block; /*内联元素转成块元素，宽度就是上级li标签的宽度*/
+    height: 44px; /*a标签高度和li高度一致,宽度*/
+    line-height: 44px; /*文字垂直居中*/
+    text-indent: 71px; /*首行缩进71px*/
+    color: #333333;
+    background: url("../images/icons.png") 33px -90px no-repeat;
+
+}
+
+.sub_menu_con li a:hover{
+    color: #ff8800; /*鼠标放在a标签的文字上会产生变色效果*/
+}
+
+/*单独调整后面5个li标签背景图的位置，都是用的一张背景图,每个上面高度加50px,左右单独微调一下*/
+.sub_menu_con li .icon02{
+    background-position: 31px -140px;
+}
+
+.sub_menu_con li .icon03{
+    background-position: 31px -190px;
+}
+
+.sub_menu_con li .icon04{
+    background-position: 33px -240px;
+}
+
+.sub_menu_con li .icon05{
+    background-position: 33px -289px;
+}
+
+.sub_menu_con li .icon06{
+    background-position: 33px -338px;
+}
+
+
+
+.slide{
+    width: 760px;
+    height: 270px;
+    background-color: pink;
+}
+
+
+
+.advs{
+    width: 240px;
+    height: 270px;
+    background-color: cyan;
+}
