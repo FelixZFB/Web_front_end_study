@@ -318,10 +318,41 @@ body{
 }
 
 
+/*设置幻灯片底部的6个小圆点*/
+.points{
+    position: absolute; /*父级div作为绝对定位的参考*/
+    width: 100%; /*设置宽度为父级的100%，没有内容，也会显示完整的宽度*/
+    height: 11px;
+    /*background-color: green;*/
+    left: 0;
+    bottom: 9px;
+    font-size: 0; /*去掉子级行内块元素间隙：父级设置字体为0，单独设置子级字体（没有文字可以不设置）*/
+    text-align: center; /*用于设置子元素水平居中*/
+}
+
+.points li{
+    display: inline-block; /*转换为行内块元素，布局在一行，有间隙，可以单独设置样式*/
+    width: 11px;
+    height: 11px;
+    background-color: lightgreen;
+    margin: 0 5px;
+    border-radius: 50%; /*方块直接倒成圆角，半径给边长的一半*/
+    cursor: pointer; /*鼠标箭头变成手的形状*/
+}
+
+.points .active{
+    background-color: #cecece;
+}
+
 
 /*右侧广告栏*/
 .advs{
-    width: 240px;
+    width: 240px; /*边框大小正好可以放两张广告图片*/
     height: 270px;
-    background-color: cyan;
+    background-color: red;
+}
+
+/*两个图片之间会有一个像素的间隔bug，写上下面一句，图片转换为block就解决了*/
+.advs img{
+    display: block;
 }
