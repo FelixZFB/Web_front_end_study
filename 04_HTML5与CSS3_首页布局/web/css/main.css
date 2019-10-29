@@ -153,8 +153,10 @@ body{
 /*33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
 /*主菜单栏：全部商品、首页、手机端*/
 .main_menu_con{
+    width: 1200px;
     height: 40px;
     border-bottom: 2px solid #39a93e;
+    margin: 0 auto; /*整体水平居中*/
 }
 
 .center_con02{
@@ -355,4 +357,136 @@ body{
 /*两个img图片之间会有一个像素的间隔bug，写上下面一句，图片转换为block就解决了*/
 .advs img{
     display: block;
+}
+
+
+/*55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555*/
+/*新鲜水果栏：标题栏、活动商品展示、商品图片橱窗展示*/
+
+/*整体水果栏*/
+.common_model{
+    width: 1200px;
+    height: 337px;
+    margin: 20px auto 0; /*上部保持间距，左右居中，底部不设置，下一个盒子设置上边距*/
+    /*background-color: gold;*/
+}
+
+/*标题栏*/
+.common_title_con{
+    height: 35px;
+    border-bottom: 2px solid #42ad46;
+    /*background-color: blue;*/
+}
+
+.common_title_con h3{
+    float: left;
+    height: 35px;
+    font: bold 16px/35px "Microsoft YaHei";
+    color: #37ab40;
+}
+
+.common_title_con ul{
+    float: left; /*ul元素左浮动，和h3排在一行*/
+    margin: 12px 0 0 20px;
+}
+
+.common_title_con ul li{
+    float: left;
+    height: 12px;
+    border-left: 1px solid #666666;
+}
+
+.common_title_con ul li a{
+    float: left;
+    line-height: 12px; /*a默认有自己的行高，将行高给成和li的行高一样，就和li的左边框高度一致了*/
+    color: #666666;
+    margin: 0 10px; /*文字与竖线保持距离*/
+}
+
+.common_title_con ul li a:hover{
+    color: blueviolet;
+}
+
+/*查看更多单独右浮动，单独给一个more样式*/
+.common_title_con .more{
+    float: right;
+    color: #666666;
+    font: normal 12px/35px "Microsoft YaHei";
+}
+
+.common_title_con .more:hover{
+    color: blueviolet;
+}
+
+
+/*活动商品展示*/
+.goods_banner{
+    /*background-color: red;*/
+    width: 200px;
+    height: 300px;
+}
+
+
+/*商品图片橱窗展示*/
+.goods_list{
+    /*background-color: lightblue;*/
+    width: 1000px;
+    height: 300px;
+    float: left; /*注意：该处给定浮动后，才会从活动商品右边开始排列，不然计算宽度时候，会从浏览器窗口最左边开始计算*/
+}
+
+.goods_list li{
+    float: left; /*li给定浮动，商品排在一行*/
+    width: 249px;
+    height: 299px;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    text-align: center; /*li下面的元素都水平居中*/
+}
+
+.goods_list li h4{
+    font: normal 14px/50px "Microsoft YaHei";
+    color: #666666;
+}
+
+.goods_list li a{
+    display: block; /*转换为块元素，支持所有样式*/
+    width: 180px;
+    height: 180px;
+    margin: 0 auto; /*父元素li已经设置了水平居中，此处可以省略*/
+}
+
+.price{
+    font: bold 20px/50px "Microsoft YaHei";
+    color: #c40000;
+}
+
+
+/*66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666*/
+/*底部信息栏：联系信息、版权信息、备案信息等*/
+.footer{
+    border-top: 2px solid #4ab14e;
+    margin-top: 30px;
+    text-align: center; /*子元素水平居中*/
+}
+
+.footer_link{
+    margin-top: 38px;
+}
+
+.footer_link a{
+    color: #4ab14e;
+    font-size: 12px;
+    margin: 0 10px;
+}
+
+.footer_link span{
+    color: #4ab14e;
+    font-size: 12px;
+}
+
+.footer_link p{
+    color: black;
+    font-size: 12px;
+    margin-top: 10px;
 }
