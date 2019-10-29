@@ -176,7 +176,7 @@ body{
 
 .center_con02 ul{
     float: left;
-    overflow: hidden; /*用于隐藏第一个a标签的做边框，如果给在下面的li标签，则所有的做边框都被隐藏了*/
+    overflow: hidden; /*用于隐藏第一个a标签的左边框，如果给在下面的li标签，则所有的做边框都被隐藏了*/
 }
 
 .center_con02 li{
@@ -225,7 +225,7 @@ body{
 
 .sub_menu_con li a{
     display: block; /*内联元素转成块元素，宽度就是上级li标签的宽度*/
-    height: 44px; /*a标签高度和li高度一致,宽度*/
+    height: 44px; /*a标签高度和li高度一致,宽度就是上级li标签的宽度*/
     line-height: 44px; /*文字垂直居中*/
     text-indent: 71px; /*首行缩进71px*/
     color: #333333;
@@ -352,7 +352,7 @@ body{
     background-color: red;
 }
 
-/*两个图片之间会有一个像素的间隔bug，写上下面一句，图片转换为block就解决了*/
+/*两个img图片之间会有一个像素的间隔bug，写上下面一句，图片转换为block就解决了*/
 .advs img{
     display: block;
 }
