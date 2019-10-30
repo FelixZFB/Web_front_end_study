@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*风车旋转动画*/
+        @keyframes rotating{
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg); /*-360deg就是逆时针旋转*/
+            }
+        }
+
+        .rotate{
+            display: block;
+            float: left;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto 0;
+            /*linear匀速无限次旋转,加速可以改变完成一次的动画时间*/
+            animation: rotating 1000ms linear 0s infinite; /*时间，匀速，延时，无限次*/
+        }
+    </style>
+</head>
+<body>
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+    <img src="images/fengche.png" alt="风车图片" class="rotate">
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*定义animation动画，需要单独定义*/
+        @keyframes moving{
+            from{
+                width: 100px;
+            }
+            to{
+                width: 500px;
+            }
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            /*动画：名称,时间,方式，延迟，播放次数,动画原路返回(默认不返回)*/
+            animation: moving 1s ease 0s 4 alternate;
+            /*animation-play-state: paused; !*默认停止，下面设置鼠标放置运动*!*/
+        }
+
+        .box:hover{
+            animation-play-state: paused; /*鼠标放到动画上就暂停*/
+            /*animation-play-state: running; !*鼠标放到动画上就运动*!*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

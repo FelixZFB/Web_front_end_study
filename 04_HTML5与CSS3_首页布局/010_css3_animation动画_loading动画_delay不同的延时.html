@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .con{
+            width: 300px;
+            height: 158px;
+            border: 1px solid cyan;
+            margin: 150px auto 0;
+
+        }
+
+        /*下载缩放动画*/
+        @keyframes loading{
+            from{
+                 transform: scale(1,1); /*X和Y轴缩放，1就是不缩放*/
+            }
+            to{
+                transform: scale(1,0.5); /*Y轴缩放到0.5，相当于竖向缩小*/
+            }
+        }
+
+        .con div{
+            width: 30px;
+            height: 100px;
+            float: left;
+            background-color: gold;
+            margin: 15px;
+            border-radius: 15px; /*两端倒圆角，给定宽度一半*/
+            /*放大缩小，原路返回，单独每个给一个延时，就可以形成下载的效果*/
+            animation: loading 500ms ease infinite alternate;
+        }
+
+        /*css3选择器，选择第几个子元素,可以减少标签里面class类的个数*/
+        .con div:nth-child(1){
+            background-color: red;
+            animation-delay: 0ms;
+        }
+
+        .con div:nth-child(2){
+            background-color: coral;
+            animation-delay: 100ms;
+        }
+
+        .con div:nth-child(3){
+            background-color: pink;
+            animation-delay: 200ms;
+        }
+
+        .con div:nth-child(4){
+            background-color: lightgreen;
+            animation-delay: 300ms;
+        }
+
+        .con div:nth-child(5){
+            background-color: lightblue;
+            animation-delay: 400ms;
+        }
+
+        .con p{
+            text-align: center;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!--div.con>(div.box01)*5-->
+    <div class="con">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p>Loading......</p>
+    </div>
+</body>
+</html>

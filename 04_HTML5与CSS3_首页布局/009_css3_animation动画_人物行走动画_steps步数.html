@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*人物行走动画*/
+        @keyframes walking{
+            from{
+                left: 0;
+            }
+
+            to{
+                left: -960px; /*从开始向左移动960px，一个人物状态宽度是120px*/
+            }
+        }
+
+        .box{
+            width: 120px;
+            height: 180px;
+            border: 1px solid cyan;
+            margin: 50px auto 0;
+            overflow: hidden;
+            position: relative; /*子级定位参考物*/
+        }
+
+        .box img{
+            position: absolute; /*相对于父级移动*/
+            left: 0;
+            top: 0;
+            /*8个人任务状态刚好960px，每次向左移动120px，任务状态就发生了变化*/
+            /*延时0s可以省略不写，改变动画时间就可以改变行走的速度*/
+            animation: walking 1s steps(8) infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/walking.png" alt="人物行走">
+    </div>
+</body>
+</html>
