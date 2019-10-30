@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+
+            /*只是宽度有动画，过渡的属性:宽度，延时1s，linear(匀速)|ease(缓冲运动)*/
+            /*transition: width 1s ease;*/
+            /*宽和高同时变化的动画*/
+            transition: width 1s ease, height 1s ease;
+        }
+        .box:hover{
+            width: 500px;
+            height: 500px;
+        }
+
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            margin: 20px 0;
+            /*最后一个2s是延时2s后颜色变化，变化耗时3s*/
+            transition: width 1s linear, height 1s ease, background-color 3s linear 2s;
+            /*所有属性同时动画，不写延时，过渡时间设置相同就可以*/
+            /*多个属性同时动画可以合并为以下一句*/
+            /*transition: all 1s ease;*/
+        }
+        .box2:hover{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

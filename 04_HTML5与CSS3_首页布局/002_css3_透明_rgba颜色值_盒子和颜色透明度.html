@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            background: url("web/images/banner01.jpg");
+        }
+        .box{
+            width: 300px;
+            height: 100px;
+            background-color: #000000;
+            color: blue;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+
+            /*元素透明度完整写法是以下2句*/
+            /*设置盒子透明度*/
+            opacity: 0.3;
+            filter: alpha(opacity=30); /*兼容IE*/
+            /*上面写法，盒子整体都透明了，文字也变透明了*/
+        }
+
+        .box02{
+            width: 300px;
+            height: 100px;
+            /*只设置背景色和背景色透明度*/
+            /*不会影响文字其它内容的透明度*/
+            background-color: rgba(0,0,0,0.3); /*前三个数值表示颜色，第四个数值表示颜色的透明度 */
+            color: blue;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">这是一个DIV</div>
+    <div class="box02">这是一个DIV</div>
+</body>
+</html>

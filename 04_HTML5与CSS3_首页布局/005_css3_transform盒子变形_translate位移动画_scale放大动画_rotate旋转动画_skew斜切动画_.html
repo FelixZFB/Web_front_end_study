@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*位移动画*/
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px auto 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*设置盒子变形，盒子位移*/
+            /*translate位移比position的left和top位移性能高*/
+            transform: translate(0px, 0px); /*建议写上，该句也可以省略*/
+            /*注意:transform设置都是静态的变化（起点和终点的状态），显示过渡动画还是需要结合transition动画*/
+            transition: all 1s ease;
+        }
+        .box:hover{
+            transform: translate(100px, 100px);
+        }
+
+        /*放大缩小动画*/
+        .box2{
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px auto 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*设置盒子变形,盒子放大*/
+            transform: scale(1,1);
+            transition: all 1s ease;
+        }
+
+        .box2:hover{
+            transform: scale(2,2);
+        }
+
+         /*旋转动画*/
+        .box3{
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px auto 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*设置盒子变形,盒子旋转*/
+            transform: rotate(0);
+            transition: all 1s ease;
+        }
+
+        .box3:hover{
+            transform: rotate(45deg);
+        }
+
+        /*斜切动画*/
+        .box4{
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px auto 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*设置盒子变形,盒子斜切*/
+            /*设置x y轴斜切角度*/
+            transform: skew(0, 0);
+            transition: all 1s ease;
+        }
+
+        .box4:hover{
+            transform: skew(45deg, 0deg);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box">位移动画</div>
+    <div class="box2">放大动画</div>
+    <div class="box3">旋转动画</div>
+    <div class="box4">斜切动画</div>
+</body>
+</html>

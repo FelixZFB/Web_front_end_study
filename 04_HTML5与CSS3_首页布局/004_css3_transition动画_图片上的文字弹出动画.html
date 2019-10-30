@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .pic_con{
+            width: 200px;
+            height: 300px;
+            margin: 50px auto 0;
+            position: relative; /*子元素定位的参考物*/
+            overflow: hidden; /*隐藏溢出的文字说明内容*/
+        }
+
+        .pic_info{
+            position: absolute; /*相对于父级定位*/
+            left: 0;
+            top: 300px;
+            width: 200px;
+            height:120px;
+            padding: 5px;
+            /*黑色背景，设置背景透明色*/
+            background-color: rgba(0,0,0,0.1);
+            color: white;
+            /*文字说明动画*/
+            transition: all 500ms ease;
+        }
+
+        /*鼠标放置到图片后，文字说明才显示在图片上面*/
+        .pic_con:hover .pic_info{
+            top: 180px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pic_con">
+        <img src="web/images/banner01.jpg" alt="图片">
+        <div class="pic_info">
+            <h3>文字说明</h3>
+            <p>我是一张图片我是一张图片我是一张图片我是一张图片</p>
+        </div>
+    </div>
+</body>
+</html>
