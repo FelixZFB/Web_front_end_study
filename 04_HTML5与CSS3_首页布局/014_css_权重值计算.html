@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        #content div.main_content h2{
+            color:red;
+        }
+
+        #content .main_content h2{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="main_content">
+            <h2>这是一个h2标题</h2>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--
+第一条样式的权重计算： 100(#)+1(div标签)+10(类)+1(标签)，结果为112；
+第二条样式的权重计算： 100+10+1，结果为111；   少一个div标签，权重值少了1
+h2标题的最终颜色为red
+-->

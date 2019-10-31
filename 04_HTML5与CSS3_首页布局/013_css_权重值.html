@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            border: 3px solid cyan;
+            background-color: gold;
+            color: red;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            border: 3px solid cyan;
+            background-color: gold;
+            /*!important，加在样式属性值后，权重值为10000*/
+            color: red!important;
+        }
+
+    </style>
+</head>
+<body>
+    <!--内联样式，如：style=””，权重值为1000-->
+    <div class="box" style="color: blue"> <!--实际文字为蓝色-->
+        我是div
+    </div>
+    <div class="box1" style="color: blue">
+        我是div <!--实际文字为红色-->
+    </div>
+</body>
+</html>
