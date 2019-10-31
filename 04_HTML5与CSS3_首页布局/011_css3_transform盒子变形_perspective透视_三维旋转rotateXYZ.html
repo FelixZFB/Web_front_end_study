@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        /*三维旋转动画*/
+        /*
+        X轴：屏幕从左往右
+        Y轴：屏幕从上往下
+        Z轴：屏幕从里往外
+        rotate不写轴，默认是Z轴
+        */
+
+        /*Z轴动画*/
+        .box0 {
+            float: left;
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px 20px 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*Y轴旋转，设置透视距离800px，变形前后都要写上*/
+            transform-style: preserve-3d; /*规范写法：三维空间里面旋转*/
+            transform: perspective(800px) rotateZ(0deg);
+            transition: all 1s ease;
+        }
+
+        .box0:hover{
+            transform: perspective(800px) rotateZ(60deg); /*y轴旋转90deg*/
+        }
+
+
+        /*Y轴动画*/
+        .box1 {
+            float: left;
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px 20px 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*Y轴旋转，设置透视距离800px，变形前后都要写上*/
+            transform-style: preserve-3d; /*规范写法：三维空间里面旋转*/
+            transform: perspective(800px) rotateY(0deg);
+            transition: all 1s ease;
+        }
+
+        .box1:hover{
+            transform: perspective(800px) rotateY(60deg); /*y轴旋转90deg*/
+        }
+
+        /*X轴旋转动画*/
+        .box2 {
+            float: left;
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            background-color: gold;
+            margin: 50px 20px 0;
+            text-align: center;
+            font: bold 20px/200px "Microsoft YaHei";
+
+            /*X轴旋转，设置透视距离800px，变形前后都要写上*/
+            transform-style: preserve-3d; /*规范写法：三维空间里面旋转*/
+            transform: perspective(800px) rotateX(0deg);
+            transition: all 1s ease;
+        }
+
+        .box2:hover{
+            transform: perspective(800px) rotateX(60deg); /*y轴旋转90deg*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box0">Z轴旋转动画</div>
+    <div class="box1">Y轴旋转动画</div>
+    <div class="box2">X轴旋转动画</div>
+</body>
+</html>

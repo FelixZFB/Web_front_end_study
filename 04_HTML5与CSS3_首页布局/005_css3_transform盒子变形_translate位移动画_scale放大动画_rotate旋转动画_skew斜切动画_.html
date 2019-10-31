@@ -17,7 +17,7 @@
 
             /*设置盒子变形，盒子位移*/
             /*translate位移比position的left和top位移性能高*/
-            transform: translate(0px, 0px); /*建议写上，该句也可以省略*/
+            transform: translate(0px, 0px); /*初始值写上，不设置容易出现跳变的bug*/
             /*注意:transform设置都是静态的变化（起点和终点的状态），显示过渡动画还是需要结合transition动画*/
             transition: all 1s ease;
         }
@@ -44,7 +44,8 @@
             transform: scale(2,2);
         }
 
-         /*旋转动画*/
+        /*旋转动画，相当于三维坐标的Z轴，rotateZ，后面有单独的三维旋转*/
+        /*屏幕里面指向屏幕外面为Z轴*/
         .box3{
             width: 200px;
             height: 200px;

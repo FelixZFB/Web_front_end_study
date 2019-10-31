@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 700px;
+            height: 272px;
+            /*background-color: gold;*/
+            border: 3px solid black;
+            margin: 50px auto 0;
+            position: relative;
+            transform-style: preserve-3d; /*容器里面的元素在3维空间旋转*/
+
+        }
+
+        .box img{
+            position: absolute;
+            left: 200px;
+            top: 0;
+            transform: perspective(800px) rotateY(0deg); /*加入透视效果，便于观察*/
+            transition: all 1s ease; /*展示过渡动画*/
+            /*图片翻转时背面是否可见，默认是可见，背面可以看见前面*/
+            /*影藏后背面的就是透明的，背面可以叠加文字内容*/
+            backface-visibility: hidden;
+        }
+
+        .box:hover img{
+            transform: perspective(800px) rotateY(180deg);
+        }
+
+        .box .back{
+            width: 300px;
+            height: 272px;
+            background-color: pink;
+            position: absolute;
+            left:200px;
+			top:0;
+			font-size:20px;
+			text-align:center;
+			line-height:272px;
+            /*图片背景盒子位置和图片在一个位置，初始状态是旋转180度的*/
+            /*当图片翻转180度，背景内容正好旋转到正面，正好显示出文字*/
+			transform:perspective(800px) rotateY(-180deg);
+			transition:all 1s ease;
+			backface-visibility:hidden;
+
+            /*上面的图片和背面盒子大小一致，动画时间效果等设置都要相同，翻转才能同时进行*/
+
+        }
+
+        .box:hover .back{
+			transform:perspective(800px) rotateY(0deg);
+		}
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/location_bg.jpg" alt="背景图">
+        <div class="back">
+            我是图片的背面，图片的说明文字
+        </div>
+    </div>
+</body>
+</html>
