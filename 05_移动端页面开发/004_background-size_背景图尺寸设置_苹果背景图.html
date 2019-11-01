@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 50px auto 0;
+            /*使用苹果图片作为背景图，但是图片尺寸比盒子大*/
+            /*多的部分就被影藏了*/
+            background: url("images/apple.png") no-repeat;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 50px auto 0;
+
+            background: url("images/apple.png") no-repeat;
+            /*直接给定背景图尺寸和盒子大小一致就会自动缩放图片*/
+            /*background-size: 200px 200px;*/
+            background-size: 100% 100%; /*也可以使用长宽的百分比*/
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 50px auto 0;
+
+            background: url("images/apple.png") no-repeat;
+            background-size: cover; /*完全覆盖容器，背景图像有可能超出容器*/
+            /*苹果最右边有一点已经溢出了*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+</body>
+</html>
+
+<!--
+css3背景background新属性
+background-size:
+
+length：用长度值指定背景图像大小。不允许负值。
+percentage：用百分比指定背景图像大小。不允许负值。
+auto：背景图像的真实大小。
+cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。
+-->
