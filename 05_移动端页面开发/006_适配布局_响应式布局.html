@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        body{
+            margin: 0;
+        }
+
+        /*屏幕宽度大于800px使用以下样式，宽度会自动缩放*/
+
+        .con div{
+            width: 23%;
+            height: 200px;
+            border: 2px solid black;
+            background-color: gold;
+            float: left;
+            box-sizing: border-box; /*盒子宽度包含边框尺寸*/
+            margin: 1%; /*边款加内容正好是100%*/
+            /*4个div正好放在一行*/
+        }
+
+        /*当屏幕宽度小于800px执行以下样式，自动1行变成2行*/
+        /*这样就不会出现1行的情况下，不断的压缩，最后压扁后样式会很丑*/
+        @media (max-width: 800px){
+            .con div{
+                width: 46%;
+                margin: 2%;
+                /*2个div正好放在一行*/
+            }
+        }
+
+        /*当屏幕宽度小于400px，1行只显示1个div*/
+        @media (max-width: 400px){
+            .con div{
+                width: 94%;
+                margin: 3%;
+            }
+        }
+
+        /*根据设备屏幕大小，就可以响应不同的样式*/
+        /*PC,平板，手机都可以响应对应的样式，显示最佳的观看效果*/
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+</body>
+</html>
