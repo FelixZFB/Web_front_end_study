@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    /*
+    rem不是依据父元素——而是依据根元素（root element）来确定其长度。
+    这里所说的根元素（root element）毫无疑问就是web文档中的html元素。
+    也就是说，无论嵌套层级有多深，rem都是根据<html>的font-size来确定长度的。
+    */
+        html{
+            font-size: 16px; /*html的字体大小就是1rem*/
+        }
+        .div1{
+            font-size: 3rem;    /* 3rem = 16px * 3 = 48px */
+        }
+        .div2{
+            font-size: 0.5rem;  /* 0.5rem = 16px * 0.5 = 8px */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="div1">
+        我是48px字体
+        <div class="div2">我我是8px字体</div>
+    </div>
+</body>
+</html>
