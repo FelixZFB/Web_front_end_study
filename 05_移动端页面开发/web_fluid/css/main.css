@@ -1,0 +1,28 @@
+/*顶部logo栏*/
+.header{
+    height: 50px;
+    background-color: #37ab40;
+    position: relative; /*用于搜索框的定位*/
+}
+
+.logo{
+    display: block;
+    width: 89px;
+    height: 36px;
+    margin: 7px auto 0;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.search{
+    width: 27px;
+    height: 27px;
+    /*background-color: gold;*/
+    position: absolute;
+    right: 29px;
+    top: 12px;
+    background: url("../images/icons.png") left top no-repeat;
+    background-size: 60px 840px; /*缩小背景图尺寸,设置原始图片尺寸的一半*/
+}

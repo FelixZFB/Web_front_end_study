@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--mata:vp tab设置视口-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天天生鲜-首页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"> <!--引入css样式-->
+    <link rel="stylesheet" type="text/css" href="css/main.css"> <!--引入css样式-->
+    <script type="application/javascript" src="js/set_root.js"></script> <!--引入js文件-->
+</head>
+<body>
+
+    <!--
+    - 流体式布局和rem布局区别：
+    - 参考web_fluid和web_rem实例
+    - 都打开index，然后切换到手机，iPhone6设备，可以左右拉动宽口或者切换设备，对比效果
+    - 流体式布局，字体图片都不会改变大小（因为样式里面给的都是固定像素），用百分比设置的背景盒子也只会拉宽
+    - rem布局，背景栏目，字体图片都会等比例放大缩小，虽然设置时候，样式里面是以iPhone6大小为基准设置样式
+    - js里面设置的iPhone6屏幕尺寸下的默认html字体是10px
+    - 切换设备或者拉伸窗口大小，默认字体10px会自动缩放，对应后面的样式全部是rem，以html字体作为基准
+    - 因此所有样式都会自动按比例缩放，我们不断拉宽，可以发现html字体最大只能是20px（是否就是背景图2倍有关）
+    -->
+
+
+    <!--基于rem布局-->
+    <!--以iPhone6 375*667为基准，图片都是2倍图-->
+    <div class="main_wrap">
+
+        <div class="header clearfix"> <!--父级使用clearfix解决margin-top塌陷-->
+            <a href="#" class="logo"><img src="images/logo.png" alt="天天生鲜logo"></a>
+            <a href="#" class="search"></a> <!--搜索图标使用背景图-->
+        </div>
+
+        <div class="center">
+
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/*基于rem布局*/
+/*js里面设置html默认字体大小为10px*/
+/*1rem=10px*/
+
+/*最外层包裹样式，大小和手机屏幕尺寸一致，以iPhone6作为基准，图片像素都是2倍图*/
+.main_wrap{
+    position: absolute; /*参考元素就是body也就是浏览器窗口*/
+    background-color: gold;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; /*上面都为0，代表盒子大小和浏览器窗口大小一样*/
+    /*外部盒子固定了，顶部栏中间内容底部栏都可以以他为基准绝对定位*/
+}
+
+
+
+/*顶部栏目样式*/
+/*顶部logo栏*/
+.header{
+    height: 5rem;
+    background-color: #37ab40;
+    position: relative; /*用于搜索框的定位*/
+}
+
+.logo{
+    display: block;
+    width: 8.9rem;
+    height: 3.6rem;
+    margin: 0.7rem auto 0;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.search{
+    width: 2.7rem;
+    height: 2.7rem;
+    /*background-color: gold;*/
+    position: absolute;
+    right: 2.9rem;
+    top: 1.2rem;
+    background: url("../images/icons.png") left top no-repeat;
+    background-size: 6rem 84rem; /*缩小背景图尺寸,设置原始图片尺寸的一半*/
+}
+
+
+
+/*中间内容样式*/
