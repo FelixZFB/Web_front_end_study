@@ -8,7 +8,7 @@
 
 .main_wrap{
     position: absolute; /*参考元素就是body也就是浏览器窗口*/
-    background-color: gold;
+    /*background-color: gold;*/
     left: 0;
     right: 0;
     top: 0;
@@ -117,8 +117,8 @@
     display: block;
     height: 5.6rem;
     /*border: 2px solid red;*/
-    background: url("../images/icons.png") left -6.00rem no-repeat; /*没张图片向上移动一定像素*/
-    background-size: 6rem 84rem;
+    background: url("../images/icons.png") left -6.00rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
 }
 
 /*单独设置每一个背景图的位置*/
@@ -197,7 +197,7 @@
 }
 
 
-/*商品展示*/
+/*商品展示栏下幻灯片*/
 .banner{
     display: block;
     width: 35.5rem;
@@ -209,20 +209,25 @@
     width: 100%;
 }
 
+/*商品展示*/
 .goods_list{
     width: 37.5rem; /*宽度就是页面宽度，手机设备宽度就是375px，也可以用100%*/
     height: 18.7rem;
-    background-color: gold;
+    /*background-color: gold;*/
     margin: 1rem auto 0;
 }
 
-.goods_list li{
+.goods_list li {
     float: left;
-    width: 11.8rem;
+    width: 11.7rem;
     height: 18.7rem;
-    border-right: 1px solid #e7e7e7;
-    background-color: green;
-
+    /*border-right: 1px solid #e7e7e7;*/
+    /*background-color: green;*/
+    position: relative; /*用于购物车定位*/
+    /*ul是设置的水平居中，下面的ul盒子一行分布3个li，由于设置左浮动*/
+    /*不能直接设置居中，我们先设置盒子合适的宽度（大小刚刚好，就直接居中了），如果有不能有点偏差，然后设置盒子间距*/
+    /*调整三个盒子整体居中，也可以直接设置第一个盒子左边距，最后一个盒子右边距*/
+    margin: 0 0.2rem 0 0.5rem; /*上面12.3就刚刚好，但是我们还是设置间距比较好看*/
 }
 
 /*最后一个商品没有有边框*/
@@ -230,11 +235,59 @@
     border-right: 0;
 }
 
-
-
 /*商品图片*/
+/*设置宽度为父级100%,图片自动缩放，高度由缩放图片自动撑开*/
+.goods_list li a img{
+    width: 100%; /*图片大小大于盒子了，设置图片宽度为100%,就会自动缩放*/
+}
 
+/*商品名称和价格*/
+.goods_list li h4{
+    font: normal 1rem/1.5rem "Microsoft YaHei";
+    width: 5rem;
+    /*margin: 0.5rem auto 0; !*盒子左右居中*!*/
+    text-align: left;
 
+    /*文字不换行，超出盒子部分省略号显示，以下三步实现*/
+    overflow: hidden;
+    /*强制文字不换行*/
+    white-space: nowrap;
+    /*超出部分显示省略号*/
+    text-overflow: ellipsis;
+}
+
+/*商品规格*/
+.unit{
+    width: 5rem;
+    font: normal 1rem/1.5rem "Microsoft YaHei";
+    /*margin: 0 auto 0; !*盒子左右居中*!*/
+    color: #bbbbbb;
+    text-align: left;
+}
+
+/*商品价格*/
+.price{
+    width: 5rem;
+    font: normal 1rem/1.5rem "Microsoft YaHei";
+    /*margin: 0 auto 0; !*盒子左右居中*!*/
+    color: #ff4400;
+    text-align: left;
+}
+
+/*加号图标*/
+.add_chart{
+    position: absolute;
+    width: 3.4rem;
+    height: 3.4rem;
+    /*background-color: gold;*/
+    /*定位到合适的位置*/
+    right: 1.35rem;
+    bottom: 1.5rem;
+
+    /*移动背景图显示出加号*/
+    background: url("../images/icons.png") left -54rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
 
 
 
@@ -244,6 +297,47 @@
     left: 0;
     bottom: 0; /*相对于底部是0*/
     width: 100%; /*也可以使用right为0*/
-    background-color: red;
+    /*background-color: red;*/
+    background-color: #e7e7e7;
     height: 5rem;
+}
+
+.footer li{
+    width: 25%;
+    height: 5rem;
+    float: left;
+    text-align: center; /*文字水平居中*/
+}
+
+.footer li a{
+    display: block;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 0.7rem auto 0; /*盒子整体居中*/
+
+    /*移动背景图显示出需要的图形*/
+    background: url("../images/icons.png") left -60rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+/*单独设置每个图形移动的位置*/
+.footer li:nth-child(2) a{
+    background: url("../images/icons.png") left -66rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+.footer li:nth-child(3) a{
+    background: url("../images/icons.png") left -72rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+.footer li:nth-child(4) a{
+    background: url("../images/icons.png") left -78rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+/*底部栏文字*/
+.footer li h2{
+    color: darkcyan;
+    margin-top: 0.3rem;
 }

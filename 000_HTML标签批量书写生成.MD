@@ -34,3 +34,23 @@ HTML快速创建，配合tab键使用
         <li>美人鱼</li>
         <li>美人鱼</li>
     </ul>
+    
+- ul.footer>(li>(a+h2{首页}))*4
+    <ul class="footer">
+        <li>
+            <a href=""></a>
+            <h2>首页</h2>
+        </li>
+        <li>
+            <a href=""></a>
+            <h2>首页</h2>
+        </li>
+        <li>
+            <a href=""></a>
+            <h2>首页</h2>
+        </li>
+        <li>
+            <a href=""></a>
+            <h2>首页</h2>
+        </li>
+    </ul>
