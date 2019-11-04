@@ -2,7 +2,10 @@
 /*js里面设置html默认字体大小为10px*/
 /*1rem=10px*/
 
-/*最外层包裹样式，大小和手机屏幕尺寸一致，以iPhone6作为基准，图片像素都是2倍图*/
+/*最外层包裹div*/
+/*样式，大小和手机屏幕尺寸一致，以iPhone6作为基准，图片像素都是2倍图*/
+/*所有图片都是iPhone6布置尺寸的2倍图，使用设置img标签宽度100%或者背景图background-size强制缩小图片避免元素溢出等方式，图片自动缩放*/
+
 .main_wrap{
     position: absolute; /*参考元素就是body也就是浏览器窗口*/
     background-color: gold;
@@ -14,9 +17,15 @@
 }
 
 
+/*使用外部包裹div，作为定位基准*/
+/*整体定位顶部栏，中间内容，底部栏*/
+
+
+
 
 /*顶部栏目样式*/
 /*顶部logo栏*/
+/*顶部按照文档流，直接排在最顶部，不需要定位*/
 .header{
     height: 5rem;
     background-color: #37ab40;
@@ -47,4 +56,186 @@
 
 
 
+
 /*中间内容样式*/
+.center_con{
+    position: absolute; /*最外层的包裹div作为定位基准*/
+    left: 0;
+    right: 0; /*右边对齐，也可以使用宽度100%*/
+    top: 5rem;
+    bottom: 5rem;
+    background-color: #efefef;
+
+    /*只出现竖向滚动条，横向不出现，横向宽度都是设置好的*/
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+/*幻灯片样式*/
+/*图片需要缩小为1/2*/
+.slide{
+    /*宽度就是默认100%*/
+    height: 14rem; /*图片实际是280px，需要的样式是140px*/
+}
+
+.slide img{
+    /*父元素设置的宽度，img设置宽度为100%会自动适应父级宽度，高度自动缩放*/
+    width: 100%; /*img标签是内联块元素，需要设置宽度为100%，内联块没有设置宽高，宽高由内容决定*/
+    /*高度会自动等比缩放，原始图片(750*280)正好是2倍，缩小后正好是1倍图(375*140)*/
+}
+
+
+
+/*菜单栏*/
+.menu_con{
+    /*宽度不设置，直接父级的100%*/
+    height: 18.5rem;
+    /*background-color: green;*/
+    margin: 1rem 0 0 2.75rem;
+}
+
+.menu_con ul{
+    width: 35.75rem; /*最右边一个li摆不下，ul多给1rem，多的背景直接隐藏*/
+    overflow: hidden;
+    height: 16.75rem;
+    margin: 1.75rem auto 0; /*左右整体居中*/
+}
+
+.menu_con ul li{
+    width: 5.9rem;
+    height: 8.1rem;
+    float: left;
+    /*background-color: pink;*/
+    /*border: 2px solid red;*/
+    margin-right: 3.0rem;
+
+}
+
+.menu_con li a{
+    display: block;
+    height: 5.6rem;
+    /*border: 2px solid red;*/
+    background: url("../images/icons.png") left -6.00rem no-repeat; /*没张图片向上移动一定像素*/
+    background-size: 6rem 84rem;
+}
+
+/*单独设置每一个背景图的位置*/
+.menu_con li:nth-child(2) a{
+    background-position: left -12.0rem;
+}
+
+.menu_con li:nth-child(3) a{
+    background-position: left -18.0rem;
+}
+
+.menu_con li:nth-child(4) a{
+    background-position: left -24.0rem;
+}
+
+.menu_con li:nth-child(5) a{
+    background-position: left -30.0rem;
+}
+
+.menu_con li:nth-child(6) a{
+    background-position: left -36.0rem;
+}
+
+.menu_con li:nth-child(7) a{
+    background-position: left -42.0rem;
+}
+
+.menu_con li:last-child a{
+    background-position: left -48.0rem;
+}
+
+
+/*菜单图片下面文字设置*/
+.menu_con li h2{
+    height: 2.5rem;
+    text-align: center; /*文字水平居中*/
+    font: bold 0.9rem/2.5rem "Microsoft YaHei"; /*文字大小也可以使用像素，不需要缩放*/
+    color: darkcyan;
+}
+
+
+
+
+/*<!--商品展示栏-->*/
+.common_model{
+    height: 17.25rem;
+    /*background-color: blueviolet;*/
+    margin-top: 1rem;
+    text-align: center; /*商品展示栏下面的子元素都默认保持居中*/
+    /*有些靠左靠右可以单独设置*/
+}
+
+
+/*标题栏*/
+.common_title{
+    width: 35.5rem;
+    height: 1.8rem;
+    /*background-color: gold;*/
+    margin: 1.6rem auto 0;
+
+}
+
+.common_title h3{
+    float: left;
+    height: 1.8rem;
+    font: bold 1.5rem/1.8rem "Microsoft YaHei";
+    color: darkcyan;
+    border-left: 0.5rem solid #fbc83d;
+}
+
+.common_title a{
+    float: right;
+    height: 1.8rem;
+    font: bold 1.0rem/1.8rem "Microsoft YaHei";
+    color: darkcyan;
+}
+
+
+/*商品展示*/
+.banner{
+    display: block;
+    width: 35.5rem;
+    height: 9rem;
+    margin: 1rem auto 1rem;
+}
+
+.banner img{
+    width: 100%;
+}
+
+.goods_list{
+    width: 37.5rem; /*宽度就是页面宽度，手机设备宽度就是375px，也可以用100%*/
+    height: 18.7rem;
+    background-color: gold;
+    margin: 1rem auto 0;
+}
+
+.goods_list li{
+    float: left;
+    width: 11.8rem;
+    height: 18.7rem;
+    border-right: 1px solid #e7e7e7;
+
+}
+
+/*商品图片*/
+
+
+
+
+
+/*底部栏样式*/
+.footer{
+    position: absolute;
+    left: 0;
+    bottom: 0; /*相对于底部是0*/
+    width: 100%; /*也可以使用right为0*/
+    background-color: red;
+    height: 5rem;
+}
