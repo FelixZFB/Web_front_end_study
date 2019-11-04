@@ -221,8 +221,16 @@
     width: 11.8rem;
     height: 18.7rem;
     border-right: 1px solid #e7e7e7;
+    background-color: green;
 
 }
+
+/*最后一个商品没有有边框*/
+.goods_list li:last-child{
+    border-right: 0;
+}
+
+
 
 /*商品图片*/
 
