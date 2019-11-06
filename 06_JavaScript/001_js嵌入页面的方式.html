@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js嵌入页面方式</title>
+    <!--方式1:外部引入（实际开发使用该方式）-->
+    <script type="text/javascript" src="js/hello_world.js"></script>
+    <!--方式2：页面script标签嵌入-->
+    <script type="text/javascript">
+        alert('hello world, too!')
+    </script>
+</head>
+<body>
+    <!--方式3：行间事件（主要用于事件）-->
+    <input type="button" name="" value="点击" onclick="alert('hello world!')">
+</body>
+</html>
+
+<!--页面运行从上往下读，前两句自动运行，第三个点击运行-->
