@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--将body中的行间js代码都提取后放到script下面，body里面就没有js代码-->
+    <!--对比002案例，onclick是放在body行间代码里面-->
+    <script type="text/javascript">
+
+        /*全部代码都放在加载模块里面，注意是window不是windows*/
+        window.onload = function(){
+
+            /*获取input标签元素*/
+            var oBtn = document.getElementById('btn01');
+            /*将事件属性和一个函数关联，函数不能写小括号，写了就代表马上执行函数*/
+            oBtn.onclick = fnChange;
+            /*点击input按钮，以下函数就会执行*/
+
+            function fnChange(){
+                /*获取元素*/
+                var oDiv = document.getElementById('div1');
+                /*修改样式*/
+                oDiv.style.color = 'red';
+                oDiv.style.fontSize = '32px';
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+    <input type="button" name="" value="点击改变div1的样式" id="btn01">
+</body>
+</html>

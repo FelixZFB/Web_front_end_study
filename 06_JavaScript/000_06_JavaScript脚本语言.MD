@@ -6,6 +6,7 @@
 
 ## 1. JavaScript介绍
 - JavaScript是运行在浏览器端的脚步语言，
+    JavaScript直接有浏览器解释执行不需要编译
     JavaScript主要解决的是前端与用户交互的问题，
     包括使用交互与数据交互。 JavaScript是浏览器解释执行的，
     前端脚本语言还有JScript（微软，IE独有），ActionScript( Adobe公司，需要插件)等。
@@ -105,7 +106,7 @@
             </script>
 
             
-## 5. js操作元素属性
+## 4.1. js操作元素属性
 - 获取的页面元素，就可以对页面元素的属性进行操作，属性的操作包括属性的读和写。
 
 - 操作属性的方法
@@ -132,3 +133,5 @@
     1、html的属性和js里面属性写法一样
     2、“class” 属性写成 “className”（特殊地方）
     3、“style” 属性里面的属性，有横杠的改成驼峰式，比如：“font-size”，改成”style.fontSize”
+    
+## 5. js函数   

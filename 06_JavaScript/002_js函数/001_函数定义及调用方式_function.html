@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*定义一个函数*/
+        /*函数名称匈牙利命名法，前面加个fn*/
+        function fnChange(){
+            alert('hello world!')
+        }
+
+        /*函数调用方式1：函数名小括号直接调用*/
+        fnChange();
+
+
+        /*再定义一个函数*/
+        function fnMyalert(){
+            alert('hello world haha!')
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <!--函数调用方式2：行间调用，使用onclick，页面点击响应内容，函数就会被调用-->
+    <div id="div1" onclick="fnMyalert()">这是一个div元素</div>
+</body>
+</html>
