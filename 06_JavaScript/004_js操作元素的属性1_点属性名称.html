@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oLink = document.getElementById('link');
+
+            /*读取元素的属性,赋值给变量*/
+            var sId = oDiv1.id;
+            alert(sId);
+
+            /*写入元素的属性*/
+            /*写入属性，网页上查看源代码，代码和下面的html代码相比已经发生了变化*/
+            // js动态加载会将HTML代码进行修改
+            oDiv1.style.color = 'red';
+            oDiv1.style.fontSize = '32px';
+
+            oLink.href = 'http://www.baidu.com';
+            oLink.title = '点击跳转到百度首页';
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+    <a href="#" id="link">这是一个连接</a>
+    <div class="box" id="div2">这是第二个div元素</div>
+</body>
+</html>

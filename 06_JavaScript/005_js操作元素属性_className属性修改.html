@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oLink = document.getElementById('link');
+            var oDiv2 = document.getElementById('div2');
+
+            //其它标签元素的属性直接使用名称，class特殊
+            /*操作“class” 属性要写成 “className”*/
+            /*修改css样式为box2*/
+            oDiv2.className = 'box2';
+
+        }
+
+    </script>
+
+    <style type="text/css">
+        .box{
+            font-size: 32px;
+            color: red;
+        }
+        .box2{
+            font-size: 32px;
+            color: gold;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+    <a href="#" id="link">这是一个连接</a>
+    <div class="box" id="div2">这是第二个div元素</div>
+</body>
+</html>

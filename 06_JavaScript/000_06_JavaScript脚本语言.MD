@@ -109,10 +109,26 @@
 - 获取的页面元素，就可以对页面元素的属性进行操作，属性的操作包括属性的读和写。
 
 - 操作属性的方法
-    1、“.” 操作
-    2、“[ ]”操作
+    1、“.” 操作 .属性name 和句点法只用一样
+        
+        var oDiv1 = document.getElementById('div1');
+        
+        oDiv1.style.color = 'red';
+        oDiv1.style.fontSize = '32px';
+        
+    2、“[ ]”操作 将元素内置属性使用变量替换，就需要使用
+        
+        var sMystyle = 'color';
+        var sValue = 'red';
+        
+        oDiv.style.sMystyle = sValue;    该句不会产生任何效果
+        oDiv.style.color = sValue;       该句可以修改属性
+        
+        /*元素内置属性用变量代替，就需要使用[]操作*/
+        oDiv.style[sMystyle] = sValue
+        - 参考实例
 
 - 属性写法
     1、html的属性和js里面属性写法一样
-    2、“class” 属性写成 “className”
+    2、“class” 属性写成 “className”（特殊地方）
     3、“style” 属性里面的属性，有横杠的改成驼峰式，比如：“font-size”，改成”style.fontSize”

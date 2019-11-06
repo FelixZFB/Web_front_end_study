@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var oDiv = document.getElementById('div1')
+
+            var sMystyle = 'color';
+            var sValue = 'red';
+
+            /*color直接使用sMystyle代替会无效*/
+            /*sMystyle会当做style样式中的一个属性，不会当做一个变量*/
+            /*该属性找不到，就直接跳过了*/
+            // oDiv.style.sMystyle = sValue; 该句不会产生任何效果
+            // oDiv.style.color = sValue; 该句可以修改属性
+
+            /*元素内置属性用变量代替，就需要使用[]操作*/
+            oDiv.style[sMystyle] = sValue
+        };
+
+
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+</body>
+</html>
