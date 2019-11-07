@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*大多数操作和python列表相同，但是部分写法不一样*/
+
+        /*通过数组的类创建*/
+        var aList01 = new Array(1,2,3);
+
+        /*直接量创建*/
+        var aList02 = [1,2,3];
+
+        /*获取数组的长度,即成员的个数*/
+        alert(aList02.length);
+
+        /*下标操作数组的某个数据*/
+        alert(aList02[1]);
+
+        /*添加删除成员*/
+        aList02.push(4); /*结果1,2,3,4*/
+        aList02.pop(4); /*结果1,2,3*/
+        alert(aList02);
+
+        /*数组前后翻转*/
+        aList02.reverse();
+        alert(aList02); /*3,2,1*/
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

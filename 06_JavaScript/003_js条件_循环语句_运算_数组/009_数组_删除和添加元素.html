@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        var aList = [1,2,3,4];
+        /*删除和添加元素*/
+        aList.splice(2,1,7,8,9); //从第2个元素开始，删除1个元素，然后在此位置增加'7,8,9'三个元素
+        alert(aList);
+
+        var aList1 = [1,2,3,4];
+        aList1.splice(0,2,2,3);
+        alert(aList1);
+
+        /*数组添加符号合并为一个字符串*/
+        var aList2 = [1,2,3,4];
+        alert(aList2.join('-')); // 弹出 1-2-3-4
+        alert(aList2);
+        //注意：数组的其它操作都会改变原始数组，但是join返回一个字符串，原始数组不变
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

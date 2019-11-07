@@ -194,3 +194,75 @@
 - switch语句
     多重if else语句可以换成性能更高的switch语句 
     
+## 7. js的数组
+- 数组就是一组数据的集合，javascript中，数组里面的数据可以是不同类型的。
+- 类似python的列表，其中大多数方法和python中也相同，少数不一样
+
+- 定义数组的方法
+    //对象的实例创建
+    var aList = new Array(1,2,3);
+    
+    //直接量创建（推荐）
+    var aList2 = [1,2,3,'asd'];
+    
+- 操作数组中数据的方法
+    1、获取数组的长度：aList.length;
+    var aList = [1,2,3,4];
+    alert(aList.length); // 弹出4
+    
+    2、用下标操作数组的某个数据：aList[0];
+    var aList = [1,2,3,4];
+    alert(aList[0]); // 弹出1
+    
+    3、join() 将数组成员通过一个分隔符合并成字符串
+    var aList = [1,2,3,4];
+    alert(aList.join('-')); // 弹出 1-2-3-4
+    alert(aList); // 弹出1,2,3,4
+    注意：数组的其它操作都会改变原始数组，但是join返回一个字符串，原始数组不变
+    
+    4、push() 和 pop() 从数组最后增加成员或删除成员
+    var aList = [1,2,3,4];
+    aList.push(5);
+    alert(aList); //弹出1,2,3,4,5
+    aList.pop();
+    alert(aList); // 弹出1,2,3,4
+    
+    5、unshift()和 shift() 从数组前面增加成员或删除成员
+    var aList = [1,2,3,4];
+    aList.unshift(5);
+    alert(aList); //弹出5,1,2,3,4
+    aList.shift();
+    alert(aList); // 弹出1,2,3,4
+    
+    6、reverse() 将数组反转
+    var aList = [1,2,3,4];
+    aList.reverse();
+    alert(aList);  // 弹出4,3,2,1
+    
+    7、indexOf() 返回数组中元素第一次出现的索引值
+    var aList = [1,2,3,4,1,3,4];
+    alert(aList.indexOf(1));
+    
+    8、splice() 在数组中增加或删除成员
+    var aList = [1,2,3,4];
+    aList.splice(2,1,7,8,9); //从第2个元素开始，删除1个元素，然后在此位置增加'7,8,9'三个元素
+    alert(aList); //弹出 1,2,7,8,9,4
+    
+    
+
+-  多维数组
+    多维数组指的是数组的成员也是数组的数组。
+    var aList = [[1,2,3],['a','b','c']];
+    alert(aList[0][1]); //弹出2;
+    批量操作数组中的数据，需要用到循环语句 
+    
+    var aList = [[1,2,3],['a','b','c'],[4,5,6]];
+
+        alert(aList[0].length); //第一行的长度3
+        alert(aList[2].length); //第一行的长度3
+
+        /*通过行列取出元素，类似numpy中数组*/
+        /*也可以把大元素看成第一个坐标，大元素中的元素看做第二个坐标*/
+        alert(aList[0][0]); //弹出1
+        alert(aList[1][1]); //弹出b
+        alert(aList[2][2]); //弹出6   

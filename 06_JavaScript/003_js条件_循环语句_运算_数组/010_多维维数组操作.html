@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*创建一个多维数组，一个大元素看成一行，大元素中的元素看成列，3行3列*/
+
+        var aList = [[1,2,3],['a','b','c'],[4,5,6]];
+
+        alert(aList[0].length); //第一行的长度3
+        alert(aList[2].length); //第一行的长度3
+
+        /*通过行列取出元素，类似numpy中数组*/
+        /*也可以把大元素看成第一个坐标，大元素中的元素看做第二个坐标*/
+        alert(aList[0][0]); //弹出1
+        alert(aList[1][1]); //弹出b
+        alert(aList[2][2]); //弹出6
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
