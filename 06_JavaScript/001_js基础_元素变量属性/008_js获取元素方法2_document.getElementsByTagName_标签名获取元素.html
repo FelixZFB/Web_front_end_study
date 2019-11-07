@@ -15,19 +15,24 @@
             alert(aLi.length);
             /*单独设置一个li的样式*/
             aLi[0].style.backgroundColor = 'gold';
+
+
+            /*精确控制，多级选择,先定位到一个ul列表中，然后选择它下面的li*/
+            var oUl = document.getElementById('list1');
+            var aLi2 = oUl.getElementsByTagName('li');
+
+            alert(aLi2.length)
         }
 
     </script>
 </head>
 <body>
-    <ul class="list1">
-        <li></li>
-        <li></li>
+    <ul id="list1">
         <li></li>
         <li></li>
         <li></li>
     </ul>
-    <ul class="list2">
+    <ul id="list2">
         <li></li>
         <li></li>
         <li></li>
