@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入外部css样式-->
+    <link rel="stylesheet" type="text/css" href="../css/skin01.css" id="link01">
+    <script type="text/javascript">
+
+        /*加载模块*/
+        window.onload = function () {
+            /*获取要操作的三个元素*/
+            var oBtn01 = document.getElementById('btn01');
+            var oBtn02 = document.getElementById('btn02');
+            var oLink01 = document.getElementById('link01');
+
+            /*点击按钮，自动换肤，即自动切换引入的外部css样式*/
+            /*onclick点击元素内容调用执行函数*/
+            /*即要点击input标签按钮*/
+            oBtn01.onclick = function () {
+                oLink01.href = '../css/skin01.css';
+            };
+
+            oBtn02.onclick = function () {
+                oLink01.href = '../css/skin02.css';
+            };
+
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="皮肤1" id="btn01">
+    <input type="button" name="" value="皮肤2" id="btn02">
+</body>
+</html>
