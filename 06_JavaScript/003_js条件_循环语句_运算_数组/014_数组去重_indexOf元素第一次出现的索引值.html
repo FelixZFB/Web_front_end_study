@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        var aList = [2,1,4,2,5,6,5,5,3,3,4,2,1];
+
+        var aList2 = [];
+        var iLen = aList.length;
+
+        for(var i=0;i<iLen;i++){
+            if(aList.indexOf(aList[i])===i){
+                aList2.push(aList[i])
+            }
+        }
+
+        // i=0时候，aList[i]=2,索引值0,0=0,成立加入元素到空数组中
+        // i=2时候，aList[2]=4,索引值2,2=2,成立加入元素到空数组中
+        // i=3时候，aList[3]=2,索引值0,0!=2,元素排除掉
+
+        alert(aList2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

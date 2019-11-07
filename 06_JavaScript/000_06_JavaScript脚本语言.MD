@@ -239,7 +239,7 @@
     aList.reverse();
     alert(aList);  // 弹出4,3,2,1
     
-    7、indexOf() 返回数组中元素第一次出现的索引值
+    7、indexOf() 返回数组中元素第一次出现的索引值(利用该属性可以去除掉重复的元素)
     var aList = [1,2,3,4,1,3,4];
     alert(aList.indexOf(1));
     
@@ -266,3 +266,18 @@
         alert(aList[0][0]); //弹出1
         alert(aList[1][1]); //弹出b
         alert(aList[2][2]); //弹出6   
+        
+## 8. 循环语句
+-  for循环
+    for(var i=0;i<len;i++)
+    {
+        ......
+    }
+
+- while循环 
+    var i=0;
+    while(i<8){
+        ......
+        i++;
+    }
+  
