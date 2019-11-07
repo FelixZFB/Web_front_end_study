@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            /*获取input的值*/
+            var oInput01 = document.getElementById('input01');
+            var oInput02 = document.getElementById('input02');
+            var oBtn = document.getElementById('btn');
+
+            /*点击弹出结果*/
+            oBtn.onclick = function () {
+                /*字符串转换为数字，不转换就是字符串拼接了*/
+                var sVal01 = parseInt(oInput01.value); /*获取input输入进去的值*/
+                var sVal02 = parseInt(oInput02.value);
+                iSum = sVal01 + sVal02;  /*求和，除后留下的数*/
+                alert(iSum);
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="input01">
+    +
+    <input type="text" name="" id="input02">
+    =
+    <input type="button" name="" value="点击求和" id="btn">
+</body>
+</html>

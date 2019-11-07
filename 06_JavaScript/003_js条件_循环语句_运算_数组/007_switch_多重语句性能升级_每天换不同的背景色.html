@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            /*多重条件判断*/
+            var iWeek = 3;
+            var oBody = document.getElementById('body01');
+
+            /*/!*根据变量的值，确定背景色是什么*!/
+            if (iWeek===1) {
+                oBody.style.backgroundColor = 'gold';
+            }
+            else if (iWeek===2) {
+                oBody.style.backgroundColor = 'green';
+            }
+            else if (iWeek===3) {
+                oBody.style.backgroundColor = 'red';
+            }
+            else if (iWeek===4) {
+                oBody.style.backgroundColor = 'lightblue';
+            }
+            else if (iWeek===5) {
+                oBody.style.backgroundColor = 'lightgreen';
+            }
+            else {
+                oBody.style.backgroundColor = 'pink';
+            }*/
+
+            /*相对于多重语句，性能更高*/
+            switch (iWeek) {
+                case 1: /*判断iWeek是否等于1*/
+                    oBody.style.backgroundColor = 'gold';
+                    break; /*结束整体的运行*/
+                case 2: /*判断iWeek是否等于1*/
+                    oBody.style.backgroundColor = 'green';
+                    break; /*结束整体的运行*/
+                case 3: /*判断iWeek是否等于1*/
+                    oBody.style.backgroundColor = 'blue';
+                    break; /*结束整体的运行*/
+                case 4: /*判断iWeek是否等于1*/
+                    oBody.style.backgroundColor = 'red';
+                    break; /*结束整体的运行*/
+                default:
+                    oBody.style.backgroundColor = 'pink';
+            }
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <div id="body01" style="width: 500px; height: 500px; background-color: lightyellow">
+        我是一个div盒子
+    </div>
+</body>
+</html>
