@@ -18,7 +18,7 @@
             // oDiv.style.color = sValue; 该句可以修改属性
 
             /*元素内置属性用变量代替，就需要使用[]操作*/
-            oDiv.style[sMystyle] = sValue
+            oDiv.style[sMystyle] = sValue /*此处要用中括号，不能使用.，使用变量作为元素属性*/
         };
 
 

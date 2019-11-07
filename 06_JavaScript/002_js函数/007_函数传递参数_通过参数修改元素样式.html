@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            /*函数传递参数*/
+            /*形参a*/
+            function fnMyalert(a) {
+                alert(a);
+            }
+            /*hello!是实参*/
+            fnMyalert('hello!');
+
+
+            /*传递多个参数，修改样式*/
+            function fnChangestyle(mystyle, val) {
+                var oDiv = document.getElementById('div1');
+                /*改变样式*/
+                /*此处要用中括号，不能使用.，使用变量替换内置属性，直接使用mystyle会直接去内置属性找，但是找不到就跳过了*/
+                oDiv.style[mystyle] = val;
+            }
+            /*传递多个实参，调用函数*/
+            fnChangestyle('fontSize', '30px');
+            fnChangestyle('color', 'red');
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1">
+        我是一个div元素
+    </div>
+</body>
+</html>
