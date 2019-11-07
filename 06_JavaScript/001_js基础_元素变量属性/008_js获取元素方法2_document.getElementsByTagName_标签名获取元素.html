@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function(){
+            // 获取li标签
+            var aLi = document.getElementsByTagName('li');
+            // aLi.style.backgroundColor = 'gold'; // 出错！不能同时设置多个li
+
+            /*查看获取了多少个li*/
+            alert(aLi.length);
+            /*单独设置一个li的样式*/
+            aLi[0].style.backgroundColor = 'gold';
+        }
+
+    </script>
+</head>
+<body>
+    <ul class="list1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="list2">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
