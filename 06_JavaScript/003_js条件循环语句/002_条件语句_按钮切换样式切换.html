@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 200px;
+            height: 500px;
+            background-color: gold;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var oBtn = document.getElementById('btn01');
+            var oDiv = document.getElementById('box01');
+
+            /*oDiv.style.display默认是去标签的属性里面找，
+            div默认是块，但是标签里面没有style样式，
+            就没有display属性对应的值，因此是找不到的display的值*/
+            alert(oDiv.style.display); /*弹出是空，什么都没有*/
+
+            /*点击input的按钮，调用函数，显示和隐藏模块*/
+            oBtn.onclick = function () {
+                /*判断oDiv的原始属性是否为none或者为空*/
+                /*==本来是判断，但是pycharm里面推荐使用===和!==,||表示或者*/
+                if (oDiv.style.display === 'none' || oDiv.style.display === '') {
+                    oDiv.style.display = 'block';
+                }
+                else {
+                    oDiv.style.display = 'none';
+                }
+
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="切换样式" id="btn01">
+    <div class="box" id="box01"></div>
+</body>
+</html>
