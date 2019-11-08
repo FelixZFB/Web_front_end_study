@@ -294,4 +294,63 @@
      - 参考001文件夹中008案例   
      
      
-## 10. 字符串处理   
+## 10. 字符串处理
+- 字符串转换及处理
+
+    1、字符串合并操作：“ + ”
+        var iNum01 = 12;
+        var iNum02 = 24;
+        var sNum03 = '12';
+        var sTr = 'abc';
+        alert(iNum01+iNum02);  //弹出36
+        alert(iNum01+sNum03);  //弹出1212 数字和字符串相加等同于字符串相加
+        alert(sNum03+sTr);     // 弹出12abc
+
+    2、parseInt() 将数字字符串转化为整数
+        var sNum01 = '12';
+        var sNum02 = '24';
+        var sNum03 = '12.32';
+        alert(sNum01+sNum02);  //弹出1224
+        alert(parseInt(sNum01)+parseInt(sNum02))  //弹出36
+        alert(sNum03)   //弹出数字12 将字符串小数转化为数字整数
+
+    3、parseFloat() 将数字字符串转化为小数
+        var sNum03 = '12.32'
+        alert(parseFloat(sNum03));  //弹出 12.32 将字符串小数转化为数字小数
+        
+    4、split() 把一个字符串分隔成字符串组成的数组
+        var sTr = '2017-4-22';
+        var aRr = sTr.split("-");
+        var aRr2= sTr.split("");
+    
+        alert(aRr);  //弹出['2017','4','2']
+        alert(aRr2);  //弹出['2','0','1','7','-','4','-','2','2']
+    
+    5、charAt() 获取字符串中的某一个字符
+        var sId = "#div1";
+        var sTr = sId.charAt(0);
+        alert(sTr); //弹出 #
+    
+    6、indexOf() 查找字符串是否含有某字符
+        var sTr = "abcdefgh";
+        var iNum = sTr.indexOf("c");
+        alert(iNum); //弹出2 弹出的是字符串对应的索引值，不存在就是弹出-1
+    
+    7、substring() 截取字符串 用法： substring(start,end)（不包括end）
+        var sTr = "abcdefghijkl";
+        var sTr2 = sTr.substring(3,5);
+        var sTr3 = sTr.substring(1);
+    
+        alert(sTr2); //弹出 de
+        alert(sTr3); //弹出 bcdefghijkl
+    
+    8、toUpperCase() 字符串转大写
+        var sTr = "abcdef";
+        var sTr2 = sTr.toUpperCase();
+        alert(sTr2); //弹出ABCDEF
+    
+    9、toLowerCase() 字符串转小写
+        var sTr = "ABCDEF";
+        var sTr2 = sTr.toLowerCase();
+        alert(sTr2); //弹出abcdef
+           
