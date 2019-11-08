@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var oDiv = document.getElementById('div1');
+
+            function fnTimego(){
+                var now = new Date();  // 获取当前详细时间
+                var year = now.getFullYear();  //
+                var month = now.getMonth()+1; // 月份默认是0到11月，需要加上1
+                var date = now.getDate(); // 日
+                var week = now.getDay(); //  星期几 0到6 星期天是0
+                var hour = now.getHours(); // 时
+                var minute = now.getMinutes(); // 分
+                var second = now.getSeconds(); // 秒
+                var sDate = '当前时间是：'+ year + '年' + month +'月'+date+'日 ' + fnToweek(week) + ' ' + fnTudou(hour) + ':' + fnTudou(minute) + ':' + fnTudou(second);
+                oDiv.innerHTML = sDate; // 当前时间是：2019年11月8日 星期五 20:42:56
+            }
+
+            fnTimego(); // 打开网页自动调用一次，后面每隔1秒自动调用一次，解决定时器刚开始1秒空白问题
+
+            /*每隔1秒调用一次函数，就可以连续显示当前的时间*/
+            setInterval(fnTimego,1000);
+
+            /*将星期的0-6数字转换为汉字一二三四五六日*/
+            function fnToweek(n) {
+                if(n===0){
+                    return '星期日';
+                }
+                else if(n===1){
+                    return '星期一';
+                }
+                else if(n===2){
+                    return '星期二';
+                }
+                else if(n===3){
+                    return '星期三';
+                }
+                else if(n===4){
+                    return '星期四';
+                }
+                else if(n===5){
+                    return '星期五';
+                }
+                else {
+                    return '星期六';
+                }
+            }
+
+            /*小时分钟秒一位数字，转变为两位数字，小于10的都前面加个字符串0*/
+            function fnTudou(n){
+                if(n<10)
+                {
+                    return '0'+n;
+                }
+                else
+                {
+                    return n;
+                }
+            }
+
+        }
+
+    </script>
+    <style type="text/css">
+
+        .box{
+            width: 800px;
+            height: 400px;
+            line-height: 400px;
+            font-size: 30px;
+            color: blue;
+            text-align: center;
+            margin: 50px auto 0;
+            border: 2px solid red;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1" class="box"></div>
+</body>
+</html>
