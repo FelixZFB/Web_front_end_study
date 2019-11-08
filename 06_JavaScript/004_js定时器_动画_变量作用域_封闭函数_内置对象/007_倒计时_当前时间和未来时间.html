@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var oDiv = document.getElementById('div1');
+
+            function timeleft() {
+                var sNow = new Date(); // 获取系统时间，时间开发时读取后台服务器时间
+                var sFuture = new Date(2019,11,10,24,0,0);
+
+                var sLeft = parseInt((sFuture-sNow)/1000); // 直接减的结果是毫秒，除以1000得到秒，取整数
+                var iDay = parseInt(sLeft/86400); // 整数天
+                var iHour = parseInt(sLeft%86400/3600); // 天数除了的余数，计算小时
+                var iMin = parseInt(sLeft%86400%3600/60); // 分钟数
+                var iSec = sLeft%60; //总秒数除以60就是剩下的秒数
+
+                sTime = '距离2019年11月11日零点还剩下：'+ iDay +'天' + iHour + '时' + iMin + '分' + iSec + '秒';
+                oDiv.innerHTML = sTime;
+            }
+
+            timeleft(); // 先运行一次，去掉定时器开始运行前的网页空白
+            setInterval(timeleft,1000); // 每一秒运行一次
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
