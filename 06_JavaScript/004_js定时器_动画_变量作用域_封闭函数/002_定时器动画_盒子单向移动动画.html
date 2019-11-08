@@ -16,7 +16,7 @@
 
             function moving() {
                 iLeft += 2;
-                oDiv.style.left = iLeft + 'px';
+                oDiv.style.left = iLeft + 'px'; /*数字和字符串相加就是字符串拼接*/
                 if (iLeft > 700){
                     clearInterval(timer); // 大于700px就关闭定时器，函数不在执行
                 }
