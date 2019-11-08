@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        定时器：
+        setTimeout  只执行一次的定时器
+        clearTimeout 关闭只执行一次的定时器
+        setInterval  反复执行的定时器
+        clearInterval 关闭反复执行的定时器
+        */
+
+        function myalert() {
+            alert('hello world!');
+        }
+
+        // 只执行一次的定时器，第一个参数要定时执行的函数名，或者匿名函数，第二个参数是毫秒，不写单位
+        var time01 = setTimeout(myalert, 2000);
+        // 关闭只执行一次的定时器，上面定时器2秒后才执行，还没有执行，已经被关闭了
+        clearTimeout(time01);
+
+        // 反复执行的定时器,页面不关闭，会反复弹出执行
+        var time02 = setInterval(myalert, 2000);
+        clearInterval(time02);
+
+
+        // 匿名函数，函数直接写在定时器内部
+        var time03 = setTimeout(function () {
+            alert('hello!')
+        },2000)
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

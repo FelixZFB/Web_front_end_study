@@ -298,6 +298,7 @@
 - 字符串转换及处理
 
     1、字符串合并操作：“ + ”
+        "+" 有特殊情况，看下面例子
         var iNum01 = 12;
         var iNum02 = 24;
         var sNum03 = '12';
@@ -353,4 +354,10 @@
         var sTr = "ABCDEF";
         var sTr2 = sTr.toLowerCase();
         alert(sTr2); //弹出abcdef
-           
+
+
+## 11. 调试程序方法
+- 调试程序的方法
+    1、alert
+    2、console.log
+    3、document.title
