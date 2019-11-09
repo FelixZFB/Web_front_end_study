@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*预先加载模块*/
+        window.onload = function () {
+
+            var oBody = document.getElementById('body01');
+
+            // 获取url地址的参数部分,html后面的部分一般就是参数
+            var sData = window.location.search;
+
+            // 参数不为空，就弹出参数部分
+            if(sData !== ''){
+                alert(sData);
+                // 一般参数只需要使用=后面的部分，使用等号分割然后取出来
+                var aRr = sData.split('=');
+                var iNum = aRr[1]; // 等号右边单独拿出来
+                alert(iNum);
+
+                // 可以根据获取到的不同参数，然后实现不同的功能
+                if(iNum==='sr98strkocqlmrnvdouga6elkk'){
+                    oBody.style.backgroundColor = 'gold';
+                }
+                else{
+                    oBody.style.backgroundColor = 'green';
+                }
+            }
+
+
+
+        }
+
+    </script>
+
+
+
+</head>
+<body id="body01">
+    <input type="button" name="" value="跳转" id="btn01">
+</body>
+</html>

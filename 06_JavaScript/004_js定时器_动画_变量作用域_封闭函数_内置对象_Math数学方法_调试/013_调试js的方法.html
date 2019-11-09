@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        var iNum04 = 234;
+
+        window.onload = function () {
+
+            var oBody = document.getElementById('body01');
+
+            // 调试方法1：alert()弹出，优点直观
+            // alert会阻止程序向下运行
+            var iNum01 = 12;
+            // alert(iNum01); // 弹出12，确定后，页面才变成金色
+
+            // 调试方法2：console.log() 不会阻止程序运行
+            // 火狐控制台，可以看见三个值都已经输出了
+            // 控制台里面可以直接访问script下面的全局变量，但是局部变量访问不到
+            // 最顶部的iNum04直接控制台输入iNum04就可以输出234
+
+            console.log(iNum01);
+
+            oBody.style.backgroundColor = 'gold';
+
+            var iNum02 = 24;
+            // alert(iNum02);
+            console.log(iNum02);
+
+            var iNum03 = 48;
+            console.log(iNum03);
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+</head>
+<body id="body01">
+
+</body>
+</html>

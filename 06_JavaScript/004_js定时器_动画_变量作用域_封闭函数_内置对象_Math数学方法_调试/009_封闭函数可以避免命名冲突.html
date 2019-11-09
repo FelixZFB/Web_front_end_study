@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        var iNum01 = 12;
+        function myalert(){
+            alert('hello!');
+        }
+
+        /*封闭函数*/
+        (function(){
+            var iNum01 = 24;
+            function myalert(){
+                alert('hello!world');
+            }
+            alert(iNum01);
+            myalert()
+        })();
+
+
+        alert(iNum01);
+        myalert();
+
+        // 先弹出封闭函数中内容，接着弹出外部函数的内容
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

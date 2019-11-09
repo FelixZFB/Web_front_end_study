@@ -14,6 +14,7 @@
                 var sFuture = new Date(2019,11,10,24,0,0);
 
                 var sLeft = parseInt((sFuture-sNow)/1000); // 直接减的结果是毫秒，除以1000得到秒，取整数
+                alert(sLeft);
                 var iDay = parseInt(sLeft/86400); // 整数天
                 var iHour = parseInt(sLeft%86400/3600); // 天数除了的余数，计算小时
                 var iMin = parseInt(sLeft%86400%3600/60); // 分钟数

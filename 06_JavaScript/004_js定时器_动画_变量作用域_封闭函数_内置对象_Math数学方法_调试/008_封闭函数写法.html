@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        // 函数正常定义执行步骤，先定义，后调用
+        function myalert() {
+            alert('hello world!');
+        }
+
+        myalert();
+
+        // 可以修改为以下格式，就变成了封闭函数
+        // 函数定义用括号包起来，然后直接括号调用
+        // 封闭函数是一个独立的空间，内部可以定义专属于自己的变量函数，
+        // 对外界没有影响，外界也不能访问
+        (function myalert() {
+            alert('hello world!');
+        })();
+
+
+        // 封闭函数不用小括号，可以前面加上!或~
+        !function myalert(){
+            alert('hello!');
+        }()
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>
