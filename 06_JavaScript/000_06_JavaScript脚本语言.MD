@@ -361,7 +361,7 @@
     1、alert  运行到该处函数会暂停运行，必须点击页面确定，然后继续向下运行
     2、console.log  函数一直向下运行，浏览器console中查看结果
         // 火狐控制台里面可以直接访问script下面的全局变量，但是局部变量访问不到
-    3、document.title
+    3、document.title 改变网页标题的值，调试的变量直接替换了网页的标题，方法查看
     - 参考实例
     
 
@@ -402,7 +402,7 @@
     window.location.search //获取地址参数部分
     window.location.hash //获取页面锚点或者叫哈希值
 
-- 3、Math
+## 15. Math
 - Math是内置的一个实例对象，有很多数学方法   
     Math.random 获取0-1的随机数
     Math.floor 向下取整 5.6 就是5 没有四舍五入，直接向上或向下
