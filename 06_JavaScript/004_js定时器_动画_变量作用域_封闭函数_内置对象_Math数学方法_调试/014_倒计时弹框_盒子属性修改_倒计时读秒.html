@@ -61,10 +61,24 @@
 			var oPop = document.getElementById('pop_con');
 			var oBtn = document.getElementById('btn');
 			var oPop_tip = document.getElementById('pop_tip');
+			var iTime = 5; /*全局变量，开始值就是5*/
 
 
 			oBtn.onclick = function () {
 				oPop.style.display = 'block'; /*点击弹框，显示出pop_con弹框内容，本来设置的是none隐藏*/
+
+				setInterval(fnDaojishi,1000); /*定时器，每隔1秒执行下面函数一次*/
+
+				function fnDaojishi() {
+					iTime--;
+					oPop_tip.innerHTML = '还有' + iTime + '秒中关闭弹框';
+					if (iTime===0){
+						oPop.style.display = 'none'; /*时间为0的时候，隐藏掉弹框*/
+						clearInterval(timer);
+						iTime = 5;
+						oPop_tip.innerHTML = '还有秒中关闭弹框';
+					}
+				}
 			}
 
 
