@@ -39,6 +39,15 @@
 			background-color:gold;
 			margin:10px;
 			height:40px;
+			text-align: center;
+		}
+
+		.popup p{
+			background-color:gold;
+			margin:10px;
+			height:40px;
+			line-height: 40px;
+			text-align: center;
 		}
 
 		.mask{
@@ -71,12 +80,12 @@
 
 				function fnDaojishi() {
 					iTime--;
-					oPop_tip.innerHTML = '还有' + iTime + '秒中关闭弹框';
+					oPop_tip.innerHTML = '还有' + iTime + '秒钟关闭弹框';
 					if (iTime===0){
 						oPop.style.display = 'none'; /*时间为0的时候，隐藏掉弹框*/
 						clearInterval(timer);
 						iTime = 5;
-						oPop_tip.innerHTML = '还有秒中关闭弹框';
+						oPop_tip.innerHTML = '还有5秒钟关闭弹框';
 					}
 				}
 			}
