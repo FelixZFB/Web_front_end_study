@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入jquery-->
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            alert('原生JS弹出的' + oDiv);
+        }
+
+
+        /*使用jquery的写法，$(document).ready相当于上面的window.onload*/
+        /*表示当前页面节点都加载完毕，才执行ready括号里面的内容*/
+        $(document).ready(function () {
+            var $div = $('#div1');
+            alert('jquery弹出的' + $div); /*jquery写在后面但是弹出来在前面，速度更快*/
+        })
+
+        /*jquery上面ready完整写法的简写,$(document).ready()简写为$()*/
+        $(function () {
+            var $div = $('#div1');
+            alert('jquery简写弹出的' + $div);
+        })
+
+        /*ready比onload快的原因：*/
+        /*onload标签和标签里面数据都加载完毕(类似于网页渲染)才开始运行内部函数，*/
+        /*ready只要标签加载完毕就开始运行了，速度更快*/
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+</body>
+</html>

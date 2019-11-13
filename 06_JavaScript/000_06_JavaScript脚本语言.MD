@@ -1,7 +1,7 @@
 ## Web前端学习笔记 ##
 
 
-## 第五部分：JavaScript
+## 第六部分：JavaScript
 
 
 ## 1. JavaScript介绍

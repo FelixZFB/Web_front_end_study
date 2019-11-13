@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入jQuery-->
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        /*js代码加载模块*/
+        $(function () {
+
+            /*jQuery里面的选择器和css样式选择器写法一样*/
+            var $div = $('#div1');
+            var $div2 = $('.box');
+            var $li = $('.list li');
+
+            /*修改样式直接使用css(),原生js使用的style*/
+            $div.css({'color':'red'});
+            /*jQuery可以一次修改多个标签的样式，原生js需要使用for循环一个一个修改*/
+            $div2.css({'color':'blue'});
+            /*带-的样式可以写成原始的-形式，也可以写成驼峰式，原始js需要使用驼峰式*/
+            $li.css({'color':'yellow', 'background-color':'green'});
+
+        })
+
+    </script>
+    <style type="text/css">
+        .box{
+            background-color: gold;
+        }
+        .list li{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">这是一个id的标签</div>
+    <div class="box">这是一个class样式的标签</div>
+    <div class="box">这是一个class样式的标签</div>
+    <!--ul.list>li{$}*8-->
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>
