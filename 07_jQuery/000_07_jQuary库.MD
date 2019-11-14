@@ -118,4 +118,39 @@
     $("#div1").removeClass("divClass")  //移除id为div1的对象的class名为divClass的样式
     $("#div1").removeClass("divClass divClass2") //移除多个样式
     $("#div1").toggleClass("anotherClass") //重复切换anotherClass样式
-               
+ 
+ 
+## 5. jQuery特殊效果-动画
+- 常用动画
+    fadeOut() 淡出
+    fadeToggle() 切换淡入淡出
+    hide() 隐藏元素
+    show() 显示元素
+    toggle() 切换元素的可见状态
+    slideDown() 向下展开
+    slideUp() 向上卷起
+    slideToggle() 依次展开或卷起某个元素  
+    
+    - 传入动画播放时间，swing不写就是默认该参数，可以传入一个回调函数
+    - 回调函数是动画执行完毕后要执行的函数
+    $btn.click(function(){
+
+        $('#div1').fadeIn(1000,'swing',function(){
+            alert('动画结束了!');
+        });
+
+    });
+    
+## 6. jquery链式调用
+- 多个功能可以写在一句代码中，比如009案例
+    $(this).addClass('current').siblings().removeClass('current');
+    $div.eq($(this).index()).addClass('active').siblings().removeClass('active');
+- jquery链式调用可以提高效率
+- 比如下面就是一个链式调用：(可以换行书写，中间都是.连接)
+    $('#div1') // id为div1的元素
+    .children('ul') //该元素下面的ul子元素
+    .slideDown('fast') //高度从零变到实际高度来显示ul元素
+    .parent()  //跳到ul的父元素，也就是id为div1的元素
+    .siblings()  //跳到div1元素平级的所有兄弟元素
+    .children('ul') //这些兄弟元素中的ul子元素
+    .slideUp('fast');  //高度实际高度变换到零来隐藏ul元素
