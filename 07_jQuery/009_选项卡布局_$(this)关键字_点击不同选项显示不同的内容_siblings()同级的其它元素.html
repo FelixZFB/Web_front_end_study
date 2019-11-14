@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $btn = $('.btns input'); // 选中三个input标签
+            var $div = $('.cons div');
+
+            $btn.click(function () {
+                // 当前点击那个元素，$(this)关键字就指的是那个元素
+                // siblings()表示选择除本input的其它同级input元素
+                // 该元素添加current样式，除该元素以外都移current样式
+                $(this).addClass('current').siblings().removeClass('current');
+                // alert($(this).index()); // 弹出所点的那个元素的索引值，进行验证
+
+                // 使用input的索引值来选择对应的第几个div来对应进行添加和移除样式
+                $div.eq($(this).index()).addClass('active').siblings().removeClass('active');
+
+            })
+
+        })
+
+    </script>
+    <style type="text/css">
+
+        .btns input{
+            width: 100px;
+            height: 40px;
+            border: 0;
+            background-color: lightcyan;
+        }
+
+        .btns .current{
+            background-color: gold;
+        }
+
+        .cons div{
+            width: 500px;
+            height: 300px;
+            background-color: gold;
+            line-height: 300px;
+            text-align: center;
+            font-size: 50px;
+            display: none; /*默认不显示该模块，隐藏后不占据位置*/
+        }
+
+        .cons .active{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="btns">
+        <input type="button" name="" value="01" class="current">
+        <input type="button" name="" value="02">
+        <input type="button" name="" value="03">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="cons">
+        <div class="active">选项卡1的内容</div>
+        <div>选项卡2的内容</div>
+        <div>选项卡3的内容</div>
+    </div>
+</body>
+</html>
