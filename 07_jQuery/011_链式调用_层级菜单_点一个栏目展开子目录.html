@@ -11,8 +11,8 @@
 			font-family:'Microsoft Yahei';
 		}
 		body,ul{
-			margin:0px;
-			padding:0px;
+			margin:0;
+			padding:0;
 		}
 
 		ul{list-style:none;}
@@ -54,7 +54,7 @@
 
 
 		.menu li ul{
-			display:none;
+			display:none; /*除了第一个ul是显示的，其它ul开始都是隐藏的，ul的高度是由内容撑开的*/
 		}
 
 		.menu li ul.current{
@@ -62,7 +62,7 @@
 		}
 
 		.menu li ul li a:hover{
-			background-color:#f6b544;
+			background-color:#f6b544; /*鼠标放在子菜单栏目上变色*/
 		}
 
 
@@ -74,15 +74,15 @@
 
 		$(function(){
 
+		    // 选择所有的一级菜单栏，点击任何一个一级菜单栏都可以执行函数功能
 			$('.level1').click(function(){
 
-				//当前点击的元素紧挨的同辈元素向下展开，再跳到此元素的父级(li),再跳到此父级的其他的同辈元素(li),选择其他同辈元素(li)的子元素ul，然后将它向上收起。
-
-				// 通过stop() 可以修正反复点击导致的持续动画的问题
+			    // 展开收起就是修改了display的属性
+				// 当前点击的元素紧挨的同辈元素(next)ul向下展开收起(slideToggle)，parent()再跳到此元素的父级(li),
+                // siblings()再跳到此父级的其他的同辈元素(li),选择其他同辈元素(li)的子元素(children)ul，然后将它们都向上收起(slideUp)。
+                // 自己展开，其它收起，每次就只显示一个展开的二级菜单
+				// 通过stop() 可以修正反复点击导致的持续动画的问题，反复点击一级菜单，然后不点击，动画就会自己一直切换
 				$(this).next().stop().slideToggle().parent().siblings().children('ul').slideUp();
-
-
-
 
 			})
 
@@ -94,7 +94,8 @@
 	<ul class="menu">
 		<li>
 			<a href="#" class="level1">水果</a>
-			<ul class="current">
+            <!--除了第一个ul是显示的，其它ul开始都是隐藏的，ul的高度是由内容撑开的-->
+			<ul class="current"> <!--默认打开时候该ul子级菜单是显示出来的，其它都是隐藏的-->
 				<li><a href="#">苹果</a></li>
 				<li><a href="#">梨子</a></li>
 				<li><a href="#">葡萄</a></li>
