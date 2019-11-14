@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        
+        $(function () {
+
+            var $div = $('div'); // 选择所有的div
+            $div.css({'background-color':'gold'});
+
+            var $div1 = $('div').has('p'); // 选择含有p标签的div
+            $div1.css({'background-color':'blue', 'font-size':'30px'});
+
+            var $div2 = $('div').eq(5); // 选择第6个div,最常用,编号从0开始
+            $div2.css({'background-color':'green', 'text-indent':'30px'});
+
+            var $div3 = $('div').filter('.box'); // 选择样式为box的div
+            $div3.css({'background-color':'pink', 'text-indent':'30px'});
+
+            // 判断是否选择到了元素
+            // jquery有容错机制，即使没有找到元素，也不会出错，
+            // 可以用length属性来判断是否找到了元素,length等于0，就是没选择到元素，length大于0，就是选择到了元素。
+
+        })
+        
+    </script>
+</head>
+<body>
+    <!--div{$}*8-->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div><p>4</p></div>
+    <div>5</div>
+    <div>6</div>
+    <div class="box">7</div>
+    <div>8</div>
+</body>
+</html>

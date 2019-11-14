@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $li  = $('.list li');
+            alert($li.length); // 弹出8，代表有8个li
+
+            alert($li.eq(3).index()); // 弹出3,第四个li的索引值
+            alert($li.filter('.my_li').index()); // 弹出4,有my_li样式的li
+
+        })
+
+    </script>
+</head>
+<body>
+    <!--ul.list>li{$}*8-->
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="my_li">5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

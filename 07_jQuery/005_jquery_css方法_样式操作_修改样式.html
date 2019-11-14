@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $div1 = $('#div1');
+            var sTr = $div1.css('font-size'); /*只写名称，获取样式的属性值*/
+            alert(sTr);
+
+            // 使用字典，传入样式名称和值，就是写入属性，修改样式
+            $div1.css({'color':'red', 'font-size':'30px', 'background-color':'pink'});
+
+            var oDiv = document.getElementById('box');
+            alert(oDiv.style.fontSize); // 原生js是不能读取没有定义css属性的值，jQuery可以
+            // 如果行间写了style="font-size:20px;"原生js可以读取
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="div1">div元素</div>
+</body>
+</html>

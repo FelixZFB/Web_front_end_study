@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            
+            var $btn = $('#btn');
+            var $div1 = $('.box');
+
+            // 点击元素执行的功能,原生js使用的是onclick
+            // 注意写法不同，匿名函数写在等号右边，jQuery写在click括号里面
+            // 原生js: oBtn.onclick = function(){oDiv.style.color = 'red';}
+            $btn.click(function () {
+
+                // 先判断是否有该css样式，有就移除，没有加上，实现切换样式效果
+                /*if($div1.hasClass('col01')){
+                    $div1.removeClass('col01'); // 有的话就移除
+                }
+                else {
+                    $div1.addClass('col01'); // 没有的话就加上
+                }*/
+
+                // 上面两句可以简化为下面一句代码，不断点击就可以不断切换
+                $div1.toggleClass('col01'); // 直接切换样式，重复切换anotherClass样式
+
+            })
+
+
+
+        })
+
+    </script>
+    <style type="text/css">
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+
+        .col01{
+            background-color: red;
+            font-size: 32px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <input type="button" name="" value="切换样式" id="btn"> 
+    <div class="box">div元素</div>
+</body>
+</html>

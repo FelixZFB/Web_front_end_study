@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $div1 = $('.box');
+            // 添加移除样式，只写样式名，没有.点,只有选择器有.
+            $div1.addClass('big'); // 再原来样式基础上，给div1追加样式
+            $div1.removeClass('red'); // 移除div1里面的样式
+
+
+        })
+
+    </script>
+    <style type="text/css">
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+        }
+
+        .big{
+            font-size: 32px;
+        }
+
+        .red{
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box red">div元素</div>
+</body>
+</html>
