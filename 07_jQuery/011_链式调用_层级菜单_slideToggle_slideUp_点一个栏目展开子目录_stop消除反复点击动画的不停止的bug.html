@@ -84,6 +84,8 @@
 				// 通过stop() 可以修正反复点击导致的持续动画的问题，反复点击一级菜单，然后不点击，动画就会自己一直切换
 				$(this).next().stop().slideToggle().parent().siblings().children('ul').slideUp();
 
+				// stop就是点击时候停止前面的动画，开始当前动画
+
 			})
 
 		})

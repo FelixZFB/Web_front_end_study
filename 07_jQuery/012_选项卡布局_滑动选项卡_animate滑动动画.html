@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $btn = $('.btns input'); // 选中三个input标签
+            var $slides = $('.cons .slides');
+
+            $btn.click(function () {
+                // 当前点击那个元素，$(this)关键字就指的是那个元素
+                // siblings()表示选择除本input的其它同级input元素
+                // 该元素添加current样式，除该元素以外都移current样式,点击那个变成金色，其它恢复灰色
+                $(this).addClass('current').siblings().removeClass('current');
+                // alert($(this).index()); // 弹出所点的那个元素的索引值，进行验证
+
+                // 第一个选项卡left是0，第二个是-500px，第三是-1000px
+                // 点击哪一个的索引值，正好是0 1 2，有容错机制，此处px可以不用写
+                // 点击时候就瞬间修改left移动的值
+                // $slides.css({'left':-500*$(this).index()});
+
+                // animate动画和css3中的animation动画一样，实际是两个状态之间的切换效果
+                // css直接换成animate就改成了动画,默认是滑动效果
+                $slides.animate({'left':-500*$(this).index()});
+
+
+
+
+
+            })
+
+        })
+
+    </script>
+    <style type="text/css">
+
+        .btns input{
+            width: 100px;
+            height: 40px;
+            border: 0;
+            background-color: lightcyan;
+        }
+
+        .btns .current{
+            background-color: gold;
+        }
+
+        .cons{
+            width: 500px;
+            height: 300px;
+            overflow: hidden; /*将溢出的两个div隐藏*/
+            position: relative; /*用于子元素的定位参考*/
+        }
+
+        .slides{
+            width: 1500px;
+            height: 300px;
+            position: absolute;
+            left: 0; /*修改left的值，就可以产生滑动的效果*/
+            top: 0;
+
+        }
+
+        .cons .slides div{
+            width: 500px;
+            height: 300px;
+            background-color: gold;
+            line-height: 300px;
+            text-align: center;
+            font-size: 50px;
+            /*display: none; !*默认不显示该模块，隐藏后不占据位置*!*/
+            float: left; /*排在一行*/
+        }
+
+        .cons .slides .active{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="btns">
+        <input type="button" name="" value="01" class="current">
+        <input type="button" name="" value="02">
+        <input type="button" name="" value="03">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="cons">
+        <div class="slides">
+            <div class="active">选项卡1的内容</div>
+            <div>选项卡2的内容</div>
+            <div>选项卡3的内容</div>
+        </div>
+    </div>
+</body>
+</html>

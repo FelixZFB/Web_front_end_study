@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <style type="text/css">
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $box = $('.box');
+
+            $('#btn').click(function () {
+
+                // 直接修改样式，瞬间修改直接用css
+                // 要显示修改的动画效果，css换成animate即可
+                // 先写动画的终点状态，然后动画时间，可以传入一个回调函数，动画结束后执行的函数
+                // 不断的写回调函数，动画可以一直写下去
+                // 先变宽，然后变高，然后逐渐透明
+                $box.stop().animate({'width':'600px'},2000,function () {
+                    $box.animate({'height':'600px'},2000,function () {
+                        $box.animate({'opacity':0},3000)
+                    })
+                });
+
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="点击动画" id="btn">
+    <div class="box"></div>
+</body>
+</html>
