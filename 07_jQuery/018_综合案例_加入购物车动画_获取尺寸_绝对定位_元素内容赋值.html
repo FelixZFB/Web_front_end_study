@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .chart{
+            width: 150px;
+            height: 50px;
+            border: 2px solid #000000;
+            text-align: center;
+            line-height: 50px;
+            float: right;
+            margin-right: 100px;
+            margin-top: 50px;
+        }
+
+        .chart em{
+            font-style: normal;
+            color: red;
+            font-weight: bold;
+        }
+
+        .add{
+            width: 100px;
+            height: 50px;
+            background-color: green;
+            color: white;
+            border: 0;
+            float: left;
+            margin-top: 300px;
+            margin-left: 300px;
+        }
+
+        .point{
+            width: 16px;
+            height: 16px;
+            background-color: red;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: none; /*默认隐藏着小按钮*/
+            z-index: 999; /*最大索引，权限最高，页面最顶层*/
+            border-radius: 50%; /*倒圆角，小圆点*/
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $chart = $('.chart'); // 购物车
+            var $count = $('.chart em'); // 购物车中的数字
+            var $btn = $('.add'); // 加入购物车
+            var $point = $('.point'); // 点击加入购物车后移动到购物车的小按钮
+
+            // 获取这个加入购物车盒子的宽度和高度
+            var $w01 = $btn.outerWidth();
+            var $h01 = $btn.outerHeight();
+
+            var $w02 = $chart.outerWidth();
+            var $h02 = $chart.outerHeight();
+
+            // 点击加入购物车按钮时候执行动画
+            $btn.click(function () {
+
+                // 获取加入购物车和购物车的相对页面的绝对位置
+                var oPos01 = $btn.offset();
+                var oPos02 = $chart.offset();
+
+                // 点击加入购物车，先把小按钮位置放到加入购物车左上角,然后加上加入购物车一半的宽度，然后减去小按钮自己的宽度，就可以左右居中了
+                $point.css({'left':oPos01.left+parseInt($w01/2)-parseInt($point.outerWidth()/2),
+                    'top':oPos01.top+parseInt($h01/2)-parseInt($point.outerHeight()/2)});
+                $point.show();
+
+                // 动画的终点位置，小按钮的终点位置，购物车盒子正中间
+                $point.animate({'left':oPos02.left+parseInt($w02/2)-parseInt($point.outerWidth()/2),
+                    'top':oPos02.top+parseInt($h02/2)-parseInt($point.outerHeight()/2)},500,function () {
+
+                    // 回调函数，加入到购物车后，小按钮隐藏
+                    $point.hide();
+                    var iNum = $count.html(); // 获取购物车中count元素中的内容，即购物车中的数字
+                    $count.html(parseInt(iNum)+1); // 向购物车count元素内容赋值，即修改数字
+
+                    // 原生js使用的.innerHtml()向元素内容中赋值
+
+
+                });
+
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="chart">购物车<em>0</em></div>
+    <input type="button" name="" value="加入购物车" class="add">
+    <div class="point"></div>
+</body>
+</html>
