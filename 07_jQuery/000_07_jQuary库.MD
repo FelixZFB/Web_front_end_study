@@ -169,3 +169,55 @@
     - css3中需要定义from起始状态到to终点状态，然后设置过渡动画效果
     - jQuery本身的css样式就是起始状态，只需要在函数中定义终点状态和动画效果
     - 参考04文件夹中的007和07文件夹中的013对比
+    
+## 8. 获取尺寸、滚动事件
+- css获取属性时候，是使用的字典写法
+    比如获取字体尺寸
+    var sTr = $div1.css('font-size');
+    我们这里获取尺寸直接使用$div1.width() 注意要写上小括号
+
+- 1、获取和设置元素的尺寸
+    width()、height()    获取元素width和height  
+    innerWidth()、innerHeight()  包括padding的width和height  
+    outerWidth()、outerHeight()  包括padding和border的width和height  
+    outerWidth(true)、outerHeight(true)   包括padding和border以及margin的width和height
+
+- 2、获取元素相对页面的绝对位置
+    offset()
+
+- 3、获取浏览器可视区宽度高度
+    $(window).width();
+    $(window).height();
+
+- 4、获取页面文档的宽度高度
+    $(document).width();
+    $(document).height();
+
+- 5、获取页面滚动距离
+    $(document).scrollTop();  
+    $(document).scrollLeft();
+
+- 6、页面滚动事件
+    $(window).scroll(function(){  
+        ......  
+    })
+    
+## 9. jquery属性操作
+- 1、html() 取出或设置html内容
+    类似原生JS中的innerHtml
+    /*写(修改)元素的内容*/
+    oDiv.innerHTML = "修改标签内部的内容";
+    
+    // 取出html内容
+    var $htm = $('#div1').html();
+    
+    // 设置html内容
+    $('#div1').html('<span>添加文字</span>');
+
+- 2、prop() 取出或设置某个属性的值
+    // 取出图片的地址
+    var $src = $('#img1').prop('src');
+    
+    // 设置图片的地址和alt属性
+    $('#img1').prop({src: "test.jpg", alt: "Test Image" });
+ 
