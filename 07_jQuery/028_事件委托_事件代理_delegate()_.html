@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .list{
+            background-color: gold;
+            list-style: none; /*去掉小圆点*/
+            padding: 10px;
+        }
+
+        .list li{
+            height: 30px;
+            background: green;
+            margin: 10px;
+        }
+
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            /*// 下面实际绑定了8个li,绑定了8个事件
+            $('.list li').click(function () {
+                $(this).css({'background':'blue'});
+            })*/
+
+
+            // 事件委托写法，所有事件都委托给父级元素，只绑定事件1次
+            // 点击那个子元素，就执行那个
+            $('.list').delegate('li','click',function () {
+                // $(this)指的是委托的子元素
+                $(this).css({'background':'blue'});
+            })
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

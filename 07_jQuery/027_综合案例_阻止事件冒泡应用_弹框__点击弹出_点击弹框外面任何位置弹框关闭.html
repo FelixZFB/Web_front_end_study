@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        .pop_con{
+            display: none; /*默认弹框是隐藏的*/
+        }
+
+        .pop{
+            position: fixed; /*相对于窗口固定定位*/
+            width: 500px;
+            height: 300px;
+            background-color: #ffffff;
+            border: 3px solid #000000;
+
+            /*左上角定位在窗口正中心*/
+            left: 50%;
+            top: 50%;
+            /*向上向左移动到整个弹窗在正中心，边框的宽度湖忽略*/
+            margin-left: -250px;
+            margin-top: -150px;
+            z-index: 999; /*所有元素最上层*/
+        }
+
+        /*弹框背景灰色*/
+        .mask{
+            position: fixed; /*相对于窗口固定定位*/
+            width: 100%; /*整个背景铺满窗口*/
+            height: 100%;
+            background-color: #000000;
+            opacity: 0.3; /*设置为黑色，然后设置透明度*/
+            filter: alpha(opacity=30); /*透明度ie兼容写法*/
+            left: 0;
+            top: 0;
+            z-index: 998;
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            // 点击弹出，显示出来弹窗
+            $('#btn').click(function () {
+                $('.pop_con').show();
+                return false; // 阻止事件冒泡，下面的document事件就不会自动执行
+            })
+
+            // 事件冒泡，document是对顶层，上面的click事件会传上来
+            $(document).click(function () {
+                $('.pop_con').fadeOut(); // 元素隐藏，淡出
+            })
+            // 弹窗弹出来以后，点击页面任何位置，弹框就淡出了
+
+            // 但是我们有时候，弹框里面想输入东西，点击弹框不想关掉
+            // 弹框就加入阻止事件，此时只有点击弹窗外部，弹框才会消失
+            $('.pop').click(function () {
+                return false;
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="弹出" id="btn">
+    <div class="pop_con">
+        <div class="pop">弹框文字</div>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>
