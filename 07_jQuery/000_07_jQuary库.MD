@@ -202,7 +202,7 @@
         ......  
     })
     
-## 9. jquery属性操作
+## 9. jquery属性操作，循环操作
 - 1、html() 取出或设置html内容
     类似原生JS中的innerHtml
     /*写(修改)元素的内容*/
@@ -221,3 +221,77 @@
     // 设置图片的地址和alt属性
     $('#img1').prop({src: "test.jpg", alt: "Test Image" });
  
+- jquery循环
+    对jquery选择的对象集合分别进行操作，
+    需要用到jquery循环操作，此时可以用对象上的each方法
+    
+## 10. jquery事件
+- 事件函数列表：
+    blur() 元素失去焦点
+    focus() 元素获得焦点
+    click() 鼠标单击
+    mouseover() 鼠标进入（进入子元素也触发）
+    mouseout() 鼠标离开（离开子元素也触发）
+    mouseenter() 鼠标进入（进入子元素不触发）
+    mouseleave() 鼠标离开（离开子元素不触发）
+    hover() 同时为mouseenter和mouseleave事件指定处理函数
+    ready() DOM加载完成
+    resize() 浏览器窗口的大小发生改变
+    scroll() 滚动条的位置发生变化
+    submit() 用户递交表单
+
+- 绑定事件的其他方式
+    bind第一个参数，传入事件名称，可以同时传入多个触发事件，第二个参数就是匿名函数
+    $(function(){
+        $('#div1').bind('mouseover click', function(event) {
+            alert($(this).html());
+        });
+    });
+
+- 取消绑定事件
+    $(function(){
+        $('#div1').bind('mouseover click', function(event) {
+            alert($(this).html());
+    
+            // $(this).unbind();
+            $(this).unbind('mouseover');
+    
+        });
+    });
+
+## 11. 事件冒泡
+- 什么是事件冒泡
+    在一个对象上触发某类事件（比如单击onclick事件），如果此对象定义了此事件的处理程序，
+    那么此事件就会调用这个处理程序，如果没有定义此事件处理程序或者事件返回true，
+    那么这个事件会向这个对象的父级对象传播，从里到外，直至它被处理（父级对象所有同类事件都将被激活），
+    最上级div上面一般是body,或者它到达了对象层次的最顶层(html标签)，即document对象（有些浏览器是window）。
+    
+    // 事件一直会向上传，子级向父级，父级在向自己的父级，直到最顶层
+    // 传递事件的顺序是按照标签的级别循序，一级一级向上传递
+    // 父级有的同类事件都会自动激活执行，没有的话就继续向上执行
+    - 参考实例025
+    
+
+- 事件冒泡的作用
+    事件冒泡允许多个操作被集中处理
+    （把事件处理器添加到一个父级元素上，避免把事件处理器添加到多个子级元素上），
+    它还可以让你在对象层的不同级别捕获事件。
+
+- 阻止事件冒泡
+    事件冒泡机制有时候是不需要的，需要阻止掉，通过 event.stopPropagation() 来阻止
+
+    阻止默认行为，即阻止表单默认提交行为
+    event就是指的该事件对象，此处指的就是提交事件
+    $('#form1').submit(function(event){
+        event.preventDefault() // 阻止表单默认提交行为
+    })
+
+- 合并阻止操作
+    实际开发中，一般把阻止冒泡和阻止默认行为合并起来写，合并写法可以用
+
+    // event.stopPropagation();   阻止冒泡
+    // event.preventDefault();    阻止默认行为
+    
+    // 上面两句的合并写法，event对象就不用写了：
+    return false; --------实际开发写这句即可，上面两句一般不用  
+

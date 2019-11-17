@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            var $btn = $('#btn');
+
+            // 点击事件的第一种写法
+            /*$btn.click(function () {
+                alert('click事件');
+            })*/
+
+            // 第二种写法，也可以绑定其它事件，改变事件名称即可
+            // bind有两个参数，第一个是事件的名称,可以放入多个事件，第二个是事件发生时候要执行的函数
+            // 点击或者鼠标移入
+            $btn.bind('click mouseover',function () {
+                alert('触发事件绑定的函数');
+                $(this).unbind('mouseover'); // 触发结束后，解绑掉鼠标移入事件，只有点击事件了
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="按钮" id="btn">
+</body>
+</html>
