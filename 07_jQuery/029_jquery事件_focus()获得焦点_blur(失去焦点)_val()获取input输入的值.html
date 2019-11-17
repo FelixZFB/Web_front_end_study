@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            /*$('#input01').focus(function () {
+                console.log('元素获得焦点'); /!*输入框要点击一下，才能输入内容，点击后可以输入内容就相当于获得焦点*!/
+            })*/
+
+            // 开发实际用途，进入页面时候input元素就已经获得焦点了，直接可以输入文字，使用下面一句代码
+            $('#input01').focus();
+            // $('#input02').focus();  只能获取一个input的焦点，焦点只有一个元素可以获得，写多个，只能最后一个获得焦点
+
+            // 失去焦点时候,获取input元素输入的值
+            $('#input01').blur(function () {
+                var sVal = $(this).val(); // val()获取input输入的值
+                alert(sVal); // 失去焦点时候，弹出里面输入的值
+            })
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" name="" id="input01">
+        <input type="text" name="" id="input02">
+        <input type="submit" name="" value="提交" id="sub">
+    </form>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            // mouseover() 鼠标进入（进入子元素也触发）
+            $('.con').mouseover(function () {
+                alert('鼠标进入'); // 由于存在事件冒泡，移入到.con的子元素也会触发,导致触发多次
+            })
+
+            // mouseout() 鼠标离开（离开子元素也触发）
+            $('.box2').mouseout(function () {
+                alert('鼠标移除'); // 由于存在事件冒泡，移入到.con的子元素也会触发
+            })
+
+            // mouseenter() 鼠标进入（进入子元素不触发）
+            // mouseleave() 鼠标离开（离开子元素不触发）
+            $('.con3').mouseenter(function () {
+                alert('鼠标进入');
+                // 进入子元素不会触发，先进入大盒子然后按确定（鼠标不要移动），然后进入小盒子，就不会触发
+            })
+
+
+        })
+
+    </script>
+    <style type="text/css">
+
+        .con{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 10px auto 10px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .con2{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 10px auto 10px;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .con3{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 10px auto 10px;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box"></div>
+    </div>
+
+    <div class="con2">
+        <div class="box2"></div>
+    </div>
+
+    <div class="con3">
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
