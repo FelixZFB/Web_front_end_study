@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript">
+
+        // 滚轮事件是针对整个页面，最顶层文档window(也就是document)
+        // 有两个参数，event即滚动事件，dat是事件触发方向，向上1向下为-1，高频率触发，一下滚动很多次
+        $(window).mousewheel(function (event,dat) {
+            alert(dat);
+        })
+        
+        
+    </script>
+            
+</head>
+<body>
+
+</body>
+</html>

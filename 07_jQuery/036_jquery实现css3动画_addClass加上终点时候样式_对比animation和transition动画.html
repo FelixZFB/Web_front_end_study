@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+
+        // css3实现动画使用的hover伪类的transition动画或者animation动画(定义一个动画函数的from起点状态to终点状态)
+        // jquery可以直接将动画样式添加到盒子上去即可，代码更加的简单
+		// 盒子最初有一个样式，jQuery函数加上了一个样式，两个样式之间就形成了动画
+
+		// 网页打开时候，有一个样式，然后我们添加一个样式，相当于就有了一个起点和一个终点的变化
+		// 两个样式的变化就可以形成一个动画
+		// 原来的样式本身里面就放有transition动画代码，只要有样式变化都会有动画显示，transition:all 1000ms ease;
+		// 新的样式一般使用addClass()方法加上去，该方法激活的方法，可以是点击事件，滚动事件，鼠标移入等事件
+
+		$(function(){
+
+			$('#btn').click(function(){
+
+				$('.box').addClass('moving');
+
+			})
+
+		})
+
+
+	</script>
+	<style type="text/css">
+		.box{
+			width:200px;
+			height:200px;
+			background-color:gold;
+			margin:50px auto 0;
+			transition:all 1s ease; /*过渡动画*/
+		}
+
+		/*jQuery中直接定义一个动画样式，定义动画终点即可，然后将该样式加到盒子上去即可*/
+		.moving{
+			transform:rotate(135deg);
+		}
+
+
+		/*css3的animation动画，需要先定义动画函数，然后样式里面引入动画*/
+		/*代码更加复杂*/
+		/*!*风车旋转动画*!
+        @keyframes rotating{
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(135deg); !*-360deg就是逆时针旋转*!
+            }
+        }
+
+		 .box{
+            display: block;
+            !*linear匀速无限次旋转,加速可以改变完成一次的动画时间*!
+            animation: rotating 1000ms linear 0s infinite; !*时间，匀速，延时，无限次*!
+        }*/
+
+
+
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="动画" id="btn">
+	<div class="box"></div>
+</body>
+</html>

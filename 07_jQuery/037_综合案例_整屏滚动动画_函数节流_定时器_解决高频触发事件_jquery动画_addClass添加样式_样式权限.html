@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>整页滚动</title>
+    <!--引入css样式-->
+	<link rel="stylesheet" type="text/css" href="css/test.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<!--引入jQuery鼠标滚动插件-->
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript">
+
+        $(function () {
+            var $screen = $('.pages_con'); /*整个屏幕,5个div元素*/
+            var $pages = $('.pages'); // 一个div元素
+            var $len = $pages.length; // 获取div(页面)的个数
+            var $h = $(window).height(); // 获取浏览器窗口的高度
+            var $nowscreen = 0; // 5个div,一个div对应一个屏幕，屏幕进行计数
+			var $points = $('.points li'); // 右侧列表小圆点
+			var timer = null; // 定义一个定时器，用于解决高触发事件，滚动一次就触发多次，屏幕滚动了几页过去了
+
+            $pages.css({'height':$h}); // 窗口的高度设置为每个div的页面高度，整屏都可以填充上背景色
+
+            // 刚进入时候第一个div应该自动播放动画
+            $pages.eq(0).addClass('moving');
+
+            $(window).mousewheel(function (event,dat) {
+
+            	// 使用下面两句清楚定时器，和函数功能放在定时器里面，每次滚动都只会滚动一屏，解决高频触发问题
+            	// 进入事件时候，清楚前面的定时器，就算触发了多次，都只执行最后一次的定时器
+				// 上面就是函数节流的原理，虽然触发了多次，但是最终只执行最后一次函数
+            	clearTimeout(timer);
+
+            	// 将滚动触发事件执行的函数放在一个定时器里面，
+            	timer = setTimeout(function () {
+
+            		// 向下滚动就是dat就是-1
+					if(dat===-1){
+						$nowscreen++;
+					}
+					// 除了向下滚动就是想上滚动
+					else{
+						$nowscreen--;
+					}
+
+					// 由于滚动是高触发，一滚动会滚动很多页，向上向下会超出整个大div页面，最后显示就是空白
+					// 加入if进行限制nowscreen，相当于限制的top的值，此处nowscreen限制最小为0最大为4
+					if($nowscreen<0){
+						$nowscreen=0;
+					}
+					if($nowscreen>$len-1){
+						$nowscreen=$len-1;
+					}
+
+					// 一个屏幕的高度乘以当前的屏幕数，就是该div的top高度
+					$screen.animate({'top':-$h*$nowscreen});
+
+					// 当前的div页面加上moving样式，此时图片和文字对应的样式就相应发生了变化
+					// 本来样式是.main_con .left_img 现在就变成了.moving .main_con .left_img （权限相当于原始样式更高，就会使用该样式）
+					// siblings()选择除本div的其它同级元素,我们样式添加以后，滚回来时候还要有动画效果，
+					// 就需要滚动时候其它div的动画样式都移除，向上向下再次滚动时候就会添加样式产生动画效果
+					$pages.eq($nowscreen).addClass('moving').siblings().removeClass('moving');
+					// 右侧小圆点同时加上样式，进行激活显示
+					$points.eq($nowscreen).addClass('active').siblings().removeClass('active');
+
+				},200)
+
+
+            })
+
+			// 点击小圆点切换页面，和上面原理相同
+			$points.click(function(){
+				$nowscreen = $(this).index();
+				$points.eq($nowscreen).addClass('active').siblings().removeClass('active');
+				$screen.animate({'top':-$h*$nowscreen},300);
+				$pages.eq($nowscreen).addClass('moving').siblings().removeClass('moving');
+			})
+
+
+
+
+        })
+
+	</script>
+</head>
+<body>
+	<div class="pages_con">
+
+        <!--5个页面5个div,每个div里面有图片和文字两部分组成-->
+        <!--初始状态：图片是在宽口左边(定位的left)的外面，透明度为0,文字在窗口右边(定位的right)的外面，透明度为0-->
+        <!--终点状态：图片和文字移动到窗口里面，透明度为1，文字透明度为1-->
+        <!--通过滚动事件添加样式，实现图片文字滑入和透明到显示出来的动画-->
+        <!--5个页面实现滚动效果，修改每一个div的top值即可，因为一开始就在js中设置了每个div高度就是屏幕的高度，正好每一次就显示一个div在整个屏幕中-->
+		<div class="pages page1">
+			<div class="main_con">
+				<div class="left_img"><img src="images1/001.png"></div>
+				<div class="right_info">
+				Web前端开发是从网页制作演变而来的，名称上有很明显的时代特征。在互联网的演化进程中，网页制作是Web1.0时代的产物，那时网站的主要内容都是静态的，用户使用网站的行为也以浏览为主。
+				</div>
+			</div>
+		</div>
+
+		<div class="pages page2">
+			<div class="main_con">
+				<div class="right_img"><img src="images1/002.png"></div>
+				<div class="left_info">
+				2005年以后，互联网进入Web2.0时代，各种类似桌面软件的Web应用大量涌现，网站的前端由此发生了翻天覆地的变化。网页不再只是承载单一的文字和图片，各种富媒体让网页的内容更加生动，网页上软件化的交互形式为用户提供了更好的使用体验，这些都是基于前端技术实现的。
+				</div>
+			</div>
+
+		</div>
+
+		<div class="pages page3">
+			<div class="main_con">
+				<div class="left_img"><img src="images1/004.png"></div>
+				<div class="right_info">
+				以前会Photoshop和Dreamweaver就可以制作网页，现在只掌握这些已经远远不够了。无论是开发难度上，还是开发方式上，现在的网页制作都更接近传统的网站后台开发，所以现在不再叫网页制作，而是叫Web前端开发。
+				</div>
+			</div>
+		</div>
+
+		<div class="pages page4">
+			<div class="main_con">
+				<div class="left_img"><img src="images1/003.png"></div>
+				<div class="right_info">
+					Web前端开发在产品开发环节中的作用变得越来越重要，而且需要专业的前端工程师才能做好，这方面的专业人才近几年来备受青睐。Web前端开发是一项很特殊的工作，涵盖的知识面非常广，既有具体的技术，又有抽象的理念。简单地说，它的主要职能就是把网站的界面更好地呈现给用户。
+				</div>
+			</div>
+		</div>
+
+		<div class="pages page5">
+			<div class="main_con">
+				<div class="center_img"><img src="images1/005.png"></div>
+			</div>
+		</div>
+
+
+	</div>
+	<ul class="points">
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
