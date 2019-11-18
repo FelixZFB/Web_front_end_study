@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            // 通过html字符串的方式插入内容，添加节点，该方式性能最高
+            // $('#div1').html('<a href="#">连接</a>');
+            // 但是上面的方式，会直接替换掉标签中已有的内容
+
+            // 元素内部插入，相当于添加的是子元素
+
+            // 新建一个带有内容的a标签，然后使用append()：在现存元素的内部，从后面插入元素
+            $a = $('<a href="#">连接</a>');
+            $('#div1').append($a);
+
+            // 新建一个空的a标签
+            $a2 = $('<a>');
+            $('#div1').append($a2);
+
+            // appendTo就是前后元素位置交换一下
+            // $(a2).appendTo($('#div1'))
+
+        })
+
+    </script>
+</head>
+<body>
+    <!--div#div1-->
+    <div id="div1">
+        <h1>这是一个h1元素</h1>
+    </div>
+</body>
+</html>

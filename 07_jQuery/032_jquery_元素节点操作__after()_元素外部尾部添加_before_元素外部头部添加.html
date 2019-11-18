@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            // 元素外部插入，级别还该元素相同
+
+            // 新建一个带有内容的a标签，before在现存元素的外部，从前面插入元素
+            $a = $('<a href="#">连接</a>');
+            $('#div1').before($a);
+
+            // 放到div1元素的后面
+            $h2 = $('<h2>这是一个h2</h2>');
+            $('#div1').after($h2);
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <!--div#div1-->
+    <div id="div1">
+        <h1>这是一个h1元素</h1>
+    </div>
+</body>
+</html>

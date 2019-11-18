@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todolist</title>
+    <style type="text/css">
+        .list_con {
+            width: 600px;
+            margin: 50px auto 0;
+        }
+
+        .inputtxt {
+            width: 550px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 0px;
+            text-indent: 10px;
+        }
+
+        .inputbtn {
+            width: 40px;
+            height: 32px;
+            padding: 0px;
+            border: 1px solid #ccc;
+        }
+
+        .list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .list li {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .list li span {
+            float: left;
+        }
+
+        .list li a {
+            float: right;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var $inputtxt = $('#txt1'); // 输入内容的标签
+            var $btn = $('#btn1');  // 增加按钮的标签
+            var $ul = $('#list');  // 学历列表的ul标签
+            var $up = $('.up');  // 向上移动按钮
+            var $down = $('.down');  // 向下移动按钮
+            var $del = $('.del');  // 删除按钮
+
+            // 功能1：添加内容
+            // 点击增加，获取input框的值，然后添加到ul的子元素尾部
+            $btn.click(function () {
+                var $val = $inputtxt.val(); // 获取input输入框里面的值
+
+                // 先判断以下是否有值
+                if($val===''){
+                    alert('内容为空，请输入内容！');
+                    return; // 返回，结束该句代码，继续后面的代码
+                }
+
+                var $li = $('<li>\n' +
+                    '            <span>' + $val + '</span>\n' +
+                    '            <a href="javascript:;" class="up"> ↑ </a>\n' +
+                    '            <a href="javascript:;" class="down"> ↓ </a>\n' +
+                    '            <a href="javascript:;" class="del">删除</a>\n' +
+                    '        </li>');
+
+                $ul.append($li);  // 添加内容都ul子元素的末尾
+                // 添加完以后，就将内容清空
+                $inputtxt.val(''); // 清空以下input的内容，不然再次点击增加会不断增加相同的内容，必须再次输入，然后添加
+            })
+
+
+            // 功能2：删除列表中的计划
+            $del.click(function () {
+                // 删除按钮父元素li标签删除
+                $(this).parent().remove();
+            })
+
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+
+<div class="list_con">
+    <h2>计划学习列表</h2>
+    <input type="text" name="" id="txt1" class="inputtxt">
+    <input type="button" name="" value="增加" id="btn1" class="inputbtn">
+    <ul id="list" class="list">
+
+        <li>
+            <span>学习html</span>
+            <a href="javascript:;" class="up"> ↑ </a>
+            <a href="javascript:;" class="down"> ↓ </a>
+            <a href="javascript:;" class="del">删除</a>
+        </li>
+        <li>
+            <span>学习css</span>
+            <a href="javascript:;" class="up"> ↑ </a>
+            <a href="javascript:;" class="down"> ↓ </a>
+            <a href="javascript:;" class="del">删除</a>
+        </li>
+        <li>
+            <span>学习javascript</span>
+            <a href="javascript:;" class="up"> ↑ </a>
+            <a href="javascript:;" class="down"> ↓ </a>
+            <a href="javascript:;" class="del">删除</a>
+        </li>
+
+    </ul>
+
+</div>
+</body>
+</html>
