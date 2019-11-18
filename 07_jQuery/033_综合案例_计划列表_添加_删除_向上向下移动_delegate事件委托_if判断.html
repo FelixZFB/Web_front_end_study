@@ -54,9 +54,6 @@
             var $inputtxt = $('#txt1'); // 输入内容的标签
             var $btn = $('#btn1');  // 增加按钮的标签
             var $ul = $('#list');  // 学历列表的ul标签
-            var $up = $('.up');  // 向上移动按钮
-            var $down = $('.down');  // 向下移动按钮
-            var $del = $('.del');  // 删除按钮
 
             // 功能1：添加内容
             // 点击增加，获取input框的值，然后添加到ul的子元素尾部
@@ -82,10 +79,41 @@
             })
 
 
-            // 功能2：删除列表中的计划
-            $del.click(function () {
-                // 删除按钮父元素li标签删除
-                $(this).parent().remove();
+            // 功能2：删除和移动列表中的计划，新增加的由于代码执行顺序问题，后期增加计划并没有被绑定，因此不能删除
+            // 因此，此处我们使用事件委托，绑定在固定的ul元素上，ul是一直存在的
+            // 事件绑定以后，后面新加入的元素都可以执行已经绑定的事件
+            $ul.delegate('a','click',function () {
+
+                // 下面的this指的是当前的a标签
+
+                // 内部有三类a标签，需要进行class的值进行判断，执行不同的函数
+                var $handler = $(this).prop('class'); // 取出属性的值
+
+                // 删除操作
+                if ($handler==='del'){
+                    $(this).parent().remove(); // 删除父元素li一个学习计划
+                }
+
+                // 向上移动操作
+                if ($handler==='up'){
+                    // 如果本来就在顶部，即li前面没有元素，就提示一下
+                    if($(this).parent().prev().length===0){
+                        alert('已经到顶部了！');
+                        return;
+                    }
+                    // li插入到自己前面那个li的前面，使用insertBefore
+                    $(this).parent().insertBefore($(this).parent().prev());
+                }
+
+                // 向下移动操作
+                if ($handler==='down'){
+                    if($(this).parent().next().length===0){
+                        alert('已经到底部了！');
+                        return;
+                    }
+                    // li插入到自己后面那个li的后面，使用insertAfter
+                    $(this).parent().insertAfter($(this).parent().next());
+                }
             })
 
 

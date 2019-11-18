@@ -306,7 +306,8 @@
         $list = $('#list');
         // $list是父级元素，li是委托的子元素，click是委托的事件
         // $(this)即要执行事件的子元素
-        $list.delegate('li', 'click', function() {
+        // 有三个参数：传入子元素标签的名称，要绑定的事件，然后事件发生时候要执行的函数
+        $list.delegate('li', 'click', function() { 
             $(this).css({background:'red'});
         });
     })
