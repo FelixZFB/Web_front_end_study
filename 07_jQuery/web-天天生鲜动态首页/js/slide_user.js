@@ -9,6 +9,7 @@ $(function () {
     var $points_con = $('.points'); // 图片下面小圆点的ul标签，即小圆点的容器
     var $prev = $('.prev'); // 左边小箭头
     var $next = $('.next'); // 右边小箭头
+    var $timer = null;  // 定时器声明
 
 
     // 动态加入幻灯片下面的小圆点
@@ -51,11 +52,64 @@ $(function () {
         moving();
         $points.eq($nowli).addClass('active').siblings().removeClass('active');
     })
+    
+    
+    // 幻灯片自动播放，加入一个定时器就可以，就相当于自动执行向右点击,5秒执行一次
+    $timer = setInterval(autoplay,5000);
 
+    // 鼠标移入到幻灯片时候清除定时器，鼠标移走时重新打开定时器
+    $li.mouseenter(function () {
+        clearInterval($timer);
+    })
+
+    // 鼠标移开后，自动启动一个定时器
+    $li.mouseleave(function () {
+        $timer = setInterval(autoplay,5000);
+    })
+
+
+    // 幻灯片自动播放程序，相当于点击向右的箭头
+    function autoplay() {
+        $nowli++;
+        moving();
+        $points.eq($nowli).addClass('active').siblings().removeClass('active');
+    }
+    
 
     // 幻灯片的运动函数
     // 打开网页时候，$prevli的值是0，点击一个图片后，图片切换完后，$prevli被赋值为当前已经显示的$nowli
     function moving() {
+
+        // 两种左右移动到边界的特殊情况，左右移动时候，有两种极限情况：
+        // 第一张向左边点击，$nowli--会出现负值
+        // 第四张向右边点击，对应的索引值$nowli已经是3，$nowli++就是4
+        // 索引不应该出现负值，还有索引值为4已经没有图片了，就显示的背景色
+        // 点击第一张时候，先把第四张变成第一张，即初始值$nowli=3
+        // 点击最后，再次点击就切换到第一张去，$nowli变成0
+        if($nowli<0){
+            $nowli = $len-1; // 即初始值是3，点击到最左边后，又切换到最后一张,第四张图片从左边滑动进来，开始新的循环
+            $prevli = 0; // 之前显示的第一张
+            $li.eq($nowli).css({'left':-760});
+            $li.eq($nowli).animate({'left':0});
+            $li.eq($prevli).animate({'left':760});
+            $prevli = $nowli; // 将当前显示的$prevli赋值为3，然后再点击向左，3向下减减，下次点击左箭头，$nowli就变成3-- = 2
+            return;
+            // 两种极限情况，执行完了就就跳出函数，再次点击时候，根据去寻找适合自己的函数进行执行下一次点击
+            // 该函数执行的是一种特殊情况，执行完后，要跳出函数，该函数执行后，幻灯片发生了切换，
+            // 相当于返回了新的$prevli和$nowli值，然后再次点击根据新的值选择要执行的moving函数，如果不return一直会在函数里面出不去
+            // 再次点击还是会出现背景色
+        }
+
+        if($nowli>$len-1){
+            $nowli = 0; // 即初始值是0，点击到最右边后，又切换回到第一张，第一张图片从右边滑动进来，开始新循环
+            $prevli = $len-1; // 之前显示的是最后一张
+            $li.eq($nowli).css({'left':760});
+            $li.eq($nowli).animate({'left':0});
+            $li.eq($prevli).animate({'left':-760});
+            $prevli = $nowli;
+            return;
+            // 两种极限情况，执行完了就就跳出函数，去寻找适合自己的函数进行执行下一次点击
+        }
 
         // 初始状态，第1张幻灯片在展示位置，其它3张都在右边760px位置，对应index是0 1 2 3
         // 如果点击要显示的幻灯片的索引值大于当前正在显示的，将其left值先修改为760然后改成0，就形成了从右边到左边的滑入动画
@@ -78,42 +132,16 @@ $(function () {
             $prevli = $nowli;  // 当前显示图片的的索引值赋值给$prevli，当前的幻灯片就是下次的要移走的幻灯片
         }
 
-        // 如果值相同，就是点击同一个小圆点，什么都不做，跳出该函数
+        // 如果值相同，就是点击同一个小圆点，返回一个空值，什么都不做，跳出该函数
         if($nowli===$prevli){
-            return;
+            return null;
         }
 
-        // 两种左右移动到边界的特殊情况，左右移动时候，有两种极限情况：
-        // 第一张向左边点击，$nowli--会出现负值
-        // 第四张向右边点击，对应的索引值$nowli已经是3，$nowli++就是4
-        // 索引不应该出现负值，还有索引值为4已经没有图片了，就显示的背景色
-        // 点击第一张时候，先把第四张变成第一张，即初始值$nowli=3
-        // 点击最后，再次点击就切换到第一张去，$nowli变成0
-        if($nowli<0){
-            $nowli = $len-1; // 即初始值是3，点击到最左边后，又切换到最后一张,第四张图片从左边滑动进来，开始新的循环
-            $prevli = 0; // 之前显示的第一张
-            $li.eq($nowli).css({'left':-760});
-            $li.eq($nowli).animate({'left':0});
-            $li.eq($prevli).animate({'left':760});
-            $prevli = $nowli; // 将当前显示的$prevli赋值为3，然后再点击向左，3向下减减，下次点击左箭头，$nowli就变成3-- = 2
-            return; // 两种极限情况，执行完了就就跳出函数，再次点击时候，根据去寻找适合自己的函数进行执行下一次点击
-            // 该函数执行的是一种特殊情况，执行完后，要跳出函数，该函数执行后，幻灯片发生了切换，
-            // 相当于返回了新的$prevli和$nowli值，然后再次点击根据新的值选择要执行的moving函数，如果不return一直会在函数里面出不去
-            // 再次点击还是会出现背景色
-        }
-
-        if($nowli>$len-1){
-            $nowli = 0; // 即初始值是0，点击到最右边后，又切换回到第一张，第一张图片从右边滑动进来，开始新循环
-            $prevli = $len-1; // 之前显示的是最后一张
-            $li.eq($nowli).css({'left':760});
-            $li.eq($nowli).animate({'left':0});
-            $li.eq($prevli).animate({'left':-760});
-            $prevli = $nowli;
-            return; // 两种极限情况，执行完了就就跳出函数，去寻找适合自己的函数进行执行下一次点击
-        }
+        // 注意函数内部使用return的函数，一般放在函数内部的前面，不要放在后面，会出现bug
+        // 上面前两个特殊情况，都使用了return跳出函数，放在最后，还是会出现空背景色
+        // 最后一个函数，返回的是空值，函数什么都不做，放这里没有问题
 
     }
-
-
-
+    
+    
 })
