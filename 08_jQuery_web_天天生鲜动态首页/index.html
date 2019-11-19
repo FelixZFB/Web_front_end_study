@@ -9,6 +9,8 @@
 	<!--引入本地控制网页的js文件-->
 	<script type="text/javascript" src="js/slide_user.js"></script>
 	<script type="text/javascript">
+
+		// 读取用户数据，插入到页面中去
 		$(function(){
 			$.ajax({
 				url:'js/data.json',
@@ -17,11 +19,11 @@
 			})
 			.done(function(dat){
 
-				$('.user_login_btn').hide();
+				$('.user_login_btn').hide(); // 隐藏掉登陆按钮
 
-				$('.user_info em').html(dat.name);
+				$('.user_info em').html(dat.name); // 从json文件中读取用户数据，插入到页面中去
 
-				$('.user_info').show();	
+				$('.user_info').show();	 // 显示出用户信息，默认没有登陆时候显示的是登陆图标，用户信息是隐藏的
 				
 			})
 			.fail(function(){

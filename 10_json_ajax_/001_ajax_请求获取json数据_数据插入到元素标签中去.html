@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        // 下面是ajax读取json数据的标准写法
+        $.ajax({
+            url:'js/data.json',
+            type:'GET',
+            datatype:'json',
+        })
+        .done(function (dat) {
+            console.log(dat); // 读取数据
+            console.log(dat.name); // 取出name对应的值
+            console.log(dat.age); // 取出age对应的值
+
+            // 将读出来的数据给插入到span的标签内容中去
+            $('#username').html(dat.name);
+            $('#userage').html(dat.age);
+
+        })
+        .fail(function () {
+            console.log('服务器超时，请重试！')
+        })
+
+    </script>
+</head>
+<body>
+    <h1>ajax读取json文件</h1>
+    <p>姓名：<span id="username" style="color: red; font-size: 32px;"></span></p>
+    <p>年龄：<span id="userage" style="color: red; font-size: 32px;"></span></p>
+
+</body>
+</html>
