@@ -117,7 +117,7 @@
     
 - jsonp读取的数据和ajax不一样，jsonp数据是json中的数据放在一个fnBack()函数里面
 
-## 3. 本地存储：cookie localStorage sessionStorage
+## 3. 本地存储：Cookie LocalStorage SessionStorage
 - 本地存储分为cookie，以及新增的localStorage和sessionStorage
 
 - 1、cookie 
@@ -130,6 +130,7 @@
     cookie在jquery中有个插件，jquery.cookie.js
     先引入jQuery库，然后再引入jquery.cookie.js
     然后启动js的服务器环境（参考09文件夹），就可以操作使用cookie了
+    - 需要依赖jQuery库,使用服务器环境访问查看
     
     // 第一个参数是cookie键的名称，第二个是值，
     // 第三个字典是：expires:7 过期时间7天，存储路径，/代表该文件的根目录下
@@ -141,7 +142,31 @@
     
     具体参考：004案例和004图片
     
+- 2. Web Storage
+    localStorage 和 sessionStorage 合称为Web Storage , 
+    Web Storage支持事件通知机制，可以将数据更新的通知监听者，
+    Web Storage的api接口使用更方便。
+    iPhone的无痕浏览不支持Web Storage，只能用cookie。
     
+    - 他们不需要Jquery库，直接在script里面写即可，然后使用服务器环境访问查看
+    
+- 2.1 localStorage(本地存储)
+    存储在本地，容量为5M或者更大，不会在请求时候携带传递，
+    在所有同源窗口中共享，数据一直有效，除非人为删除，可作为长期数据。
+    
+    //设置：
+        localStorage.setItem("dat", "456");
+        localStorage.dat = '456';
+    //获取：
+        localStorage.getItem("dat");
+        localStorage.dat
+    //删除
+        localStorage.removeItem("dat");
+        
+- 2.2 sessionStorage(会话存储)
+    存储在本地，容量为5M或者更大，不会在请求时候携带传递，
+    在同源的当前窗口关闭前有效（出于安全的考虑）
+    - 参考005案例和005图片
     
     
     

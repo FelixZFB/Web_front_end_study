@@ -20,7 +20,7 @@
 		}
 
         .pop_con{
-			display:none; /*先隐藏着弹框*/
+			display:none; /*先隐藏着弹框，点击弹出按钮后修改属性为block*/
 		}
 
 		.popup{
@@ -33,7 +33,7 @@
 			margin-left:-251px;
 			top:50%;
 			margin-top:-151px;
-			z-index:9999;
+			z-index:9999; /*弹框的权重值最大，总是在最上层，下一层背景色权重为9998,显示背景色为灰色*/
 		}
 		.popup h2{
 			background-color:gold;
@@ -50,6 +50,7 @@
 			text-align: center;
 		}
 
+		/*弹框的背景色，占据整个屏幕，颜色设置黑色，设置透明度，然后就显示为灰色了*/
 		.mask{
 			position:fixed;
 			width:100%;
@@ -58,7 +59,7 @@
 			left:0;
 			top:0;
 			opacity:0.5;
-			z-index:9998;
+			z-index:9998; /*权重值仅次于弹框，显示在弹框下一层*/
 		}
 
 	</style>
@@ -98,6 +99,7 @@
 <body>
 	<div class="menu">菜单文字</div>
 	<div class="pop_con" id="pop_con">
+		<!--弹框内容-->
 		<div class="popup">
 			<h2>弹框的标题</h2>
 			<br>
@@ -105,12 +107,13 @@
 			<br>
 			<p id="pop_tip">还有5秒钟关闭弹框</p>
 		</div>
+		<!--用于设置背景色为灰色-->
 		<div class="mask"></div>
 	</div>
 
 	<input type="button" name="" value="弹出弹框" id="btn">
-    <!--input上面两个div都是使用的fixed定位，没有占据文档流位置-->
-    <!--因此，input按钮是从左上角开始，相当于是文档流第一个元素-->
+    <!--input之前的两个div都是使用的fixed定位，没有占据文档流位置-->
+    <!--因此，input按钮是从左上角开始，占据第一个位置，相当于是文档流第一个元素-->
     <!--接下来文档流就是P标签，P自带样式，和按钮之间有间距-->
 
 	<p>文档流定位第一个位置网页文字</p>
