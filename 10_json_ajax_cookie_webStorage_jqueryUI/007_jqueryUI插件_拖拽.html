@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--引入jQueryUI插件-->
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            /*盒子支持拖动，不传参数就是随意拖动*/
+            // $('.box').draggable();
+            // 可以传入参数
+            $('.box').draggable({
+                axis: 'x',  // 限制拖动的轴向，x轴或者y轴
+                containment: 'parent', // 限制拖动范围，只能在父级里面拖动
+
+                drag: function (event,ui) {
+                    console.log(ui); // event是拖动事件，ui是拖动时候发生的参数变化
+                    document.title = ui.position.left; // 相对于父级left移动的值，给到html的title，拖动时候标题就是left值
+                }
+
+            });
+
+
+        })
+
+    </script>
+    <style type="text/css">
+
+        .con{
+            width: 800px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 50px auto 0;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box">
+            拖拽盒子移动
+        </div>
+    </div>
+</body>
+</html>

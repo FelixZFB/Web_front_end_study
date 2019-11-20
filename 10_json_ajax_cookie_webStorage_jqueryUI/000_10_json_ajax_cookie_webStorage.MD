@@ -126,7 +126,9 @@
     可设置访问路径，只有此路径及此路径的子路径才能访问此cookie，
     在设置的过期时间之前有效。
 
-- cookie的使用(设置和读取)    
+
+- cookie的使用(设置和读取)  
+- jquery.cookie.js插件应用
     cookie在jquery中有个插件，jquery.cookie.js
     先引入jQuery库，然后再引入jquery.cookie.js
     然后启动js的服务器环境（参考09文件夹），就可以操作使用cookie了
@@ -168,5 +170,15 @@
     在同源的当前窗口关闭前有效（出于安全的考虑）
     - 参考005案例和005图片
     
-    
+## 4. jQuery UI插件
+- jQuery UI是以 jQuery 为基础的代码库。
+    包含底层用户交互、动画、特效和可更换主题的可视控件。
+    我们可以直接用它来构建具有很好交互性的web应用程序。
+
+- jqueryUI 网址
+    http://jqueryui.com/
+
+- 常用功能：
+    1.拖拽
+       
     
