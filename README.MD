@@ -12,7 +12,7 @@
 ### 第十部分：json_ajax_cookie_webStorage_jqueryUI
 ### 第十一部分：js移动端库和框架bootstrap
 
-### 学习笔记在每个文件中的000文件
+### 学习笔记：每个文件夹中的000文件
 
 
 ### 实用技巧总结
