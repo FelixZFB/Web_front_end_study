@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        // jsonp可以跨域名请求获取数据，利用的是script标签可以跨域名请求
+        $.ajax({
+            url:'js/data.js',
+            type:'get',
+            dataType:'jsonp',
+            jsonpCallback:'fnBack'
+        })
+        .done(function (dat) {
+            console.log(dat); // 读取数据
+            console.log(dat.name); // 取出name对应的值
+            console.log(dat.age); // 取出age对应的值
+        })
+        .fail(function () {
+             alert('服务器超时，请重试！');
+        })
+
+    </script>
+</head>
+<body>
+    <h1>js服务器环境下运行，jsonp获取数据</h1>
+</body>
+</html>

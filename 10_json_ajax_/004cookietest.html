@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+
+        // 设置cookie，第一个参数是cookie键的名称，第二个是值，
+        // 第三个字典是：expires:7 过期时间7天，存储路径，/代表该文件的根目录下
+        // cookie信息使用火狐浏览器，打开服务器环境，运行该html文件查看，参考图片004-1
+        $.cookie('mycookie','ok123!',{expires:7,path:'/'});
+
+        // 读取cookie信息,需要知道cookie的名称
+        var mycookie = $.cookie('mycookie');
+        alert(mycookie);
+
+    </script>
+</head>
+<body>
+    <h1>js服务器环境下运行，cookie测试页面</h1>
+</body>
+</html>

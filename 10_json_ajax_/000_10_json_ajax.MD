@@ -93,6 +93,10 @@
     ajax只能请求同一个域下的数据或资源，有时候需要跨域请求数据，
     就需要用到jsonp技术，jsonp可以跨域请求数据，
     它的原理主要是利用了<script>标签可以跨域链接资源的特性。
+    比如：
+    <!--可以引入在线的js框架，相当于就是script跨域请求的资源-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	
     jsonp和ajax原理完全不一样，不过jquery将它们封装成同一个函数。
     
     - 写法：(与ajax请求数据和返回的数据都不同)
@@ -110,4 +114,34 @@
         });
         
         // data.js里面的数据： fnBack({"name":"tom","age":18});
+    
+- jsonp读取的数据和ajax不一样，jsonp数据是json中的数据放在一个fnBack()函数里面
+
+## 3. 本地存储：cookie localStorage sessionStorage
+- 本地存储分为cookie，以及新增的localStorage和sessionStorage
+
+- 1、cookie 
+    存储在本地，容量最大4k，
+    缺点：在同源的http请求时携带传递，损耗带宽，
+    可设置访问路径，只有此路径及此路径的子路径才能访问此cookie，
+    在设置的过期时间之前有效。
+
+- cookie的使用(设置和读取)    
+    cookie在jquery中有个插件，jquery.cookie.js
+    先引入jQuery库，然后再引入jquery.cookie.js
+    然后启动js的服务器环境（参考09文件夹），就可以操作使用cookie了
+    
+    // 第一个参数是cookie键的名称，第二个是值，
+    // 第三个字典是：expires:7 过期时间7天，存储路径，/代表该文件的根目录下
+    
+    设置cookie
+    $.cookie('mycookie','ok123!',{expires:7,path:'/'});
+    读取cookie信息,需要知道cookie的名称
+    $.cookie('mycookie');
+    
+    具体参考：004案例和004图片
+    
+    
+    
+    
     
