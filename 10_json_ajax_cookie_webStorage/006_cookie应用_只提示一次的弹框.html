@@ -9,11 +9,19 @@
 	<script type="text/javascript">
 		$(function(){
 
+			/*
+			首次打开时候，没有cookie的值，因此弹框就弹出了，点击知道了
+			弹框关闭，同时把设置一个cookie，然后浏览器就有了cookie
+			下次打开，有了cookie，就不会有任何动作，默认弹框还是隐藏的
+			可以进入火狐，存储，删除该cookie，然后打开，弹框就又出来了
+			*/
+
+			// 取出hasread对应的值，如果没有就是undefined
 			var hasread = $.cookie('hasread');
 			//alert(hasread);
 
-			// 判断是否存了cookie，没有就弹出弹框
-			if(hasread==undefined)
+			// 判断是否存了cookie，undefined就是没有该cookie的值，没有就弹出弹框
+			if(hasread===undefined)
 			{
 				$('.pop_con').show();
 			}
@@ -33,9 +41,12 @@
 	</script>
 	<style type="text/css">
 
+		/*默认弹框和背景色都是隐藏的*/
 		.pop_con{
 			display:none;
 		}
+
+		/*弹框相对于浏览器窗口是固定定位，窗口正中间的位置*/
 		.pop{
 			position:fixed;
 			width:500px;
@@ -49,6 +60,7 @@
 			z-index:9999;
 		}
 
+		/*背景色变成灰色，权限次于弹框，在弹框下一层*/
 		.mask{
 			position:fixed;
 			width:100%;
@@ -61,25 +73,19 @@
 			z-index:9990;
 
 		}
-
-		.close{
-			float:right;
-			font-size:30px;
-		}
-
-
-
 	</style>
+
 </head>
 <body>
 
+	<!--弹框整体设置，弹框和弹框后面的背景色-->
 	<div class="pop_con">
+		<!--弹框内容-->
 		<div class="pop">
 			亲！本网站最近有优惠活动！请强力关注！
-			<a href="#" id="close" class="close">×</a>
-
 			<a href="javascript:;" id="user_read">朕知道了！</a>
 		</div>
+		<!--弹框后面背景色，灰色-->
 		<div class="mask"></div>
 	</div>
 
