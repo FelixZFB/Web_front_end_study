@@ -1,4 +1,4 @@
-## Web前端学习笔记 ##
+## Web前端笔记 ##
 
 ### 第一部分：HTML学习
 ### 第二部分：css学习
@@ -7,6 +7,12 @@
 ### 第五部分：移动端页面开发
 ### 第六部分：JavaScript(原生)
 ### 第七部分：jQuery
+### 第八部分：jQuery_web_动态首页
+### 第九部分：js服务器环境
+### 第十部分：json_ajax_cookie_webStorage_jqueryUI
+### 第十一部分：js移动端库和框架bootstrap
+
+### 学习笔记在每个文件中的000文件
 
 
 ### 实用技巧总结
