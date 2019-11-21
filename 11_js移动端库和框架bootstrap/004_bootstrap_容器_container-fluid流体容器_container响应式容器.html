@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+        /*直接使用bootstrap中已经写好的样式container-fluid和container*/
+
+        /*流体容器，即100%宽度的容器，注意默认左右padding有15px*/
+        .container-fluid{
+            height: 100px;
+            border: 1px solid black;
+            background-color: gold;
+        }
+
+        /*响应式布局容器, 注意默认左右padding有15px*/
+        /*
+        有四个响应式尺寸
+        1170  大于1170宽度都设置为1170px
+        970   970-1170为970px
+        750   750-970为750px
+        100%  小于750时候，宽度全部按100%显示
+        打开浏览器，左右拉动查看效果
+        */
+        /*内部还是使用的媒体查询@media (max-width: 1170px){}，参考05文件夹中的响应式布局案例*/
+        .container{
+            height: 100px;
+            border: 1px solid black;
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">流体容器，即100%宽度的容器</div>
+    <br>
+    <br>
+    <br>
+    <div class="container">响应式容器</div>
+</body>
+</html>

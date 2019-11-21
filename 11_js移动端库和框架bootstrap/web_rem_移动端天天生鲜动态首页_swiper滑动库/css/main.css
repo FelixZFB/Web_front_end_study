@@ -341,3 +341,31 @@
     color: darkcyan;
     margin-top: 0.3rem;
 }
+
+
+
+
+/*swiper中的css样式，左右箭头自定义修改*/
+.swiper-button-next, .swiper-button-prev {
+     position:absolute;
+     top:50%;
+     width:14px;  /*宽度*/
+     height:22px; /*高度*/
+     margin-top:-22px;
+     z-index:10;
+     cursor:pointer;
+     -moz-background-size:27px 44px;
+     -webkit-background-size:27px 44px;
+     background-size:14px 22px;  /*背景图大小和上面的宽高相同*/
+     background-position:center;
+     background-repeat:no-repeat
+}
+
+
+/*幻灯片下面的小圆点修改样式*/
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 10px; /*修改离底部的高度*/
+    left: 0;
+    width: 134%;  /*修改居中的位置，100%是在正中间*/
+}
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+        /*使用属性选择器，只要名称含有col-的所有样式*/
+        div[class*='col-']{
+            height: 100px;
+            background-color: gold;
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>栅格系统，col-lg，分界点1200px</h1>
+    <!--响应容器-->
+    <div class="container">
+        <!--栅格系统，col-lg代表分界点为1200px-->
+        <!--后面的数字加起来要等于12，当窗口宽度大于1200px，下面4个盒子会排在一行-->
+        <!--总的宽度是1170px，然后按比例分配，当窗口宽度小于1200px，每个盒子单独占一行，宽度为970px-->
+        <!--然后继续缩小宽度，变成750px,最后继续缩小，显示为100%宽度
+        每一行的宽度根据bootstrap中容器规定确定，参考004案例-->
+        <!--拉动窗口查看盒子的变化-->
+        <div class="row">
+            <div class="col-lg-3">col-lg-3 3份</div>
+            <div class="col-lg-4">col-lg-4 4份</div>
+            <div class="col-lg-2">col-lg-2 2份</div>
+            <div class="col-lg-3">col-lg-3 3份</div>
+        </div>
+    </div>
+
+    <h1>栅格系统，col-md，分界点992px</h1>
+    <!--响应容器-->
+    <div class="container">
+        <!--栅格系统，col-md代表分界点为992px-->
+        <!--拉动窗口查看盒子的变化-->
+        <div class="row">
+            <div class="col-md-4">col-lg-4 4份</div>
+            <div class="col-md-4">col-lg-4 4份</div>
+            <div class="col-md-4">col-lg-4 4份</div>
+        </div>
+    </div>
+</body>
+</html>

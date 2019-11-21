@@ -1,0 +1,166 @@
+## Web前端笔记 ##
+
+
+## 第十一部分：js移动端库和bootstrap框架
+
+
+
+## 1. 移动端js事件
+- 移动端的操作方式和PC端是不同的，移动端主要用手指操作，
+    所以有特殊的touch事件，touch事件包括如下几个事件：
+    1、touchstart: //手指放到屏幕上时触发
+    2、touchmove: //手指在屏幕上滑动式触发
+    3、touchend: //手指离开屏幕时触发
+    4、touchcancel: //系统取消touch事件的时候触发，比较少用 
+    
+- 移动端一般有三种操作，点击、滑动、拖动，
+    这三种操作一般是组合使用上面的几个事件来完成的，
+    所有上面的4个事件一般很少单独使用，
+    一般是封装使用来实现这三种操作，可以使用封装成熟的js库。
+    
+    
+## 2. zeptojs库
+- Zepto是一个轻量级的针对现代高级浏览器的JavaScript库， 
+    它与jquery有着类似的api。 如果你会用jquery，那么你也会用zepto。
+    Zepto的一些可选功能是专门针对移动端浏览器的；
+    它的最初目标是在移动端提供一个精简的类似jquery的js库。
+    使用时候直接script引入该库（库都放在js文件夹中）即可。
+    <!--引入zepto库，引入和使用都和jQuery库一样-->
+
+- zepto官网：http://zeptojs.com/
+- zepto中文api：http://www.css88.com/doc/zeptojs_api/
+- zepto包含很多模块，默认下载版本包含的模块有Core, Ajax, Event, Form, IE模块，如果还需要其他的模块，可以自定义构建。
+- zepto自定义构建地址：http://github.e-sites.nl/zeptobuilder/ 
+
+- 但是目前手机处理器越来越快，处理能力越来越强，实际开发直接使用jQuery库，不使用zepto
+
+
+## 3. swiper滑动效果插件
+- swiper.js是一款成熟稳定的应用于PC端和移动端的滑动效果插件，
+    一般用来触屏焦点图、触屏整屏滚动等效果。 
+    swiper分为2.x版本和3.x版本，
+    2.x版本支持低版本浏览器(IE7)，
+    3.x放弃支持低版本浏览器，适合应用在移动端。
+
+    2.x版本中文网址：http://2.swiper.com.cn/
+    3.x版本中文网地址：http://www.swiper.com.cn/
+    
+    swiper.jquery.min.js 页面引入了jQuery就使用该文件，依赖jQuery
+    swiper.min.js 直接使用，不需要依赖jQuery
+    swiper.min.css 一般要自定义样式，还需要引入该css文件(很多滑动的自定义样式，直接套用即可)
+    如果页面引用了jquery或者zepto，就引用 swiper.jquery.min.js,它的容量比swiper.min.js
+    
+    - 实际开发：jQuery库  swiper.jquery.min.js   swiper.min.css一起使用
+    - 参考web_rem_移动端天天生鲜动态首页实例
+    
+- 自定义swiper.min.css中的样式
+
+    - 不要直接修改swiper.min.css文件，源文件不要改动，其它地方也会使用源文件
+    - 我们自己的main.css是在swiper.min.css后面引入的，main.css的样式会覆盖swiper.min.css中的
+    - 因此，我们将swiper.min.css要修改的样式部分，复制出来，放到main.css进行修改
+    - 具体步骤：
+    - 进火狐-查看元素-找到元素样式位置-点击进入swiper.min.css(自动定位在该样式处)-复制样式-粘贴到main.css末尾进行修改
+    - 参考web_rem_移动端天天生鲜动态首页实例和里面的图片
+    
+    - 自定义css样式技巧：(火狐浏览器为例)
+        - 查看元素，比如幻灯片底部切换的小圆点修改
+        - 幻灯片是自动播放的，我们可以先将自动播放暂时关闭，方便元素的选择
+        - 选择页面中的元素，选择小圆点部分
+        - 查看器里面就会显示元素具体的样式，然后我们可以直接修改样式
+        - 浏览器中修改bottom width就是调整小圆点部分的位置
+        - 可以直接复制出来样式，也可以点击右上角swiper.min.css进入样式编辑器里面
+        - 把要修改的样式部分复制到main.css中进行修改
+        - 具体参考：web_rem_移动端天天生鲜动态首页_swiper滑动库案例和里面的图片
+   
+- 实际使用直接去查参考文档和API文档：
+        Swiper5 使用方法
+        https://www.swiper.com.cn/usage/index.html
+        API文档
+        https://www.swiper.com.cn/api/index.html
+        
+        
+## 4. bootstrap框架
+- 简单、直观、强悍的前端开发框架，让web开发更迅速、简单。 
+    来自Twitter，是目前很受欢迎的前端框架之一。
+    Bootrstrap是基于HTML、CSS、JavaScript的，
+    让书写代码更容易。 移动优先，响应式布局开发。
+- 中文网站：
+    bootstrap中文网址：http://www.bootcss.com/
+    中文文档及下载地址：https://v3.bootcss.com/getting-started/
+- Bootstrap 插件全部依赖 jQuery
+    请注意，Bootstrap 的所有 JavaScript 插件都依赖 jQuery，
+    因此 jQuery 必须在 Bootstrap 之前引入，就像在基本模版中所展示的一样。
+    在 bower.json 文件中 列出了 Bootstrap 所支持的 jQuery 版本。
+
+- 预编译版
+    - 文档结构：
+    bootstrap/
+    ├── css/
+    │   ├── bootstrap.css
+    │   ├── bootstrap.css.map
+    │   ├── bootstrap.min.css
+    │   ├── bootstrap.min.css.map
+    │   ├── bootstrap-theme.css
+    │   ├── bootstrap-theme.css.map
+    │   ├── bootstrap-theme.min.css
+    │   └── bootstrap-theme.min.css.map
+    ├── js/
+    │   ├── bootstrap.js
+    │   └── bootstrap.min.js
+    └── fonts/
+        ├── glyphicons-halflings-regular.eot
+        ├── glyphicons-halflings-regular.svg
+        ├── glyphicons-halflings-regular.ttf
+        ├── glyphicons-halflings-regular.woff
+        └── glyphicons-halflings-regular.woff2
+    
+    上面展示的就是 Bootstrap 的基本文件结构：预编译文件可以直接使用到任何 web 项目中。
+    我们提供了编译好的 CSS 和 JS (bootstrap.*) 文件，还有经过压缩的 CSS 和 JS (bootstrap.min.*) 文件。
+    同时还提供了 CSS 源码映射表 (bootstrap.*.map) ，
+    可以在某些浏览器的开发工具中使用。同时还包含了来自 Glyphicons 的图标字体，
+    在附带的 Bootstrap 主题中使用到了这些图标。
+    
+    时间开发中：
+    bootstrap.min.css       放到web下的css文件夹中
+    bootstrap.min.js        放到web下的js文件夹中
+    jquery-1.12.4.min.js    放到web下的js文件夹中
+    fonts字体文件直接放在web文件夹下
+
+## 4.1.  bootstrap 容器
+- /*直接使用bootstrap中已经写好的样式container-fluid和container*/
+    <div class="container-fluid">流体容器</div>
+    <div class="container">响应式固定容器</div>
+    
+- /*流体容器，即100%宽度的容器，注意默认左右padding有15px*/  
+- /*响应式布局容器, 注意默认左右padding有15px*/
+        有四个响应式尺寸:
+            1170  大于等于1200宽度都设置为1170px
+            970   大于等于992为970px
+            750   7大于等于768为750px
+            100%  小于768时候，宽度全部按100%显示
+        内部还是使用的媒体查询，查询窗口大小，然后进行响应，@media (max-width: 1170px){}
+        参考004案例和05文件夹中的响应式布局案例
+        
+## 4.2. bootstrap 栅格系统
+- bootstrap将页面的横向分为12等分(即宽度相当于有12竖列)，按照12等分定义了适应不同宽度等分的样式类，
+    这些样式类组成了一套响应式、移动设备优先的流式栅格系统：
+
+    1、col-lg- 大于1200排成一行，小于1200分别占一行
+    2、col-md- 大于992排成一行，小于992分别占一行
+    3、col-sm- 大于768排成一行，小于768分别占一行
+    4、col-xs- 始终排列成一行  不管宽度多大多小都是一行
+    
+    上面相当于四种样式，样式的分界点和响应式容器的分界点是一样的
+    大于分界点，就排在一行，但是横向是要分割为12等分，数字加起来是12即可
+    - 参考案例005
+    
+    
+    
+        
+        
+
+            
+       
+        
+        
+    

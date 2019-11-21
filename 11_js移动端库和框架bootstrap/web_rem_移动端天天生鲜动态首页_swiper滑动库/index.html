@@ -5,11 +5,50 @@
     <!--mata:vp tab设置视口-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>天天生鲜-首页</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css"> <!--引入css样式-->
-    <link rel="stylesheet" type="text/css" href="css/main.css"> <!--引入css样式-->
+    <!--样式引入要注意顺序，文件有加载顺序，后面的样式会覆盖前面的样式-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css"> <!--引入css样式,重置样式最新引入-->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"> <!--然后引入swiper库的滑动的样式-->
+    <link rel="stylesheet" type="text/css" href="css/main.css"> <!--最后引入自己定义的css样式-->
     <!--设置re，需要引入set_root.js，用于字体大小换算-->
-    <script type="application/javascript" src="js/set_root.js"></script> <!--引入js文件，用于设置rem-->
+    <script type="text/javascript" src="js/set_root.js"></script> <!--引入js文件，用于设置rem-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--先引入jQuery库，然后引入swiper库，该库要依赖jQuery-->
+    <script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            // 使用库中的标准写法，加上下面一段代码，就可以动态操作幻灯片了
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',  // 分页小圆点
+                prevButton: '.swiper-button-prev', // 上一页箭头
+                nextButton: '.swiper-button-next', // 下一页箭头
+                initialSlide :0,  // 初始是第几张幻灯片
+                paginationClickable: true,  // 小圆点是否可以点击切换
+                loop: true,  // 幻灯片是否连续播放
+                autoplay:3000, // 自动播放时间间隔
+                autoplayDisableOnInteraction:false // 操作以后是否还自动播放
+            });
+
+        })
+
+        /*
+        swiper使用参数：
+        1、initialSlide：初始索引值，从0开始
+        2、direction：滑动方向 horizontal | vertical
+        3、speed：滑动速度，单位ms
+        4、autoplay：设置自动播放及播放时间
+        5、autoplayDisableOnInteraction：用户操作swipe后是否还自动播放，默认是true，不再自动播放
+        6、pagination：分页圆点
+        7、paginationClickable：分页圆点是否点击
+        8、prevButton：上一页箭头
+        9、nextButton：下一页箭头
+        10、loop：是否首尾衔接
+        */
+
+    </script>
 </head>
+
 <body>
 
     <!--
@@ -38,9 +77,31 @@
         <!--中间内容-->
         <div class="center_con">
 
-            <!--幻灯片-->
-            <div class="slide">
-                <img src="images/slide.jpg" alt="商品幻灯片">
+            <!--幻灯片展示-->
+            <div class="slide"> <!--幻灯片的div容器，用于放置幻灯片的盒子-->
+                <!--本来05文件夹中天天生鲜静态首页只放置了下面一张静态的图片-->
+                <!--<img src="images/slide.jpg" alt="商品幻灯片">-->
+
+
+                <!--我们直接套用swiper.min.css的css样式和swiper.jquery.min.js库实现幻灯片动态展示功能-->
+                <!--幻灯片和图片上面的箭头的整体容器-->
+                <!--下面div直接使用标准写法，图片的的地址更换为自己的图片即可，可以添加更多的图片，常用的就是3-5张图片轮流展示-->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/slide.jpg" alt="商品幻灯片"></div>
+                        <div class="swiper-slide"><img src="images/slide.jpg" alt="商品幻灯片"></div>
+                        <div class="swiper-slide"><img src="images/slide.jpg" alt="商品幻灯片"></div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>  <!--幻灯片下面的小圆点-->
+
+                    <!--不需要左右箭头，直接注释掉即可，箭头样式可以自己调节，不要直接去swiper.min.css文件中修改-->
+
+                    <div class="swiper-button-prev"></div> <!--幻灯片的左箭头-->
+                    <div class="swiper-button-next"></div> <!--幻灯片的右箭头-->
+                </div>
+
+
             </div>
 
             <!--中间菜单栏-->
