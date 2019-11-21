@@ -1,0 +1,343 @@
+/*基于rem布局*/
+/*js里面设置html默认字体大小为10px*/
+/*1rem=10px*/
+
+/*最外层包裹div*/
+/*样式，大小和手机屏幕尺寸一致，以iPhone6作为基准，图片像素都是2倍图*/
+/*所有图片都是iPhone6布置尺寸的2倍图，使用设置img标签宽度100%或者背景图background-size强制缩小图片避免元素溢出等方式，图片自动缩放*/
+
+.main_wrap{
+    position: absolute; /*参考元素就是body也就是浏览器窗口*/
+    /*background-color: gold;*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; /*上面都为0，代表盒子大小和浏览器窗口大小一样*/
+    /*外部盒子固定了，顶部栏中间内容底部栏都可以以他为基准绝对定位*/
+}
+
+
+/*使用外部包裹div，作为定位基准*/
+/*整体定位顶部栏，中间内容，底部栏*/
+
+
+
+
+/*顶部栏目样式*/
+/*顶部logo栏*/
+/*顶部按照文档流，直接排在最顶部，不需要定位*/
+.header{
+    height: 5rem;
+    background-color: #37ab40;
+    position: relative; /*用于搜索框的定位*/
+}
+
+.logo{
+    display: block;
+    width: 8.9rem;
+    height: 3.6rem;
+    margin: 0.7rem auto 0;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.search{
+    width: 2.7rem;
+    height: 2.7rem;
+    /*background-color: gold;*/
+    position: absolute;
+    right: 2.9rem;
+    top: 1.2rem;
+    background: url("../images/icons.png") left top no-repeat;
+    background-size: 6rem 84rem; /*缩小背景图尺寸,设置原始图片尺寸的一半*/
+}
+
+
+
+
+/*中间内容样式*/
+.center_con{
+    position: absolute; /*最外层的包裹div作为定位基准*/
+    left: 0;
+    right: 0; /*右边对齐，也可以使用宽度100%*/
+    top: 5rem;
+    bottom: 5rem;
+    background-color: #efefef;
+
+    /*只出现竖向滚动条，横向不出现，横向宽度都是设置好的*/
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+/*幻灯片样式*/
+/*图片需要缩小为1/2*/
+.slide{
+    /*宽度就是默认100%*/
+    height: 14rem; /*图片实际是280px，需要的样式是140px*/
+}
+
+.slide img{
+    /*父元素设置的宽度，img设置宽度为100%会自动适应父级宽度，高度自动缩放*/
+    width: 100%; /*img标签是内联块元素，需要设置宽度为100%，内联块没有设置宽高，宽高由内容决定*/
+    /*高度会自动等比缩放，原始图片(750*280)正好是2倍，缩小后正好是1倍图(375*140)*/
+}
+
+
+
+/*菜单栏*/
+.menu_con{
+    /*宽度不设置，直接父级的100%*/
+    height: 18.5rem;
+    /*background-color: green;*/
+    margin: 1rem 0 0 2.75rem;
+}
+
+.menu_con ul{
+    width: 35.75rem; /*最右边一个li摆不下，ul多给1rem，多的背景直接隐藏*/
+    overflow: hidden;
+    height: 16.75rem;
+    margin: 1.75rem auto 0; /*左右整体居中*/
+}
+
+.menu_con ul li{
+    width: 5.9rem;
+    height: 8.1rem;
+    float: left;
+    /*background-color: pink;*/
+    /*border: 2px solid red;*/
+    margin-right: 3.0rem;
+
+}
+
+.menu_con li a{
+    display: block;
+    height: 5.6rem;
+    /*border: 2px solid red;*/
+    background: url("../images/icons.png") left -6.00rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+/*单独设置每一个背景图的位置*/
+.menu_con li:nth-child(2) a{
+    background-position: left -12.0rem;
+}
+
+.menu_con li:nth-child(3) a{
+    background-position: left -18.0rem;
+}
+
+.menu_con li:nth-child(4) a{
+    background-position: left -24.0rem;
+}
+
+.menu_con li:nth-child(5) a{
+    background-position: left -30.0rem;
+}
+
+.menu_con li:nth-child(6) a{
+    background-position: left -36.0rem;
+}
+
+.menu_con li:nth-child(7) a{
+    background-position: left -42.0rem;
+}
+
+.menu_con li:last-child a{
+    background-position: left -48.0rem;
+}
+
+
+/*菜单图片下面文字设置*/
+.menu_con li h2{
+    height: 2.5rem;
+    text-align: center; /*文字水平居中*/
+    font: bold 0.9rem/2.5rem "Microsoft YaHei"; /*文字大小也可以使用像素，不需要缩放*/
+    color: darkcyan;
+}
+
+
+
+
+/*<!--商品展示栏-->*/
+.common_model{
+    height: 17.25rem;
+    /*background-color: blueviolet;*/
+    margin-top: 1rem;
+    text-align: center; /*商品展示栏下面的子元素都默认保持居中*/
+    /*有些靠左靠右可以单独设置*/
+}
+
+
+/*标题栏*/
+.common_title{
+    width: 35.5rem;
+    height: 1.8rem;
+    /*background-color: gold;*/
+    margin: 1.6rem auto 0;
+
+}
+
+.common_title h3{
+    float: left;
+    height: 1.8rem;
+    font: bold 1.5rem/1.8rem "Microsoft YaHei";
+    color: darkcyan;
+    border-left: 0.5rem solid #fbc83d;
+}
+
+.common_title a{
+    float: right;
+    height: 1.8rem;
+    font: bold 1.0rem/1.8rem "Microsoft YaHei";
+    color: darkcyan;
+}
+
+
+/*商品展示栏下幻灯片*/
+.banner{
+    display: block;
+    width: 35.5rem;
+    height: 9rem;
+    margin: 1rem auto 1rem;
+}
+
+.banner img{
+    width: 100%;
+}
+
+/*商品展示*/
+.goods_list{
+    width: 37.5rem; /*宽度就是页面宽度，手机设备宽度就是375px，也可以用100%*/
+    height: 18.7rem;
+    /*background-color: gold;*/
+    margin: 1rem auto 0;
+}
+
+.goods_list li {
+    float: left;
+    width: 11.7rem;
+    height: 18.7rem;
+    /*border-right: 1px solid #e7e7e7;*/
+    /*background-color: green;*/
+    position: relative; /*用于购物车定位*/
+    /*ul是设置的水平居中，下面的ul盒子一行分布3个li，由于设置左浮动*/
+    /*不能直接设置居中，我们先设置盒子合适的宽度（大小刚刚好，就直接居中了），如果有不能有点偏差，然后设置盒子间距*/
+    /*调整三个盒子整体居中，也可以直接设置第一个盒子左边距，最后一个盒子右边距*/
+    margin: 0 0.2rem 0 0.5rem; /*上面12.3就刚刚好，但是我们还是设置间距比较好看*/
+}
+
+/*最后一个商品没有有边框*/
+.goods_list li:last-child{
+    border-right: 0;
+}
+
+/*商品图片*/
+/*设置宽度为父级100%,图片自动缩放，高度由缩放图片自动撑开*/
+.goods_list li a img{
+    width: 100%; /*图片大小大于盒子了，设置图片宽度为100%,就会自动缩放*/
+}
+
+/*商品名称和价格*/
+.goods_list li h4{
+    font: normal 1rem/1.5rem "Microsoft YaHei";
+    width: 5rem;
+    /*margin: 0.5rem auto 0; !*盒子左右居中*!*/
+    text-align: left;
+
+    /*文字不换行，超出盒子部分省略号显示，以下三步实现*/
+    overflow: hidden;
+    /*强制文字不换行*/
+    white-space: nowrap;
+    /*超出部分显示省略号*/
+    text-overflow: ellipsis;
+}
+
+/*商品规格*/
+.unit{
+    width: 5rem;
+    font: normal 1rem/1.5rem "Microsoft YaHei";
+    /*margin: 0 auto 0; !*盒子左右居中*!*/
+    color: #bbbbbb;
+    text-align: left;
+}
+
+/*商品价格*/
+.price{
+    width: 5rem;
+    font: normal 1rem/1.5rem "Microsoft YaHei";
+    /*margin: 0 auto 0; !*盒子左右居中*!*/
+    color: #ff4400;
+    text-align: left;
+}
+
+/*加号图标*/
+.add_chart{
+    position: absolute;
+    width: 3.4rem;
+    height: 3.4rem;
+    /*background-color: gold;*/
+    /*定位到合适的位置*/
+    right: 1.35rem;
+    bottom: 1.5rem;
+
+    /*移动背景图显示出加号*/
+    background: url("../images/icons.png") left -54rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+
+
+/*底部栏样式*/
+.footer{
+    position: absolute;
+    left: 0;
+    bottom: 0; /*相对于底部是0*/
+    width: 100%; /*也可以使用right为0*/
+    /*background-color: red;*/
+    background-color: #e7e7e7;
+    height: 5rem;
+}
+
+.footer li{
+    width: 25%;
+    height: 5rem;
+    float: left;
+    text-align: center; /*文字水平居中*/
+}
+
+.footer li a{
+    display: block;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 0.7rem auto 0; /*盒子整体居中*/
+
+    /*移动背景图显示出需要的图形*/
+    background: url("../images/icons.png") left -60rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+/*单独设置每个图形移动的位置*/
+.footer li:nth-child(2) a{
+    background: url("../images/icons.png") left -66rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+.footer li:nth-child(3) a{
+    background: url("../images/icons.png") left -72rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+.footer li:nth-child(4) a{
+    background: url("../images/icons.png") left -78rem no-repeat; /*每张图片向上移动一定像素*/
+    background-size: 6rem 84rem; /*设置背景图大小，对原始图片进行缩放*/
+}
+
+/*底部栏文字*/
+.footer li h2{
+    color: darkcyan;
+    margin-top: 0.3rem;
+}

@@ -24,11 +24,15 @@
     它与jquery有着类似的api。 如果你会用jquery，那么你也会用zepto。
     Zepto的一些可选功能是专门针对移动端浏览器的；
     它的最初目标是在移动端提供一个精简的类似jquery的js库。
+    使用时候直接script引入该库（库都放在js文件夹中）即可。
+    <!--引入zepto库，引入和使用都和jQuery库一样-->
 
 - zepto官网：http://zeptojs.com/
 - zepto中文api：http://www.css88.com/doc/zeptojs_api/
 - zepto包含很多模块，默认下载版本包含的模块有Core, Ajax, Event, Form, IE模块，如果还需要其他的模块，可以自定义构建。
 - zepto自定义构建地址：http://github.e-sites.nl/zeptobuilder/ 
+
+- 但是目前手机处理器越来越快，处理能力越来越强，实际开发直接使用jQuery库，不使用zepto
 
 
 ## 3. swiper滑动效果插件
@@ -40,3 +44,7 @@
 
     2.x版本中文网址：http://2.swiper.com.cn/
     3.x版本中文网地址：http://www.swiper.com.cn/
+    
+    swiper.jquery.min.js 页面引入了jQuery就使用该文件，依赖jQuery
+    swiper.min.js 直接使用，不需要依赖jQuery
+    
