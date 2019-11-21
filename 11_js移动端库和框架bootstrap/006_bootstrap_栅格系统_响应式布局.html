@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+        /*使用属性选择器，只要名称含有col-的所有样式*/
+        div[class*='col-']{
+            background-color: gold;
+            border: 1px solid black;
+        }
+
+        .box{
+            max-width: 240px; /*窗口拉伸时候，盒子的最大宽度不能超过240px，可以保证盒子单独一行时候被拉伸的太宽了*/
+            height: 200px;
+            background-color: cyan;
+            border: 1px solid black;
+            margin: 20px auto 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>栅格系统响应式布局</h1>
+    <!--响应容器-->
+    <div class="container">
+        <!--拉动窗口查看盒子的变化-->
+        <!--col-lg-3，大于等于1200px四个排一行，总宽度1170-->
+        <!--col-md-3，大于等于992px四个排一行，总宽度970-->
+        <!--col-sm-6，大于等于768px两个排一行，总宽度750-->
+        <!--小于768px后，一个排在一行-->
+
+        <!--通过修改像素分界点，对应的等分数量，不同的窗口宽度，一行对应不同的盒子，可以实现响应式布局-->
+        <!--一行排列的盒子都是可以被12整除的数，一般一行 6个 4个 3个 2个 1个-->
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6"><div class="box"></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-6"><div class="box"></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-6"><div class="box"></div></div>
+            <div class="col-lg-3 col-md-3 col-sm-6"><div class="box"></div></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--col-xs- 始终排列成一行,不管几个盒子，始终都在一行-->
+        <!--总宽度自己根据栅格系统的分解点进行调整-->
+        <div class="row">
+            <div class="col-xs-3"><div class="box"></div></div>
+            <div class="col-xs-3"><div class="box"></div></div>
+            <div class="col-xs-3"><div class="box"></div></div>
+            <div class="col-xs-3"><div class="box"></div></div>
+        </div>
+    </div>
+</body>
+</html>

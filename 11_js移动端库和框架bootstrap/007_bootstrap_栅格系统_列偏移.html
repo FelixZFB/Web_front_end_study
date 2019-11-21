@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+        /*使用属性选择器，只要名称含有col-的所有样式*/
+        div[class*='col-']{
+            height: 200px;
+            background-color: gold;
+            border: 1px solid black;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1>栅格系统列偏移</h1>
+    <!--响应容器-->
+    <div class="container">
+        <!--每次分12等分都是以一行为准-->
+        <div class="row">
+            <!--大于1200px，两个盒子在一行，小于1200px，各自占一行-->
+            <!--每个盒子只占了总宽度的5份，右边还剩余了两份，相对于窗口没有居中-->
+            <!--我们可以将第一个盒子向右偏移1份，此时，左边空一份，右边空一份，正好整体居中了-->
+            <div class="col-lg-5 col-lg-offset-1"></div>
+            <div class="col-lg-5"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--一行的12等份都是以row行为单位，单独开一行-->
+        <div class="row">
+            <!--左边的向右偏移1份，右边的和左边这个间隔2份，最右边空了1分，整体就居中了-->
+            <div class="col-lg-4 col-lg-offset-1"></div>
+            <div class="col-lg-4 col-lg-offset-2"></div>
+        </div>
+    </div>
+</body>
+</html>
