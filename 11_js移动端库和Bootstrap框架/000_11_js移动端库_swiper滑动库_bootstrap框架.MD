@@ -147,6 +147,7 @@
         参考004案例和05文件夹中的响应式布局案例
         
 ## 4.2. bootstrap 栅格系统
+- 栅格系统可以实现快速方便的响应式布局
 - bootstrap将页面的横向一行为基准
     分为12等分(即宽度相当于有12竖列)，按照12等分定义了适应不同宽度等分的样式类，
     （以一行为基准，可以开一个div样式为container,然后下面多个div样式都为row，每个row里面包裹小div
@@ -188,6 +189,48 @@
     3、hidden-md
     4、hidden-lg 
     - 参考实例008
+    
+## 4.4. bootstrap 按钮
+- bootstrap 按钮
+- 使用input或者a标签创建按钮
+- 所有按钮，先使用btn样式声明是一个按钮，然后不同的按钮向后面加不同的样式
+    1、btn 声明按钮
+    2、btn-default 默认按钮样式 
+    3、btn-primay  蓝色，不同主题色的按钮
+    4、btn-success 绿色
+    5、btn-info 浅蓝色
+    6、btn-warning 黄色
+    7、btn-danger 红色
+    8、btn-link 链接按钮，透明色
+    9、btn-lg  大号按钮
+    10、btn-md 中号按钮
+    11、btn-xs 下号按钮
+    12、btn-block 宽度是父级宽100%的按钮
+        占父级宽度100%的按钮，一般使用在移动端的最底部，按钮独自占据一行
+    13、active  已经处于激活的按钮
+    14、disabled  不能激活，即不能点击的按钮
+    15、btn-group 定义按钮组
+        按钮组使用a标签制作，使用input标签会出现bug
+    - 参考实例009/010    
+    
+## 4.5. bootstrap 表单
+- bootstrap 表单
+    都使用form标签声明一个表单区域
+    1、form 声明一个表单域
+    2、form-inline 内联表单域     
+        <!--网页端我们可以使用内联表单，表单都在一行-->
+        <!--内联表单一直缩小，放不下元素的时候，还是会自动换行，每一行都占据100%宽度-->
+    3、form-horizontal 水平排列表单域
+        <!--水平排列表单，随便怎么拉伸，一个内联表单的元素总是在一行，始终不会换行-->
+    4、form-group 表单组、包括表单文字和表单控件
+    5、form-control 文本输入框、下拉列表控件样式
+    6、checkbox checkbox-inline 多选框样式
+    7、radio radio-inline 单选框样式
+    8、input-group 表单控件组
+    9、input-group-addon 表单控件组物件样式
+    10、input-group-btn 表单控件组物件为按钮的样式
+    11、form-group-lg 大尺寸表单
+    12、form-group-sm 小尺寸表单
     
     
         

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+
+    </style>
+
+</head>
+<body>
+    <!--响应容器-->
+    <div class="container">
+        <!--每次分12等分都是以一行为准-->
+        <div class="row">
+            <h1>bootstrap按钮</h1>
+        </div>
+    </div>
+    <!--响应容器-->
+    <div class="container">
+        <!--每次分12等分都是以一行为准-->
+        <div class="row">
+            <!--使用input创建按钮-->
+            <!--普通按钮,所有按钮，先使用btn样式，然后不同的按钮向后面加不同的样式-->
+            <input type="button" name="" value="按钮1" class="btn">
+            <!--带颜色的按钮,默认蓝色-->
+            <input type="button" name="" value="蓝色按钮-primary" class="btn btn-primary">
+            <!--带颜色的按钮,默认绿色-->
+            <input type="button" name="" value="绿色按钮-success" class="btn btn-success">
+            <input type="button" name="" value="绿色按钮-success" class="btn btn-info">
+
+            <!--也可以使用a标签创建按钮-->
+            <a href="#" class="btn btn-danger">红色按钮-danger</a>
+            <a href="#" class="btn btn-link">透明链接按钮-link</a>
+
+        </div>
+
+        <!--强制换行-->
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+            <!--使用a标签创建按钮，创建不同大小按钮-->
+            <a href="#" class="btn btn-danger btn-lg">大按钮</a>
+            <a href="#" class="btn btn-danger btn-md">大按钮</a>
+            <a href="#" class="btn btn-danger btn-xs">小按钮</a>
+            <a href="#" class="btn btn-danger">默认大小按钮</a>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+            <!--占据父级100%宽度的按钮-->
+            <a href="#" class="btn btn-danger btn-block">占父级宽度100%的按钮，一般使用在移动端的最底部，按钮独自占据一行</a>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+            <!--使用a标签创建按钮，激活的按钮，不能点击的按钮-->
+            <a href="#" class="btn btn-success btn-lg">默认按钮，鼠标放上去才会激活，鼠标放上去颜色变深</a>
+            <a href="#" class="btn btn-success btn-lg active">已经处于激活状态样式的按钮，颜色已经变深了</a>
+            <a href="#" class="btn btn-success btn-lg disabled">不能点击的按钮</a>
+        </div>
+
+    </div>
+</body>
+</html>

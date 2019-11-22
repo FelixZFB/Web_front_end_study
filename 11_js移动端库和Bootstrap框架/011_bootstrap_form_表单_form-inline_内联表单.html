@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+
+    </style>
+
+</head>
+<body>
+    <!--响应容器-->
+    <div class="container">
+        <!--每次分12等分都是以一行为准-->
+        <div class="row">
+            <h1>bootstrap表单</h1>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--响应容器-->
+    <div class="container">
+        <!--每次分12等分都是以一行为准-->
+        <div class="row">
+            <!--将表单还是放在栅格系统中，方便实现响应式布局-->
+            <!--使用form声明一个表单域，role="form"是一些优化后的样式，也可以不要-->
+            <form role="form">
+
+                <!--使用表单组，创建不同的表单-->
+                <div class="form-group">
+                    <!--文字和输入框-->
+                    <!--for和id属性配合使用，点击用户名文字也可以激活输入框-->
+                    <!--输入框属性使用form-control-->
+                    <label for="input01">用户名:</label>
+                    <input type="text" name="" class="form-control" id="input01">
+                </div>
+
+                <div class="form-group">
+                    <!--文字和输入框-->
+                    <label>密码:</label>
+                    <input type="password" name="" class="form-control">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!--上面的表单都是独自占据一行，适用于移动端-->
+    <!--网页端我们可以使用内联表单，表单都在一行-->
+    <!--内联表单一直缩小，放不下元素的时候，还是会自动换行，每一行都占据100%宽度-->
+    <br>
+    <br>
+    <br>
+    <!--响应容器-->
+    <div class="container">
+        <!--每次分12等分都是以一行为准-->
+        <div class="row">
+            <!--将表单还是放在栅格系统中，方便实现响应式布局-->
+            <!--使用form声明一个表单域，role="form"是一些优化后的样式，也可以不要-->
+            <!--form-inline内联表单，表单都排列在一行，还是会和栅格系统响应一致-->
+            <!--窗口一直缩小后，一行放不下了，会自动换行，占据一行的100%k宽度-->
+            <form class="form-inline" role="form">
+
+                <!--使用表单组，创建不同的表单-->
+                <div class="form-group">
+                    <!--文字和输入框-->
+                    <!--for和id属性配合使用，点击用户名文字也可以激活输入框-->
+                    <!--输入框属性使用form-control-->
+                    <label for="input01">用户名:</label>
+                    <input type="text" name="" class="form-control" id="input01">
+                </div>
+
+                <div class="form-group">
+                    <!--文字和输入框-->
+                    <label>密码:</label>
+                    <input type="password" name="" class="form-control">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
