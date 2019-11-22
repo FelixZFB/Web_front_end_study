@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+    </style>
+
+</head>
+<body>
+    <!--导航条一般都是做到顶格，所以导航条内部再包container响应式容器-->
+    <!--首先声明导航条, 颜色灰色，去掉两边倒圆角-->
+    <div class="navbar navbar-default navbar-static-top">
+        <!--导航条内部使用container响应式容器-->
+        <div class="container">
+
+            <!--定义logo，头部信息-->
+            <div class="navbar-header">
+                <!--窗口不断缩小后，出现小横线(下面一个span就是一个小横线)图标，即导航图标-->
+                <!--data-toggle="collapse" data-target="#mymenu"结合下面包裹菜单的div中的id="mymenu"-->
+                <!--上面一起实现，窗口缩小后隐藏，只显示小横线图标，点击图标展开隐藏的菜单栏-->
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+                    <span class="icon-bar"></span> <!--一个小横线-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">LOGO</a>
+            </div>
+
+            <!--使用div将菜单栏和表单包裹起来，窗口一直缩小，只显示右侧的小横线图标-->
+            <div class="collapse navbar-collapse" id="mymenu">
+
+                <!--定义菜单栏-->
+                <ul class="nav navbar-nav">
+                    <!--首页处于激活状态-->
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">公司简介</a></li>
+                    <li><a href="#">解决方案</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+
+                <!--定义菜单里面的表单-->
+                <form class="navbar-form navbar-right"> <!--表单靠右-->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" name="" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

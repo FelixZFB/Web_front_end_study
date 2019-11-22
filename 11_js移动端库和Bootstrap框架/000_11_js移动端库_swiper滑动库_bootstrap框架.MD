@@ -146,6 +146,8 @@
         内部还是使用的媒体查询，查询窗口大小，然后进行响应，@media (max-width: 1170px){}
         参考004案例和05文件夹中的响应式布局案例
         
+- 接下来要做的东西都是放在container响应式容器里面，不然窗口缩放后会出不来想要的效果
+        
 ## 4.2. bootstrap 栅格系统
 - 栅格系统可以实现快速方便的响应式布局
 - bootstrap将页面的横向一行为基准
@@ -192,7 +194,7 @@
     
 ## 4.4. bootstrap 按钮
 - bootstrap 按钮
-- 使用input或者a标签创建按钮
+- 使用input或者a标签创建按钮,还可以使用button作为标签制作按钮(参考014案例)
 - 所有按钮，先使用btn样式声明是一个按钮，然后不同的按钮向后面加不同的样式
     1、btn 声明按钮
     2、btn-default 默认按钮样式 
@@ -220,20 +222,58 @@
     2、form-inline 内联表单域     
         <!--网页端我们可以使用内联表单，表单都在一行-->
         <!--内联表单一直缩小，放不下元素的时候，还是会自动换行，每一行都占据100%宽度-->
+    
     3、form-horizontal 水平排列表单域
         <!--水平排列表单，随便怎么拉伸，一个内联表单的元素总是在一行，始终不会换行-->
+    
     4、form-group 表单组、包括表单文字和表单控件
+        - 表单进行分组，比如用户名和输入框放在一个组，密码和输入框放在一个组，参考011
+        
     5、form-control 文本输入框、下拉列表控件样式
     6、checkbox checkbox-inline 多选框样式
     7、radio radio-inline 单选框样式
     8、input-group 表单控件组
+        - 可以实现输入提示，搜索小图标等效果参考014案例
+        - <!--需要什么图标，直接使用图标的样式名称-->
+        - <!--Glyphicons 字体图标地址：https://v3.bootcss.com/components/#glyphicons-->
+        - <!--图标放在span标签里面，实际属于字体样式，当做文字使用，我们可以自己修改字体大小和颜色等参数，改变图标样式，参考顶部css样式-->
+        - bootstrap 字体图标(glyphicons就是字体图标) 通过字体代替图标，font文件夹需要和css文件夹在同一目录 
+
     9、input-group-addon 表单控件组物件样式
     10、input-group-btn 表单控件组物件为按钮的样式
     11、form-group-lg 大尺寸表单
     12、form-group-sm 小尺寸表单
     
+## 4.6. bootstrap 导航条
+- 前面讲的都是使用container响应式容器包裹的按钮，表单等内容
+- 导航条，使用navbar包裹container，然后下面再包裹内容
+    1、navbar 声明导航条
+    2、navbar-default 声明默认的导航条样式  灰色的导航条
+    3、navbar-inverse 声明反白的导航条样式  黑色的导航条
+    4、navbar-static-top 去掉导航条的圆角   
     
-        
+    5、navbar-fixed-top 固定到顶部的导航条
+    6、navbar-fixed-bottom 固定到底部的导航条
+    7、navbar-header 申明logo的容器
+    8、navbar-brand 针对logo等固定内容的样式
+    11、nav navbar-nav 定义导航条中的菜单
+    12、navbar-form 定义导航条中的表单
+    13、navbar-btn 定义导航条中的按钮
+    14、navbar-text 定义导航条中的文本
+    15、navbar-left 菜单靠左
+    16、navbar-right 菜单靠右   
+    
+    - 参考015实例，写法都按照实例中的固定格式
+    
+## 4.7. bootstrap 模态框
+- 模态框即弹框
+    1、modal 声明一个模态框
+    2、modal-dialog 定义模态框尺寸
+    3、modal-lg 定义大尺寸模态框
+    4、modal-sm 定义小尺寸模态框
+    5、modal-header 弹框顶部信息
+    6、modal-body 弹框中间内容
+    7、modal-footer  弹框底部信息
     
     
         
