@@ -19,14 +19,20 @@
     <!--data-toggle="modal" data-target="#mymodal"和模态框的id="mymodal"进行关联，点击弹出模态框-->
     <div class="container">
         <div class="row">
-            <div class="btn btn-primary" data-toggle="modal" data-target="#mymodal">点击弹出模态框</div>
+            <!--<button class="btn btn-primary" data-toggle="modal" data-target="#mymodal">点击弹出模态框</button>-->
+            <!--改造为js控制，弹出不同大小的弹框-->
+            <button class="btn btn-primary" data-toggle="modal" data-target="#mymodal001">点击弹出大弹框</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#mymodal002">点击弹出中弹框</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#mymodal003">点击弹出小弹框</button>
         </div>
     </div>
 
-    <!--模态框主体结构，三层div里面包裹具体内容-->
+    <!--模态框主体结构，三层div(弹框主体，弹框外框，弹框内容)里面包裹具体内容-->
     <!--具体格式直接按照下面格式，具体含义参考000MD文件-->
     <div class="modal fade" id="mymodal">
-        <div class="modal-dialog modal-lg">
+        <!--弹框大小-->
+        <div class="modal-dialog modal-lg"> <!--modal-lg大的弹框-->
+            <!--弹框内容-->
             <div class="modal-content">
                 <div class="modal-header">
                     弹框标题，头部信息
@@ -36,8 +42,10 @@
                     模态框主体，弹框内容信息
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">保存修改</button>
+                    <!--关闭和保存的按钮，data-dismiss="modal"点击后关闭弹框-->
+                    <!--以data-开头的属性，都是bootstrap里面的一些js效果-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">保存修改</button>
                 </div>
             </div>
         </div>

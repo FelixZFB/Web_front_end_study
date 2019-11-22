@@ -125,11 +125,15 @@
     可以在某些浏览器的开发工具中使用。同时还包含了来自 Glyphicons 的图标字体，
     在附带的 Bootstrap 主题中使用到了这些图标。
     
-    时间开发中：
+    实际开发中：
     bootstrap.min.css       放到web下的css文件夹中
     bootstrap.min.js        放到web下的js文件夹中
     jquery-1.12.4.min.js    放到web下的js文件夹中
     fonts字体文件直接放在web文件夹下
+    
+- css样式和js效果
+    - class样式直接使用bootstrap的样式名称
+    - 以data-开头的属性，都是bootstrap里面的一些js效果
 
 ## 4.1.  bootstrap 容器
 - /*直接使用bootstrap中已经写好的样式container-fluid和container*/
