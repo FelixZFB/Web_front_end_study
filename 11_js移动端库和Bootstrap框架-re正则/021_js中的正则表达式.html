@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*var re=new RegExp('规则', '可选参数');*/
+        var re01 = new RegExp('a', 'i');
+
+        /*var re=/规则/参数;*/
+        var re02 = /a/; /*匹配a*/
+        var re03 =/\d/; /*匹配一个数字*/
+
+        var sTr01 = 'abcdefg';
+        var sTr02 = 'xyz';
+        var sTr03 = '123abc';
+
+        /*匹配测试，匹配规则和匹配表达式，匹配到就弹出true，反之false*/
+        alert(re02.test(sTr01));
+        alert(re02.test(sTr02));
+        alert(re03.test(sTr03));
+
+        /*
+        常用正则规则
+
+        //用户名验证：(数字字母或下划线6到20位)
+        ^表示匹配开头
+        $表示匹配结尾
+
+        var reUser = /^\w{6,20}$/;
+
+        //邮箱验证：
+        var reMail = /^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$/i;
+
+        //密码验证：
+        var rePass = /^[\w!@#$%^&*]{6,20}$/;
+
+        //手机号码验证：
+        var rePhone = /^1[34578]\d{9}$/;
+
+
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
