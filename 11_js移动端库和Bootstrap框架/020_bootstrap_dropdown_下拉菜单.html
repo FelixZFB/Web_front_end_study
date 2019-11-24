@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap一般用作响应式布局，因此需要设置视口大小和移动端设备相同meta:vp-->
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+     initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--bootstrap依赖jQuery库，需要先引入jQuery库-->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <!--然后引入bootstrap的js插件-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--最后引入bootstrap的css样式插件，font字体文件夹直接放在web下即可-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="dropdown">
+                <!--data-toggle="dropdown"和下面的dropdown-menu自动关联，都在同一个<div class="dropdown">，不需要像模态框里面使用data-target进行关联(不同的container的div容器中)-->
+                <div class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
+                    下拉菜单
+                    <span class="caret"></span>
+                </div>
+
+                <ul class="dropdown-menu">
+                    <li><a href="#">菜单一</a></li>
+                    <li><a href="#">菜单二</a></li>
+                    <li><a href="#">菜单三</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

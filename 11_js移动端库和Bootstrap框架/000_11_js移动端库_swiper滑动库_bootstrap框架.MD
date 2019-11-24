@@ -279,7 +279,11 @@
     6、modal-body 弹框中间内容
     7、modal-footer  弹框底部信息
     
-    
+## 4.8. 路径导航 breadcrumb
+- breadcrumb 面包屑   
+- 显示当前在哪个路径
+- breadcrumb通用的路径导航单词，搜索引擎一般会搜索该单词
+
         
         
 
