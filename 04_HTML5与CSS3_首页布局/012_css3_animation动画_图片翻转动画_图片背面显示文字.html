@@ -15,6 +15,11 @@
 
         }
 
+
+        /*设置正面为图片，背面为文字，实际是两个标签元素，他们定位在同一个位置*/
+        /*文字开始就是旋转了180度（相当于看到的是背面），图片一开始处于0度位置*/
+        /*设置动画，图片旋转到背面，背面文字旋转到正面*/
+
         .box img{
             position: absolute;
             left: 200px;
@@ -45,7 +50,7 @@
 			transform:perspective(800px) rotateY(-180deg);
 			transition:all 1s ease;
 			backface-visibility:hidden;
-
+            /**/
             /*上面的图片和背面盒子大小一致，动画时间效果等设置都要相同，翻转才能同时进行*/
 
         }
