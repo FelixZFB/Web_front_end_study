@@ -12,7 +12,7 @@
             height: 40px;
             border: 1px solid cyan;
             font-size: 0; /*用于去掉子元素的间隙*/
-            text-align: center; /*所有的子元素水平居中*/
+            text-align: center; /*所有的子元素整体水平居中*/
         }
 
         .pagenation li{
@@ -23,6 +23,17 @@
         }
 
         .pagenation li a{
+            display: block;
+            height: 26px; /*设置高度，宽度不设置，文字字数不一样，自动用文字撑开*/
+            line-height: 26px; /*行高块高度一致，文字垂直居中*/
+            background: gold; /*设置背景色*/
+            padding: 0 10px; /*只给左右内容间距，上下不给，行高自动撑开*/
+            font-size: 12px; /*设置文字大小*/
+            color: black; /*文字设置为黑色*/
+            text-decoration: none; /*去掉a标签文字自带的下划线*/
+        }
+
+        .pagenation li span{
             display: block;
             height: 26px; /*设置高度，宽度不设置，文字字数不一样，自动用文字撑开*/
             line-height: 26px; /*行高块高度一致，文字垂直居中*/
