@@ -175,3 +175,29 @@
     // 注意写法不同，匿名函数写在等号右边，jQuery写在click括号里面
     // 原生js: oBtn.onclick = function(){oDiv.style.color = 'red';}
     // jQuery：$('#btn').click(function () {}
+    
+- 获取属性
+    - 原生js
+        - css样式属性获取和设置
+            oDiv1.style.color;
+            oDiv1.style.fontSize = '32px';
+        - 标签元素的属性获取和设置
+            oLink.href;
+            oLink.href = 'http://www.baidu.com';
+            oLink.title = '点击跳转到百度首页';
+
+    - jQuery
+        - css样式属性获取和设置
+            $div1.css('font-size');
+            $div1.css({'color':'red'});
+        - 标签元素的属性获取和设置
+            $a.prop('class');
+            $a.prop({'href':'http://www.hao123.com','title':'hao123首页'});
+            
+- 标签内的内容
+    - 原生js
+        oDiv.innerHTML;
+        oDiv.innerHTML = "<a href='http://www.baidu.com'>百度首页</a>";
+    - jQuery
+        $('.box').html();
+        $('.box').html('<a href='http://www.baidu.com'>百度首页</a>');

@@ -14,7 +14,7 @@
             $btn.click(function () {
                 // 当前点击那个元素，$(this)关键字就指的是那个元素
                 // siblings()表示选择除本input的其它同级input元素
-                // 该元素添加current样式，除该元素以外都移current样式,点击那个变成金色，其它恢复灰色
+                // 该元素添加current样式，除该元素以外都移除current样式,点击那个变成金色，其它恢复灰色
                 $(this).addClass('current').siblings().removeClass('current');
                 // alert($(this).index()); // 弹出所点的那个元素的索引值，进行验证
 

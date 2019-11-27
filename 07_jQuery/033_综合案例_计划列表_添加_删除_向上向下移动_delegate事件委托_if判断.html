@@ -66,6 +66,7 @@
                     return; // 返回，结束该句代码，继续后面的代码
                 }
 
+                /*编写要添加的内容，直接复制li中内容，加入$val*/
                 var $li = $('<li>\n' +
                     '            <span>' + $val + '</span>\n' +
                     '            <a href="javascript:;" class="up"> ↑ </a>\n' +
@@ -145,6 +146,7 @@
         </li>
         <li>
             <span>学习javascript</span>
+            <!--javascript:;代替#号，点击后什么都不做，#号会跳转到页面顶部-->
             <a href="javascript:;" class="up"> ↑ </a>
             <a href="javascript:;" class="down"> ↓ </a>
             <a href="javascript:;" class="del">删除</a>

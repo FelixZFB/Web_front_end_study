@@ -47,17 +47,17 @@
             // 点击弹出，显示出来弹窗
             $('#btn').click(function () {
                 $('.pop_con').show();
-                return false; // 阻止事件冒泡，下面的document事件就不会自动执行
+                return false; // 阻止事件冒泡，下面的document事件就不会自动执行,需要点击才会执行
             })
 
-            // 事件冒泡，document是对顶层，上面的click事件会传上来
+            // 事件冒泡，document是对顶层，上面的click事件会传上来，上面已经阻止了，点击才会执行淡出
             $(document).click(function () {
                 $('.pop_con').fadeOut(); // 元素隐藏，淡出
             })
             // 弹窗弹出来以后，点击页面任何位置，弹框就淡出了
 
             // 但是我们有时候，弹框里面想输入东西，点击弹框不想关掉
-            // 弹框就加入阻止事件，此时只有点击弹窗外部，弹框才会消失
+            // 弹框文字就加入阻止事件，此时只有点击弹窗外部，弹框才会消失
             $('.pop').click(function () {
                 return false;
             })
