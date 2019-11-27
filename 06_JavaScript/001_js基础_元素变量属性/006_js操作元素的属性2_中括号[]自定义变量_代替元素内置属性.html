@@ -12,7 +12,8 @@
             var sValue = 'red';
 
             /*color直接使用sMystyle代替会无效*/
-            /*sMystyle会当做style样式中的一个属性，不会当做一个变量*/
+            /*sMystyle是一个自定义的变量属性*/
+            /*sMystyle会当做style样式中的一个属性(去内置属性查找，但是找不到)，不会当做一个变量*/
             /*该属性找不到，就直接跳过了*/
             // oDiv.style.sMystyle = sValue; 该句不会产生任何效果
             // oDiv.style.color = sValue; 该句可以修改属性

@@ -22,7 +22,8 @@
         // 关闭只执行一次的定时器，上面定时器2秒后才执行，还没有执行，已经被关闭了
         clearTimeout(time01);
 
-        // 反复执行的定时器,页面不关闭，会反复弹出执行
+        // 反复执行(无限次执行)的定时器,页面不关闭，会反复弹出执行
+        // css3中animation动画无限次执行是用的 infinite
         var time02 = setInterval(myalert, 2000);
         clearInterval(time02);
 
