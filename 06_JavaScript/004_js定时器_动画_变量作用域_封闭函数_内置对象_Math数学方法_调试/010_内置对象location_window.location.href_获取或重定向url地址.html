@@ -9,9 +9,12 @@
         window.onload = function () {
 
             var oBtn = document.getElementById('btn01');
-            // 匿名函数，鼠标点击标签元素要执行的匿名函数
+            // 匿名函数，鼠标点击标签input按钮要执行的匿名函数
             oBtn.onclick = function () {
                 //获取或者重定url地址,页面重新定位到百度了
+                // 点击input按钮先获取当前网页地址
+                // 然后网页重定向到百度首页，网页自动跳转过去
+                alert(window.location.href);
                 window.location.href = 'http://www.baidu.com';
             }
 
