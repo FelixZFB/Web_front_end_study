@@ -32,8 +32,8 @@
 - json的另外一个数据格式是数组，和javascript中的数组字面量相同。
     ["tom",18,"programmer"]
 
-# 如果是字典形式，load读取出来就是python字典类型
-# 如果是数组形式，load读取出来就是python列表类型
+# 如果json文件是字典形式，load读取出来就是python字典类型
+# 如果json文件是数组形式，load读取出来就是python列表类型
 # 读取出来以后直接当做字典或者列表操作即可
 
 - json文件读取与写入，python中字典与json格式之间转换
