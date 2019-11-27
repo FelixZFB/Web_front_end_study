@@ -6,6 +6,7 @@
     <!--引入jQuery-->
     <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
     <script type="text/javascript">
+
         /*js代码加载模块*/
         $(function () {
 
@@ -14,11 +15,11 @@
             var $div2 = $('.box');
             var $li = $('.list li');
 
-            /*修改样式直接使用css(),原生js使用的style*/
+            /*修改样式直接使用css(),原生js使用的style，css样式里面不需要使用引号*/
             $div.css({'color':'red'});
             /*jQuery可以一次修改多个标签的样式，原生js需要使用for循环一个一个修改*/
             $div2.css({'color':'blue'});
-            /*带-的样式可以写成原始的-形式，也可以写成驼峰式，原始js需要使用驼峰式*/
+            /*带-的样式可以写成原始的-形式，也可以写成匈牙利命名，原始js需要使用匈牙利命名*/
             $li.css({'color':'yellow', 'background-color':'green'});
 
         })

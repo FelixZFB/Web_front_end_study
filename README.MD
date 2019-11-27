@@ -132,4 +132,46 @@
     // 最后一个函数，返回的是空值，函数什么都不做，放这里没有问题
     - 参考07文件夹中天天生鲜动态首页，js中的slide_user.js的moving函数
 
+## 19. css 原生js jquery中关于样式书写区别
+- css
+    样式名称和值都不需要引号
+    .box{
+        width: 200px; 
+        height: 200px;
+        font-size: 32px;
+    }
     
+- 原生js中
+    样式的值要使用引号,修改样式使用style
+    oDiv1.style.color = 'red';
+    oDiv1.style.fontSize = '32px';   // 短横线写成匈牙利命名法 
+    
+- jquery中
+    - 样式写在字典里面，键值方式，修改样式使用css
+    - jquery有容错机制
+    - 样式名称可以使用短横线(css中原始写法)也可以写成匈牙利命名(原生js中写法)    
+    - 宽度高度等数字后面的px可以省略，不写px就不写引号，要写px就要加上引号
+    - 推荐写上px，都使用引号
+    $('.box').css({'color':'red'});
+    $('.list li').css({'color':'yellow', 'background-color':'green'});  // 短横线直接写成css一样，也可以写成原生js中匈牙利命名法
+    $('.box').animate({'width':'+=100px'})
+    
+    
+## 19. 原生JS和jQuery中一些语法区别
+- 加载模块
+    - 原生js
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            alert('原生JS弹出的' + oDiv);
+        }
+    
+    - jQuery
+        $(function () {
+            var $div = $('#div1');
+            alert('jquery简写弹出的' + $div);
+        })
+- 点击
+    // 点击元素执行的功能,原生js使用的是onclick
+    // 注意写法不同，匿名函数写在等号右边，jQuery写在click括号里面
+    // 原生js: oBtn.onclick = function(){oDiv.style.color = 'red';}
+    // jQuery：$('#btn').click(function () {}
