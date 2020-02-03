@@ -9,7 +9,7 @@
             height: 50px;
             /*background-color: cyan; !*由于子元素a整体左移了1px，父元素背景色会多一点出来，作为制图参考，完成后直接注释掉*!*/
             margin: 50px auto 0; /*元素自动居中*/
-            font-size: 0; /*父级字体为0，解决内联块元素间隙问题*/
+            font-size: 0; /*父级字体为0，解决内联块元素书写换行产生的间隙问题*/
         }
 
         .menu a{
@@ -22,7 +22,7 @@
             color: blue; /*文字颜色*/
             text-decoration: none; /*去掉链接默认的下划线*/
             text-align: center; /*文字水平居中*/
-            line-height: 48px; /*文字垂直居中，即内容的高度*/
+            line-height: 48px; /*文字垂直居中，即内容的高度，内容高度和盒子高度一样，就实现了垂直居中*/
             display: inline-block; /*转换a标签为内联块元素,如果要做成垂直列表，就用转换为块元素*/
             margin-left: -1px; /*边框整体向左移动，边框合并*/
         }
