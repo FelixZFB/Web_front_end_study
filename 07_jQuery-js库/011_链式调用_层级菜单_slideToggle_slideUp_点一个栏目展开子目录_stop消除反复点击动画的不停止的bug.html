@@ -57,6 +57,7 @@
 			display:none; /*除了第一个ul是显示的，其它ul开始都是隐藏的，ul的高度是由内容撑开的*/
 		}
 
+		/*ul.current就是代表具有current属性的ul标签*/
 		.menu li ul.current{
 			display:block;
 		}
@@ -74,12 +75,18 @@
 
 		$(function(){
 
-		    // 选择所有的一级菜单栏，点击任何一个一级菜单栏都可以执行函数功能
+		    // 选择所有的一级菜单栏，选择的是li标签下面具有.level1的a标签，点击任何一个一级菜单栏都可以执行函数功能
 			$('.level1').click(function(){
 
-			    // 展开收起就是修改了display的属性
-				// 当前点击的元素紧挨的同辈元素(next)ul向下展开收起(slideToggle)，parent()再跳到此元素的父级(li),
-                // siblings()再跳到此父级的其他的同辈元素(li),选择其他同辈元素(li)的子元素(children)ul，然后将它们都向上收起(slideUp)。
+			    // 展开收起就是修改了display的属性，默认网页打开时候第一个水果菜单是展开的，设置的有current样式
+				// 打开网页时候，第一个一级菜单水果栏是展开的，我们以点击海鲜栏为例
+				// 点击海鲜栏，$(this)就代表选中了海鲜栏的a标签，next()选中了是a标签的同辈元素，即海鲜栏下的ul标签
+				// ul标签执行slideToggle()动作，向下展开收起，实际是修改的ul的display属性
+				// parent()调到了a标签的父级元素li标签，就是海鲜栏所在的最大标签
+                // siblings()再跳到此li标签的其他的同辈元素li标签,
+				// children('ul')，表示选择li标签下的子元素ul，slideUp表示将它们都向上收起slideUp，实际也是修改的display属性
+				// 修改属性都是jQuery库中的该方法修改display属性
+
                 // 自己展开，其它收起，每次就只显示一个展开的二级菜单
 				// 通过stop() 可以修正反复点击导致的持续动画的问题，反复点击一级菜单，然后不点击，动画就会自己一直切换
 				$(this).next().stop().slideToggle().parent().siblings().children('ul').slideUp();

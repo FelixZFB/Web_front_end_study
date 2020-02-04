@@ -10,13 +10,15 @@
 
             var $div1 = $('#div1');
             var sTr = $div1.css('font-size'); /*只写名称，获取样式的属性值*/
-            alert(sTr);
+            alert(sTr); // 默认的font-size就是16px，虽然行间没有定义但是jQuery也可以读取，原生js不可以
 
             // 使用字典，传入样式名称和值，就是写入属性，修改样式
             $div1.css({'color':'red', 'font-size':'30px', 'background-color':'pink'});
 
             var oDiv = document.getElementById('box');
-            alert(oDiv.style.fontSize); // 原生js是不能读取没有定义css属性的值，jQuery可以
+            alert(oDiv.style.fontSize);
+            // 原生js是不能读取没有行间定义的css属性的值，jQuery可以，
+            // 可以查看console调试窗口，提示错误：Uncaught TypeError: Cannot read property 'style' of null
             // 如果行间写了style="font-size:20px;"原生js可以读取
 
 

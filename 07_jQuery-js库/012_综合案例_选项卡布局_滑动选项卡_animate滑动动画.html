@@ -25,6 +25,8 @@
 
                 // animate动画和css3中的animation动画一样，实际是两个状态之间的切换效果
                 // css直接换成animate就改成了动画,默认是滑动效果
+                // slides下面的3个div实际是左浮动，显示在一排，打开网页，只会显示第一个div，后面两个溢出了，隐藏了没有显示出来
+                // <div class="cons">里面设置的溢出的隐藏，左边溢出右边溢出都很被隐藏
                 $slides.animate({'left':-500*$(this).index()});
 
 
@@ -72,12 +74,11 @@
             line-height: 300px;
             text-align: center;
             font-size: 50px;
-            /*display: none; !*默认不显示该模块，隐藏后不占据位置*!*/
             float: left; /*排在一行*/
         }
 
         .cons .slides .active{
-            display: block;
+            display: block; /*单独修改第一个div属性，显示出第一个div*/
         }
 
     </style>

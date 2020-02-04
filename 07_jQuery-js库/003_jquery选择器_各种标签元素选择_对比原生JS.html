@@ -10,12 +10,16 @@
         /*js代码加载模块*/
         $(function () {
 
-            /*jQuery里面的选择器和css样式选择器写法一样*/
+            /*jQuery里面的选择器和css样式选择器写法一样，class样式使用.，id名称使用#，标签就直接使用标签名称*/
             var $div = $('#div1');
             var $div2 = $('.box');
             var $li = $('.list li');
 
-            /*修改样式直接使用css(),原生js使用的style，css样式里面不需要使用引号*/
+            // 原生js定义变量，使用匈牙利命名风格，对象o Object 比如：oDiv
+            // var oDiv1 = document.getElementById('div1');
+            // var oLink = document.getElementById('link');
+
+            /*修改样式直接使用css(),原生js使用的style，注意css原始样式里面的键和值都不需要使用引号*/
             $div.css({'color':'red'});
             /*jQuery可以一次修改多个标签的样式，原生js需要使用for循环一个一个修改*/
             $div2.css({'color':'blue'});
