@@ -6,9 +6,10 @@
 
 ## 1. JavaScript介绍
 - JavaScript是运行在浏览器端的脚步语言，
-    JavaScript直接有浏览器解释执行不需要编译
+    JavaScript直接有浏览器解释执行不需要编译，不需要向其它语言一样安装配置编译环境。
     JavaScript主要解决的是前端与用户交互的问题，
-    包括使用交互与数据交互。 JavaScript是浏览器解释执行的，
+    包括使用交互与数据交互。 
+    JavaScript是浏览器解释执行的，直接编写在HTML文档的script标签里面，浏览器就可以解释运行。
     前端脚本语言还有JScript（微软，IE独有），ActionScript( Adobe公司，需要插件)等。
     
 - 前端三大块
