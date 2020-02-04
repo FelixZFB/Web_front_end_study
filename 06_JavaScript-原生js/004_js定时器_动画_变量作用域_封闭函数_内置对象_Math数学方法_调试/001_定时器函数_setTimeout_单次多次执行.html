@@ -11,6 +11,7 @@
         clearTimeout 关闭只执行一次的定时器
         setInterval  反复执行的定时器
         clearInterval 关闭反复执行的定时器
+        定时器定义后，只要不关闭，会自动执行
         */
 
         function myalert() {
@@ -23,9 +24,9 @@
         clearTimeout(time01);
 
         // 反复执行(无限次执行)的定时器,页面不关闭，会反复弹出执行
-        // css3中animation动画无限次执行是用的 infinite
+        // 先定义一个定时器，css3中animation动画无限次执行是用的 infinite
         var time02 = setInterval(myalert, 2000);
-        clearInterval(time02);
+        // clearInterval(time02); // 还没开始就关闭了，要查看执行效果，注释掉该关闭语句
 
 
         // 匿名函数，函数直接写在定时器内部
