@@ -6,14 +6,14 @@
     <script type="text/javascript">
 
         window.onload = function(){
-            // 获取li标签，获取的是一个选择集，
+            // 获取li标签，获取的是一个选择集，获取的结果类似列表
             // 不是数组，但是可以用下标的方式操作选择集里面的标签元素
             var aLi = document.getElementsByTagName('li');
             // aLi.style.backgroundColor = 'gold'; // 出错！不能同时设置多个li
 
             /*查看获取了多少个li*/
             alert(aLi.length);
-            /*单独设置一个li的样式*/
+            /*单独设置一个li的样式，采用类似python中列表的操作方式*/
             aLi[0].style.backgroundColor = 'gold';
 
 

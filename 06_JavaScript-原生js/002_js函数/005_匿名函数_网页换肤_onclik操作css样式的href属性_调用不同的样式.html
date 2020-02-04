@@ -16,7 +16,9 @@
 
             /*点击按钮，自动换肤，即自动切换引入的外部css样式*/
             /*onclick点击元素内容调用执行函数*/
-            /*即要点击input标签按钮*/
+            /*即要点击input标签按钮，更换上面link标签中href属性*/
+            // 引入的是css样式，css文件里面设置了body和input标签的样式
+            // 默认加载的是skin01样式，点击切换可以改变引入的样式文件
             oBtn01.onclick = function () {
                 oLink01.href = '../css/skin01.css';
             };
