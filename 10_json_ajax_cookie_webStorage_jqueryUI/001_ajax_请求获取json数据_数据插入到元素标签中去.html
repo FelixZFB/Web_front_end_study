@@ -8,11 +8,13 @@
 
         // 下面是ajax读取json数据的标准写法
         $.ajax({
-            url:'js/data.json',
-            type:'GET',
-            datatype:'json',
+            url:'js/data.json', // 请求数据地址，可以是一个文件路径，也可以是一个网址/index
+            type:'GET',  // 请求数据的方式
+            datatype:'json', // 请求的数据形式
+            // 异步执行，$.ajax不会等内部回调函数执行完毕，ajax函数后面代码会继续执行,
+            // 'async': false, // ajax默认是异步的，此处false表示同步，一步一步向下执行
         })
-        .done(function (dat) {
+        .done(function (dat) {  // 回调函数，dat就是请求获取到的数据
             console.log(dat); // 读取数据
             console.log(dat.name); // 取出name对应的值
             console.log(dat.age); // 取出age对应的值
@@ -22,7 +24,7 @@
             $('#userage').html(dat.age);
 
         })
-        .fail(function () {
+        .fail(function () { // 可以不断的接着写回调函数
             console.log('服务器超时，请重试！')
         })
 

@@ -92,7 +92,49 @@
     函数fn Function 比如：fnHandler
     正则表达式re RegExp 比如：reEmailCheck 
     指定变量类型，变量名使用大小写驼峰命名
+
+- js 定义变量的3种方式：
+- const定义的变量不可以修改，而且必须初始化。
+```javascript
+const b = 2; //正确
+const b; //直接定义没有值，错误，必须初始化一个值
+console.log('函数外const定义b：' + b); //有输出值
+
+b = 5; // 外部直接修改，无输出值
+console.log('函数外修改const定义b：' + b);//无法输出 
+```
  
+- var定义的变量可以修改，如果不初始化会输出undefined，不会报错。
+```javascript
+var a = 1;
+// var a;//不会报错
+console.log('函数外var定义a：' + a);//可以输出a=1
+
+function change(){
+a = 4;
+console.log('函数内var定义a：' + a);//可以输出a=4
+}
+change();
+
+console.log('函数调用后var定义a为函数内部修改值：' + a);//可以输出a=4
+```
+
+- let是块级作用域，函数内部使用let定义后，对函数外部无影响。
+```javascript
+let c = 3;
+console.log('函数外let定义c：' + c);//输出c=3
+
+function change(){
+let c = 6;
+console.log('函数内let定义c：' + c);//输出c=6
+}
+
+change();
+console.log('函数调用后let定义c不受函数内部定义影响：' + c);//输出c=3
+```
+
+
+
     
 ## 4. js获取元素方法1
 - 可以使用内置对象document上的getElementById方法来获取页面上设置了id属性的元素，
