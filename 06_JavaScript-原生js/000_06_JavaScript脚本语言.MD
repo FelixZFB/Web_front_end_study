@@ -94,6 +94,10 @@
     指定变量类型，变量名使用大小写驼峰命名
 
 - js 定义变量的3种方式：
+- var 最常用的定义变量方式,可有初始化值可以没有，全局局部定义的都可以修改
+- let 定义局部变量，函数内部定义的，对函数外部不产生影响
+- const 定义的变量，必须有初始化值，不然会报错
+
 - const定义的变量不可以修改，而且必须初始化。
 ```javascript
 const b = 2; //正确
@@ -133,8 +137,6 @@ change();
 console.log('函数调用后let定义c不受函数内部定义影响：' + c);//输出c=3
 ```
 
-
-
     
 ## 4. js获取元素方法1
 - 可以使用内置对象document上的getElementById方法来获取页面上设置了id属性的元素，
@@ -155,6 +157,27 @@ console.log('函数调用后let定义c不受函数内部定义影响：' + c);//
                     var oDiv = document.getElementById('div1');
                 }
             </script>
+
+- window.onload 全局加载问题：
+    - window.onload内部定义函数的问题：
+    - 虽然使用window.onload的想法是想要使html语句解析完，再执行js语句。
+    - 但事与愿违，比如以下带有函数的语句，当浏览器解析到 <input type="button" id="cover_upper" value="转大写" onclick="fnChange()')">这条语句时，
+    - 浏览器就会跳到js里去寻找这个fnChange()函数，但是，它找不到！！！没错，找不到……
+    - 因为window.onload会等HTML渲染完成后，才开始执行，此时肯定找不到
+    - 解决方法，把函数单独拿出来放在，window.onload 外面
+    
+    - 但是有时候，又会出现另外一个问题，fnChange()函数拿到window.onload外面，但是函数里面有HTML中获取的变量节点
+    - 此时HTML还没有加载完成，此时获取节点又会报错
+    - 解决方法，把整个js代码的script标签放在body标签后面，就可以解决该问题
+    - 参考博客：https://www.sogou.com/link?url=hedJjaC291P3yGwc7N55kLSc2ls_Ks2x4Pgih5YYm3PAXUoXm4JLnwfbUz8Lj5bw
+
+ 
+
+因为window.onload会在HTML语句全部解析完全再执行里面的语句，所以暂时无法从window.onload这个作用域里面使用这个函数，所以浏览器当然给我们这个提示（函数未定义！）。
+
+ 
+
+解决方法很简单，把你自己定义的想要调用的函数从window.onload这个作用域里面拿出来，放到全局作用域中。没错，就是下面这样，把window.onload里面的内容放到外面。
 
             
 ## 4.1. js操作元素属性
