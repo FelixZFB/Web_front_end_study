@@ -11,7 +11,7 @@
         window.onload = function () {
             var oDiv = document.getElementById('div1');
             alert('原生JS弹出的' + oDiv);
-        }
+        };
 
 
         /*使用jquery的写法，$(document).ready相当于上面的window.onload*/
@@ -19,7 +19,7 @@
         $(document).ready(function () {
             var $div = $('#div1');
             alert('jquery弹出的' + $div); /*jquery写在后面但是弹出来在前面，速度更快*/
-        })
+        });
 
 
         /*jquery上面ready完整写法的简写,$(document).ready()简写为$()*/
@@ -31,9 +31,6 @@
         /*ready比onload快的原因：*/
         /*onload标签和标签里面数据都加载完毕(类似于网页渲染)才开始运行内部函数，*/
         /*ready只要标签加载完毕就开始运行了，速度更快*/
-
-
-
 
     </script>
 
